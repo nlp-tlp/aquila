@@ -1,0 +1,39 @@
+{
+  "name": "dmp",
+  "version": "0.0.0",
+  "private": true,
+  "scripts": {
+    "start": "node ./bin/www",
+    "build-css": "node-sass scss/ -o public/stylesheets/",
+    "watch-css": "nodemon -V -e scss -x \"npm run build-css\""
+  },
+  "dependencies": {
+    "body-parser": "^1.18.3",
+    "cookie-parser": "~1.3.5",
+    "cookie-session": "^2.0.0-beta.3",
+    "csurf": "^1.9.0",
+    "csv-reader": "^1.0.3",
+    "d3": "^5.7.0",
+    "debug": "~2.2.0",
+    "express": "^4.16.4",
+    "file-type": "^9.0.0",
+    "font-awesome": "^4.7.0",
+    "formidable": "^1.2.1",
+    "jade": "~1.11.0",
+    "jsdom": "~9.12.0",
+    "mongodb": "^3.0.4",
+    "mongoose": "^5.0.10",
+    "morgan": "^1.9.1",
+    "node-sass": "^4.10.0",
+    "node-sass-middleware": "^0.11.0",
+    "passport": "^0.4.0",
+    "passport-local-mongoose": "^5.0.0",
+    "pathfinder-ui": "^1.0.3",
+    "python-shell": "^0.5.0",
+    "serve-favicon": "^2.5.0",
+    "socketio": "^1.0.0"
+  },
+  "devDependencies": {
+    "nodemon": "^1.18.7"
+  }
+}

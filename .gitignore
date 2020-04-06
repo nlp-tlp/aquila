@@ -1,0 +1,4 @@
+/public/files
+/node_modules
+/data
+*.pyc

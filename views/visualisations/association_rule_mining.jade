@@ -1,0 +1,65 @@
+extends ../layouts/logged_in
+
+block content
+
+	div.erc-table
+		div#erc-table-left
+			div.erc-info#jstree-container
+				div.shadow
+					table
+						thead
+							tr
+								th Entity Categories
+					div#jstree.form-control
+
+			div.erc-info#bar-chart-container
+				div.shadow
+					table
+						thead
+							tr
+								th Bar Chart
+									//a.view-fullscreen#histogram-fullscreen(href="#")
+										i.fa.fa-arrow-circle-up
+					div#bar-chart
+					
+				
+
+
+		div#erc-table-right
+			p#filter-info Showing all <b>#{data.length}</b> rules (s &gt; 0.003).
+			div.table-container.shadow#erc-table-container		
+				table#entity-recognition-table.association-rule-mining-table
+					thead
+						tr
+							th Antecedent
+							th
+								i.fa.fa-arrow-right(style="visibility: hidden")
+							th Consequent
+							th Lift
+							th Confidence
+					tbody(id="report-table")
+						each val in data
+							tr(id = "row-" + val[0])
+								td !{val[1]}
+								td
+									i.fa.fa-arrow-right
+								td !{val[2]}
+								td !{val[3]}
+								td !{val[4]}
+				div#loading-overlay
+			div#loading-message <i class="fa fa-cog fa-spin fa-lg fa-fw"></i>&nbsp;LOADING...
+
+
+
+
+
+
+block scripts
+	script(type="text/javascript", src="https://code.jquery.com/jquery-2.2.3.min.js")
+	script(type="text/javascript" src="#{base_url}/javascripts/d3/d3.min.js")
+	script(type="text/javascript", src="#{base_url}/javascripts/data_warehousing/association_rule_mining_bar_chart_data.js")
+	script(type="text/javascript", src="#{base_url}/javascripts/data_warehousing/association_rule_mining_entity_appearances.js")
+	script(type="text/javascript", src="#{base_url}/javascripts/data_warehousing/entity_appearances_graph.js")
+
+	script.
+		makeHierarchicalBarChart("/javascripts/data_warehousing/association_rule_mining_bar_chart_data.json", "rules");

@@ -1,0 +1,2130 @@
+{
+ "name": "all_entities",
+ "children": [
+  {
+   "name": "accident_cause",
+   "class_id": 1,
+   "size": 20,
+   "children": [
+    {
+     "name": "<accident_cause>",
+     "size": 20,
+     "class_id": 1
+    },
+    {
+     "name": "bodily_contact",
+     "class_id": 1,
+     "size": 0,
+     "children": [
+      {
+       "name": "<bodily_contact>",
+       "size": 0,
+       "class_id": 1
+      }
+     ]
+    },
+    {
+     "name": "caught_between",
+     "class_id": 1,
+     "size": 4,
+     "children": [
+      {
+       "name": "<caught_between>",
+       "size": 4,
+       "class_id": 1
+      }
+     ]
+    },
+    {
+     "name": "fall",
+     "class_id": 1,
+     "size": 11,
+     "children": [
+      {
+       "name": "<fall>",
+       "size": 11,
+       "class_id": 1
+      },
+      {
+       "name": "fall_from_heights",
+       "class_id": 1,
+       "size": 0,
+       "children": [
+        {
+         "name": "<fall_from_heights>",
+         "size": 0,
+         "class_id": 1
+        }
+       ]
+      },
+      {
+       "name": "fall_from_vehicle",
+       "class_id": 1,
+       "size": 0,
+       "children": [
+        {
+         "name": "<fall_from_vehicle>",
+         "size": 0,
+         "class_id": 1
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "over_exertion",
+     "class_id": 1,
+     "size": 0,
+     "children": [
+      {
+       "name": "<over_exertion>",
+       "size": 0,
+       "class_id": 1
+      }
+     ]
+    },
+    {
+     "name": "recurrence",
+     "class_id": 1,
+     "size": 0,
+     "children": [
+      {
+       "name": "<recurrence>",
+       "size": 0,
+       "class_id": 1
+      }
+     ]
+    },
+    {
+     "name": "stepping",
+     "class_id": 1,
+     "size": 5,
+     "children": [
+      {
+       "name": "<stepping>",
+       "size": 5,
+       "class_id": 1
+      }
+     ]
+    },
+    {
+     "name": "struck_by_object",
+     "class_id": 1,
+     "size": 0,
+     "children": [
+      {
+       "name": "<struck_by_object>",
+       "size": 0,
+       "class_id": 1
+      }
+     ]
+    },
+    {
+     "name": "trip_and_fall",
+     "class_id": 1,
+     "size": 0,
+     "children": [
+      {
+       "name": "<trip_and_fall>",
+       "size": 0,
+       "class_id": 1
+      }
+     ]
+    },
+    {
+     "name": "vehicle_related",
+     "class_id": 1,
+     "size": 0,
+     "children": [
+      {
+       "name": "<vehicle_related>",
+       "size": 0,
+       "class_id": 1
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "activity",
+   "class_id": 2,
+   "size": 18,
+   "children": [
+    {
+     "name": "<activity>",
+     "size": 18,
+     "class_id": 2
+    },
+    {
+     "name": "driving",
+     "class_id": 2,
+     "size": 4,
+     "children": [
+      {
+       "name": "<driving>",
+       "size": 4,
+       "class_id": 2
+      }
+     ]
+    },
+    {
+     "name": "running",
+     "class_id": 2,
+     "size": 0,
+     "children": [
+      {
+       "name": "<running>",
+       "size": 0,
+       "class_id": 2
+      }
+     ]
+    },
+    {
+     "name": "walking",
+     "class_id": 2,
+     "size": 14,
+     "children": [
+      {
+       "name": "<walking>",
+       "size": 14,
+       "class_id": 2
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "age_group",
+   "class_id": 3,
+   "size": 181,
+   "children": [
+    {
+     "name": "<age_group>",
+     "size": 181,
+     "class_id": 3
+    },
+    {
+     "name": "age_15_24",
+     "class_id": 3,
+     "size": 19,
+     "children": [
+      {
+       "name": "<age_15_24>",
+       "size": 19,
+       "class_id": 3
+      }
+     ]
+    },
+    {
+     "name": "age_25_34",
+     "class_id": 3,
+     "size": 36,
+     "children": [
+      {
+       "name": "<age_25_34>",
+       "size": 36,
+       "class_id": 3
+      }
+     ]
+    },
+    {
+     "name": "age_35_44",
+     "class_id": 3,
+     "size": 45,
+     "children": [
+      {
+       "name": "<age_35_44>",
+       "size": 45,
+       "class_id": 3
+      }
+     ]
+    },
+    {
+     "name": "age_45_54",
+     "class_id": 3,
+     "size": 30,
+     "children": [
+      {
+       "name": "<age_45_54>",
+       "size": 30,
+       "class_id": 3
+      }
+     ]
+    },
+    {
+     "name": "age_55_64",
+     "class_id": 3,
+     "size": 31,
+     "children": [
+      {
+       "name": "<age_55_64>",
+       "size": 31,
+       "class_id": 3
+      }
+     ]
+    },
+    {
+     "name": "age_65_100",
+     "class_id": 3,
+     "size": 20,
+     "children": [
+      {
+       "name": "<age_65_100>",
+       "size": 20,
+       "class_id": 3
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "body_part",
+   "class_id": 4,
+   "size": 123,
+   "children": [
+    {
+     "name": "<body_part>",
+     "size": 123,
+     "class_id": 4
+    },
+    {
+     "name": "arm",
+     "class_id": 4,
+     "size": 40,
+     "children": [
+      {
+       "name": "<arm>",
+       "size": 40,
+       "class_id": 4
+      },
+      {
+       "name": "elbow",
+       "class_id": 4,
+       "size": 4,
+       "children": [
+        {
+         "name": "<elbow>",
+         "size": 4,
+         "class_id": 4
+        },
+        {
+         "name": "left_elbow",
+         "class_id": 4,
+         "size": 1,
+         "children": [
+          {
+           "name": "<left_elbow>",
+           "size": 1,
+           "class_id": 4
+          }
+         ]
+        },
+        {
+         "name": "right_elbow",
+         "class_id": 4,
+         "size": 2,
+         "children": [
+          {
+           "name": "<right_elbow>",
+           "size": 2,
+           "class_id": 4
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "hand",
+       "class_id": 4,
+       "size": 24,
+       "children": [
+        {
+         "name": "<hand>",
+         "size": 24,
+         "class_id": 4
+        },
+        {
+         "name": "fingers",
+         "class_id": 4,
+         "size": 0,
+         "children": [
+          {
+           "name": "<fingers>",
+           "size": 0,
+           "class_id": 4
+          }
+         ]
+        },
+        {
+         "name": "left_hand",
+         "class_id": 4,
+         "size": 9,
+         "children": [
+          {
+           "name": "<left_hand>",
+           "size": 9,
+           "class_id": 4
+          }
+         ]
+        },
+        {
+         "name": "right_hand",
+         "class_id": 4,
+         "size": 6,
+         "children": [
+          {
+           "name": "<right_hand>",
+           "size": 6,
+           "class_id": 4
+          }
+         ]
+        },
+        {
+         "name": "thumb",
+         "class_id": 4,
+         "size": 2,
+         "children": [
+          {
+           "name": "<thumb>",
+           "size": 2,
+           "class_id": 4
+          },
+          {
+           "name": "left_thumb",
+           "class_id": 4,
+           "size": 0,
+           "children": [
+            {
+             "name": "<left_thumb>",
+             "size": 0,
+             "class_id": 4
+            }
+           ]
+          },
+          {
+           "name": "right_thumb",
+           "class_id": 4,
+           "size": 0,
+           "children": [
+            {
+             "name": "<right_thumb>",
+             "size": 0,
+             "class_id": 4
+            }
+           ]
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "left_arm",
+       "class_id": 4,
+       "size": 0,
+       "children": [
+        {
+         "name": "<left_arm>",
+         "size": 0,
+         "class_id": 4
+        }
+       ]
+      },
+      {
+       "name": "right_arm",
+       "class_id": 4,
+       "size": 1,
+       "children": [
+        {
+         "name": "<right_arm>",
+         "size": 1,
+         "class_id": 4
+        }
+       ]
+      },
+      {
+       "name": "shoulder",
+       "class_id": 4,
+       "size": 6,
+       "children": [
+        {
+         "name": "<shoulder>",
+         "size": 6,
+         "class_id": 4
+        },
+        {
+         "name": "left_shoulder",
+         "class_id": 4,
+         "size": 2,
+         "children": [
+          {
+           "name": "<left_shoulder>",
+           "size": 2,
+           "class_id": 4
+          }
+         ]
+        },
+        {
+         "name": "right_shoulder",
+         "class_id": 4,
+         "size": 0,
+         "children": [
+          {
+           "name": "<right_shoulder>",
+           "size": 0,
+           "class_id": 4
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "wrist",
+       "class_id": 4,
+       "size": 3,
+       "children": [
+        {
+         "name": "<wrist>",
+         "size": 3,
+         "class_id": 4
+        },
+        {
+         "name": "left_wrist",
+         "class_id": 4,
+         "size": 1,
+         "children": [
+          {
+           "name": "<left_wrist>",
+           "size": 1,
+           "class_id": 4
+          }
+         ]
+        },
+        {
+         "name": "right_wrist",
+         "class_id": 4,
+         "size": 0,
+         "children": [
+          {
+           "name": "<right_wrist>",
+           "size": 0,
+           "class_id": 4
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "back",
+     "class_id": 4,
+     "size": 36,
+     "children": [
+      {
+       "name": "<back>",
+       "size": 36,
+       "class_id": 4
+      },
+      {
+       "name": "lower_back",
+       "class_id": 4,
+       "size": 7,
+       "children": [
+        {
+         "name": "<lower_back>",
+         "size": 7,
+         "class_id": 4
+        }
+       ]
+      },
+      {
+       "name": "upper_back",
+       "class_id": 4,
+       "size": 0,
+       "children": [
+        {
+         "name": "<upper_back>",
+         "size": 0,
+         "class_id": 4
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "body",
+     "class_id": 4,
+     "size": 5,
+     "children": [
+      {
+       "name": "<body>",
+       "size": 5,
+       "class_id": 4
+      },
+      {
+       "name": "chest",
+       "class_id": 4,
+       "size": 3,
+       "children": [
+        {
+         "name": "<chest>",
+         "size": 3,
+         "class_id": 4
+        }
+       ]
+      },
+      {
+       "name": "stomach",
+       "class_id": 4,
+       "size": 1,
+       "children": [
+        {
+         "name": "<stomach>",
+         "size": 1,
+         "class_id": 4
+        }
+       ]
+      },
+      {
+       "name": "torso",
+       "class_id": 4,
+       "size": 0,
+       "children": [
+        {
+         "name": "<torso>",
+         "size": 0,
+         "class_id": 4
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "groin",
+     "class_id": 4,
+     "size": 3,
+     "children": [
+      {
+       "name": "<groin>",
+       "size": 3,
+       "class_id": 4
+      }
+     ]
+    },
+    {
+     "name": "head",
+     "class_id": 4,
+     "size": 19,
+     "children": [
+      {
+       "name": "<head>",
+       "size": 19,
+       "class_id": 4
+      },
+      {
+       "name": "ear",
+       "class_id": 4,
+       "size": 2,
+       "children": [
+        {
+         "name": "<ear>",
+         "size": 2,
+         "class_id": 4
+        },
+        {
+         "name": "left_ear",
+         "class_id": 4,
+         "size": 1,
+         "children": [
+          {
+           "name": "<left_ear>",
+           "size": 1,
+           "class_id": 4
+          }
+         ]
+        },
+        {
+         "name": "right_ear",
+         "class_id": 4,
+         "size": 0,
+         "children": [
+          {
+           "name": "<right_ear>",
+           "size": 0,
+           "class_id": 4
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "eye",
+       "class_id": 4,
+       "size": 7,
+       "children": [
+        {
+         "name": "<eye>",
+         "size": 7,
+         "class_id": 4
+        },
+        {
+         "name": "left_eye",
+         "class_id": 4,
+         "size": 1,
+         "children": [
+          {
+           "name": "<left_eye>",
+           "size": 1,
+           "class_id": 4
+          }
+         ]
+        },
+        {
+         "name": "right_eye",
+         "class_id": 4,
+         "size": 4,
+         "children": [
+          {
+           "name": "<right_eye>",
+           "size": 4,
+           "class_id": 4
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "mouth",
+       "class_id": 4,
+       "size": 2,
+       "children": [
+        {
+         "name": "<mouth>",
+         "size": 2,
+         "class_id": 4
+        }
+       ]
+      },
+      {
+       "name": "nose",
+       "class_id": 4,
+       "size": 1,
+       "children": [
+        {
+         "name": "<nose>",
+         "size": 1,
+         "class_id": 4
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "leg",
+     "class_id": 4,
+     "size": 40,
+     "children": [
+      {
+       "name": "<leg>",
+       "size": 40,
+       "class_id": 4
+      },
+      {
+       "name": "ankle",
+       "class_id": 4,
+       "size": 9,
+       "children": [
+        {
+         "name": "<ankle>",
+         "size": 9,
+         "class_id": 4
+        },
+        {
+         "name": "left_ankle",
+         "class_id": 4,
+         "size": 4,
+         "children": [
+          {
+           "name": "<left_ankle>",
+           "size": 4,
+           "class_id": 4
+          }
+         ]
+        },
+        {
+         "name": "right_ankle",
+         "class_id": 4,
+         "size": 2,
+         "children": [
+          {
+           "name": "<right_ankle>",
+           "size": 2,
+           "class_id": 4
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "calf",
+       "class_id": 4,
+       "size": 1,
+       "children": [
+        {
+         "name": "<calf>",
+         "size": 1,
+         "class_id": 4
+        },
+        {
+         "name": "left_calf",
+         "class_id": 4,
+         "size": 0,
+         "children": [
+          {
+           "name": "<left_calf>",
+           "size": 0,
+           "class_id": 4
+          }
+         ]
+        },
+        {
+         "name": "right_calf",
+         "class_id": 4,
+         "size": 1,
+         "children": [
+          {
+           "name": "<right_calf>",
+           "size": 1,
+           "class_id": 4
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "foot",
+       "class_id": 4,
+       "size": 16,
+       "children": [
+        {
+         "name": "<foot>",
+         "size": 16,
+         "class_id": 4
+        },
+        {
+         "name": "left_foot",
+         "class_id": 4,
+         "size": 8,
+         "children": [
+          {
+           "name": "<left_foot>",
+           "size": 8,
+           "class_id": 4
+          }
+         ]
+        },
+        {
+         "name": "right_foot",
+         "class_id": 4,
+         "size": 1,
+         "children": [
+          {
+           "name": "<right_foot>",
+           "size": 1,
+           "class_id": 4
+          }
+         ]
+        },
+        {
+         "name": "toes",
+         "class_id": 4,
+         "size": 0,
+         "children": [
+          {
+           "name": "<toes>",
+           "size": 0,
+           "class_id": 4
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "knee",
+       "class_id": 4,
+       "size": 8,
+       "children": [
+        {
+         "name": "<knee>",
+         "size": 8,
+         "class_id": 4
+        },
+        {
+         "name": "left_knee",
+         "class_id": 4,
+         "size": 1,
+         "children": [
+          {
+           "name": "<left_knee>",
+           "size": 1,
+           "class_id": 4
+          }
+         ]
+        },
+        {
+         "name": "right_knee",
+         "class_id": 4,
+         "size": 3,
+         "children": [
+          {
+           "name": "<right_knee>",
+           "size": 3,
+           "class_id": 4
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "left_leg",
+       "class_id": 4,
+       "size": 1,
+       "children": [
+        {
+         "name": "<left_leg>",
+         "size": 1,
+         "class_id": 4
+        }
+       ]
+      },
+      {
+       "name": "right_leg",
+       "class_id": 4,
+       "size": 1,
+       "children": [
+        {
+         "name": "<right_leg>",
+         "size": 1,
+         "class_id": 4
+        }
+       ]
+      },
+      {
+       "name": "thigh",
+       "class_id": 4,
+       "size": 2,
+       "children": [
+        {
+         "name": "<thigh>",
+         "size": 2,
+         "class_id": 4
+        },
+        {
+         "name": "left_thigh",
+         "class_id": 4,
+         "size": 1,
+         "children": [
+          {
+           "name": "<left_thigh>",
+           "size": 1,
+           "class_id": 4
+          }
+         ]
+        },
+        {
+         "name": "right_thigh",
+         "class_id": 4,
+         "size": 0,
+         "children": [
+          {
+           "name": "<right_thigh>",
+           "size": 0,
+           "class_id": 4
+          }
+         ]
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "neck",
+     "class_id": 4,
+     "size": 5,
+     "children": [
+      {
+       "name": "<neck>",
+       "size": 5,
+       "class_id": 4
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "equipment",
+   "class_id": 5,
+   "size": 30,
+   "children": [
+    {
+     "name": "<equipment>",
+     "size": 30,
+     "class_id": 5
+    },
+    {
+     "name": "bund_wall",
+     "class_id": 5,
+     "size": 0,
+     "children": [
+      {
+       "name": "<bund_wall>",
+       "size": 0,
+       "class_id": 5
+      }
+     ]
+    },
+    {
+     "name": "cage",
+     "class_id": 5,
+     "size": 1,
+     "children": [
+      {
+       "name": "<cage>",
+       "size": 1,
+       "class_id": 5
+      }
+     ]
+    },
+    {
+     "name": "cables",
+     "class_id": 5,
+     "size": 0,
+     "children": [
+      {
+       "name": "<cables>",
+       "size": 0,
+       "class_id": 5
+      }
+     ]
+    },
+    {
+     "name": "catenery_cable",
+     "class_id": 5,
+     "size": 0,
+     "children": [
+      {
+       "name": "<catenery_cable>",
+       "size": 0,
+       "class_id": 5
+      }
+     ]
+    },
+    {
+     "name": "chock",
+     "class_id": 5,
+     "size": 0,
+     "children": [
+      {
+       "name": "<chock>",
+       "size": 0,
+       "class_id": 5
+      }
+     ]
+    },
+    {
+     "name": "chute",
+     "class_id": 5,
+     "size": 2,
+     "children": [
+      {
+       "name": "<chute>",
+       "size": 2,
+       "class_id": 5
+      }
+     ]
+    },
+    {
+     "name": "filter",
+     "class_id": 5,
+     "size": 0,
+     "children": [
+      {
+       "name": "<filter>",
+       "size": 0,
+       "class_id": 5
+      }
+     ]
+    },
+    {
+     "name": "headframe",
+     "class_id": 5,
+     "size": 0,
+     "children": [
+      {
+       "name": "<headframe>",
+       "size": 0,
+       "class_id": 5
+      }
+     ]
+    },
+    {
+     "name": "jumbo",
+     "class_id": 5,
+     "size": 0,
+     "children": [
+      {
+       "name": "<jumbo>",
+       "size": 0,
+       "class_id": 5
+      }
+     ]
+    },
+    {
+     "name": "mechanical_equipment",
+     "class_id": 5,
+     "size": 19,
+     "children": [
+      {
+       "name": "<mechanical_equipment>",
+       "size": 19,
+       "class_id": 5
+      },
+      {
+       "name": "auger",
+       "class_id": 5,
+       "size": 0,
+       "children": [
+        {
+         "name": "<auger>",
+         "size": 0,
+         "class_id": 5
+        }
+       ]
+      },
+      {
+       "name": "cavity_monitoring_system",
+       "class_id": 5,
+       "size": 0,
+       "children": [
+        {
+         "name": "<cavity_monitoring_system>",
+         "size": 0,
+         "class_id": 5
+        }
+       ]
+      },
+      {
+       "name": "conveyor",
+       "class_id": 5,
+       "size": 6,
+       "children": [
+        {
+         "name": "<conveyor>",
+         "size": 6,
+         "class_id": 5
+        }
+       ]
+      },
+      {
+       "name": "crusher",
+       "class_id": 5,
+       "size": 8,
+       "children": [
+        {
+         "name": "<crusher>",
+         "size": 8,
+         "class_id": 5
+        }
+       ]
+      },
+      {
+       "name": "pump",
+       "class_id": 5,
+       "size": 6,
+       "children": [
+        {
+         "name": "<pump>",
+         "size": 6,
+         "class_id": 5
+        },
+        {
+         "name": "sump_pump",
+         "class_id": 5,
+         "size": 1,
+         "children": [
+          {
+           "name": "<sump_pump>",
+           "size": 1,
+           "class_id": 5
+          }
+         ]
+        }
+       ]
+      },
+      {
+       "name": "skip",
+       "class_id": 5,
+       "size": 0,
+       "children": [
+        {
+         "name": "<skip>",
+         "size": 0,
+         "class_id": 5
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "personal_protective_equipment",
+     "class_id": 5,
+     "size": 0,
+     "children": [
+      {
+       "name": "<personal_protective_equipment>",
+       "size": 0,
+       "class_id": 5
+      }
+     ]
+    },
+    {
+     "name": "pipe",
+     "class_id": 5,
+     "size": 6,
+     "children": [
+      {
+       "name": "<pipe>",
+       "size": 6,
+       "class_id": 5
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "gender",
+   "class_id": 6,
+   "size": 181,
+   "children": [
+    {
+     "name": "<gender>",
+     "size": 181,
+     "class_id": 6
+    },
+    {
+     "name": "female",
+     "class_id": 6,
+     "size": 11,
+     "children": [
+      {
+       "name": "<female>",
+       "size": 11,
+       "class_id": 6
+      }
+     ]
+    },
+    {
+     "name": "male",
+     "class_id": 6,
+     "size": 170,
+     "children": [
+      {
+       "name": "<male>",
+       "size": 170,
+       "class_id": 6
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "injury",
+   "class_id": 7,
+   "size": 37,
+   "children": [
+    {
+     "name": "<injury>",
+     "size": 37,
+     "class_id": 7
+    },
+    {
+     "name": "amputation",
+     "class_id": 7,
+     "size": 0,
+     "children": [
+      {
+       "name": "<amputation>",
+       "size": 0,
+       "class_id": 7
+      }
+     ]
+    },
+    {
+     "name": "bite",
+     "class_id": 7,
+     "size": 0,
+     "children": [
+      {
+       "name": "<bite>",
+       "size": 0,
+       "class_id": 7
+      }
+     ]
+    },
+    {
+     "name": "bruises",
+     "class_id": 7,
+     "size": 3,
+     "children": [
+      {
+       "name": "<bruises>",
+       "size": 3,
+       "class_id": 7
+      },
+      {
+       "name": "contusion",
+       "class_id": 7,
+       "size": 2,
+       "children": [
+        {
+         "name": "<contusion>",
+         "size": 2,
+         "class_id": 7
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "burn",
+     "class_id": 7,
+     "size": 0,
+     "children": [
+      {
+       "name": "<burn>",
+       "size": 0,
+       "class_id": 7
+      },
+      {
+       "name": "electric_burn",
+       "class_id": 7,
+       "size": 0,
+       "children": [
+        {
+         "name": "<electric_burn>",
+         "size": 0,
+         "class_id": 7
+        }
+       ]
+      },
+      {
+       "name": "thermal_burn",
+       "class_id": 7,
+       "size": 0,
+       "children": [
+        {
+         "name": "<thermal_burn>",
+         "size": 0,
+         "class_id": 7
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "chemical_effect",
+     "class_id": 7,
+     "size": 0,
+     "children": [
+      {
+       "name": "<chemical_effect>",
+       "size": 0,
+       "class_id": 7
+      }
+     ]
+    },
+    {
+     "name": "crush_injury",
+     "class_id": 7,
+     "size": 0,
+     "children": [
+      {
+       "name": "<crush_injury>",
+       "size": 0,
+       "class_id": 7
+      }
+     ]
+    },
+    {
+     "name": "dislocation",
+     "class_id": 7,
+     "size": 0,
+     "children": [
+      {
+       "name": "<dislocation>",
+       "size": 0,
+       "class_id": 7
+      },
+      {
+       "name": "displacement",
+       "class_id": 7,
+       "size": 0,
+       "children": [
+        {
+         "name": "<displacement>",
+         "size": 0,
+         "class_id": 7
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "fracture",
+     "class_id": 7,
+     "size": 9,
+     "children": [
+      {
+       "name": "<fracture>",
+       "size": 9,
+       "class_id": 7
+      },
+      {
+       "name": "break",
+       "class_id": 7,
+       "size": 3,
+       "children": [
+        {
+         "name": "<break>",
+         "size": 3,
+         "class_id": 7
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "laceration",
+     "class_id": 7,
+     "size": 10,
+     "children": [
+      {
+       "name": "<laceration>",
+       "size": 10,
+       "class_id": 7
+      }
+     ]
+    },
+    {
+     "name": "loss_of_conciousness",
+     "class_id": 7,
+     "size": 0,
+     "children": [
+      {
+       "name": "<loss_of_conciousness>",
+       "size": 0,
+       "class_id": 7
+      }
+     ]
+    },
+    {
+     "name": "multiple_injuries",
+     "class_id": 7,
+     "size": 0,
+     "children": [
+      {
+       "name": "<multiple_injuries>",
+       "size": 0,
+       "class_id": 7
+      }
+     ]
+    },
+    {
+     "name": "muscle",
+     "class_id": 7,
+     "size": 9,
+     "children": [
+      {
+       "name": "<muscle>",
+       "size": 9,
+       "class_id": 7
+      },
+      {
+       "name": "sprain",
+       "class_id": 7,
+       "size": 3,
+       "children": [
+        {
+         "name": "<sprain>",
+         "size": 3,
+         "class_id": 7
+        }
+       ]
+      },
+      {
+       "name": "strain",
+       "class_id": 7,
+       "size": 4,
+       "children": [
+        {
+         "name": "<strain>",
+         "size": 4,
+         "class_id": 7
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "puncture",
+     "class_id": 7,
+     "size": 1,
+     "children": [
+      {
+       "name": "<puncture>",
+       "size": 1,
+       "class_id": 7
+      }
+     ]
+    },
+    {
+     "name": "splinter",
+     "class_id": 7,
+     "size": 0,
+     "children": [
+      {
+       "name": "<splinter>",
+       "size": 0,
+       "class_id": 7
+      }
+     ]
+    },
+    {
+     "name": "unspecified_injuries",
+     "class_id": 7,
+     "size": 0,
+     "children": [
+      {
+       "name": "<unspecified_injuries>",
+       "size": 0,
+       "class_id": 7
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "location",
+   "class_id": 8,
+   "size": 0,
+   "children": [
+    {
+     "name": "<location>",
+     "size": 0,
+     "class_id": 8
+    },
+    {
+     "name": "camp_medical_centre",
+     "class_id": 8,
+     "size": 0,
+     "children": [
+      {
+       "name": "<camp_medical_centre>",
+       "size": 0,
+       "class_id": 8
+      }
+     ]
+    },
+    {
+     "name": "kitchen",
+     "class_id": 8,
+     "size": 0,
+     "children": [
+      {
+       "name": "<kitchen>",
+       "size": 0,
+       "class_id": 8
+      }
+     ]
+    },
+    {
+     "name": "office",
+     "class_id": 8,
+     "size": 0,
+     "children": [
+      {
+       "name": "<office>",
+       "size": 0,
+       "class_id": 8
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "person",
+   "class_id": 9,
+   "size": 103,
+   "children": [
+    {
+     "name": "<person>",
+     "size": 103,
+     "class_id": 9
+    },
+    {
+     "name": "blast_guard",
+     "class_id": 9,
+     "size": 0,
+     "children": [
+      {
+       "name": "<blast_guard>",
+       "size": 0,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "blaster",
+     "class_id": 9,
+     "size": 0,
+     "children": [
+      {
+       "name": "<blaster>",
+       "size": 0,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "boilermaker",
+     "class_id": 9,
+     "size": 0,
+     "children": [
+      {
+       "name": "<boilermaker>",
+       "size": 0,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "chef",
+     "class_id": 9,
+     "size": 0,
+     "children": [
+      {
+       "name": "<chef>",
+       "size": 0,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "contractor",
+     "class_id": 9,
+     "size": 1,
+     "children": [
+      {
+       "name": "<contractor>",
+       "size": 1,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "driller",
+     "class_id": 9,
+     "size": 0,
+     "children": [
+      {
+       "name": "<driller>",
+       "size": 0,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "driver",
+     "class_id": 9,
+     "size": 1,
+     "children": [
+      {
+       "name": "<driver>",
+       "size": 1,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "electrical_worker",
+     "class_id": 9,
+     "size": 0,
+     "children": [
+      {
+       "name": "<electrical_worker>",
+       "size": 0,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "employee",
+     "class_id": 9,
+     "size": 0,
+     "children": [
+      {
+       "name": "<employee>",
+       "size": 0,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "fitter",
+     "class_id": 9,
+     "size": 0,
+     "children": [
+      {
+       "name": "<fitter>",
+       "size": 0,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "individual",
+     "class_id": 9,
+     "size": 0,
+     "children": [
+      {
+       "name": "<individual>",
+       "size": 0,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "injured_person",
+     "class_id": 9,
+     "size": 91,
+     "children": [
+      {
+       "name": "<injured_person>",
+       "size": 91,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "maintainer",
+     "class_id": 9,
+     "size": 0,
+     "children": [
+      {
+       "name": "<maintainer>",
+       "size": 0,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "offsider",
+     "class_id": 9,
+     "size": 0,
+     "children": [
+      {
+       "name": "<offsider>",
+       "size": 0,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "operator",
+     "class_id": 9,
+     "size": 7,
+     "children": [
+      {
+       "name": "<operator>",
+       "size": 7,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "personnel",
+     "class_id": 9,
+     "size": 0,
+     "children": [
+      {
+       "name": "<personnel>",
+       "size": 0,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "process_worker",
+     "class_id": 9,
+     "size": 0,
+     "children": [
+      {
+       "name": "<process_worker>",
+       "size": 0,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "service_crew",
+     "class_id": 9,
+     "size": 0,
+     "children": [
+      {
+       "name": "<service_crew>",
+       "size": 0,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "spotter",
+     "class_id": 9,
+     "size": 0,
+     "children": [
+      {
+       "name": "<spotter>",
+       "size": 0,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "supervisor",
+     "class_id": 9,
+     "size": 2,
+     "children": [
+      {
+       "name": "<supervisor>",
+       "size": 2,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "telehandler",
+     "class_id": 9,
+     "size": 0,
+     "children": [
+      {
+       "name": "<telehandler>",
+       "size": 0,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "underground_operator",
+     "class_id": 9,
+     "size": 0,
+     "children": [
+      {
+       "name": "<underground_operator>",
+       "size": 0,
+       "class_id": 9
+      }
+     ]
+    },
+    {
+     "name": "worker",
+     "class_id": 9,
+     "size": 4,
+     "children": [
+      {
+       "name": "<worker>",
+       "size": 4,
+       "class_id": 9
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "severity",
+   "class_id": 10,
+   "size": 181,
+   "children": [
+    {
+     "name": "<severity>",
+     "size": 181,
+     "class_id": 10
+    },
+    {
+     "name": "minor",
+     "class_id": 10,
+     "size": 50,
+     "children": [
+      {
+       "name": "<minor>",
+       "size": 50,
+       "class_id": 10
+      }
+     ]
+    },
+    {
+     "name": "serious",
+     "class_id": 10,
+     "size": 104,
+     "children": [
+      {
+       "name": "<serious>",
+       "size": 104,
+       "class_id": 10
+      }
+     ]
+    },
+    {
+     "name": "fatal",
+     "class_id": 10,
+     "size": 3,
+     "children": [
+      {
+       "name": "<fatal>",
+       "size": 3,
+       "class_id": 10
+      }
+     ]
+    },
+    {
+     "name": "ndi",
+     "class_id": 10,
+     "size": 24,
+     "children": [
+      {
+       "name": "<ndi>",
+       "size": 24,
+       "class_id": 10
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "vehicle",
+   "class_id": 12,
+   "size": 19,
+   "children": [
+    {
+     "name": "<vehicle>",
+     "size": 19,
+     "class_id": 12
+    },
+    {
+     "name": "light_vehicle",
+     "class_id": 12,
+     "size": 5,
+     "children": [
+      {
+       "name": "<light_vehicle>",
+       "size": 5,
+       "class_id": 12
+      },
+      {
+       "name": "car",
+       "class_id": 12,
+       "size": 5,
+       "children": [
+        {
+         "name": "<car>",
+         "size": 5,
+         "class_id": 12
+        }
+       ]
+      },
+      {
+       "name": "forklift",
+       "class_id": 12,
+       "size": 0,
+       "children": [
+        {
+         "name": "<forklift>",
+         "size": 0,
+         "class_id": 12
+        }
+       ]
+      },
+      {
+       "name": "man_car",
+       "class_id": 12,
+       "size": 0,
+       "children": [
+        {
+         "name": "<man_car>",
+         "size": 0,
+         "class_id": 12
+        }
+       ]
+      },
+      {
+       "name": "mine_car",
+       "class_id": 12,
+       "size": 0,
+       "children": [
+        {
+         "name": "<mine_car>",
+         "size": 0,
+         "class_id": 12
+        }
+       ]
+      },
+      {
+       "name": "ute",
+       "class_id": 12,
+       "size": 0,
+       "children": [
+        {
+         "name": "<ute>",
+         "size": 0,
+         "class_id": 12
+        }
+       ]
+      },
+      {
+       "name": "golf_buggy",
+       "class_id": 12,
+       "size": 0,
+       "children": [
+        {
+         "name": "<golf_buggy>",
+         "size": 0,
+         "class_id": 12
+        }
+       ]
+      }
+     ]
+    },
+    {
+     "name": "heavy_vehicle",
+     "class_id": 12,
+     "size": 14,
+     "children": [
+      {
+       "name": "<heavy_vehicle>",
+       "size": 14,
+       "class_id": 12
+      },
+      {
+       "name": "bogger",
+       "class_id": 12,
+       "size": 0,
+       "children": [
+        {
+         "name": "<bogger>",
+         "size": 0,
+         "class_id": 12
+        }
+       ]
+      },
+      {
+       "name": "continuous_miner",
+       "class_id": 12,
+       "size": 1,
+       "children": [
+        {
+         "name": "<continuous_miner>",
+         "size": 1,
+         "class_id": 12
+        }
+       ]
+      },
+      {
+       "name": "dozer",
+       "class_id": 12,
+       "size": 6,
+       "children": [
+        {
+         "name": "<dozer>",
+         "size": 6,
+         "class_id": 12
+        }
+       ]
+      },
+      {
+       "name": "dump_truck",
+       "class_id": 12,
+       "size": 0,
+       "children": [
+        {
+         "name": "<dump_truck>",
+         "size": 0,
+         "class_id": 12
+        }
+       ]
+      },
+      {
+       "name": "excavator",
+       "class_id": 12,
+       "size": 0,
+       "children": [
+        {
+         "name": "<excavator>",
+         "size": 0,
+         "class_id": 12
+        }
+       ]
+      },
+      {
+       "name": "haul_truck",
+       "class_id": 12,
+       "size": 7,
+       "children": [
+        {
+         "name": "<haul_truck>",
+         "size": 7,
+         "class_id": 12
+        }
+       ]
+      },
+      {
+       "name": "scraper",
+       "class_id": 12,
+       "size": 0,
+       "children": [
+        {
+         "name": "<scraper>",
+         "size": 0,
+         "class_id": 12
+        }
+       ]
+      },
+      {
+       "name": "grader",
+       "class_id": 12,
+       "size": 0,
+       "children": [
+        {
+         "name": "<grader>",
+         "size": 0,
+         "class_id": 12
+        }
+       ]
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "name": "unspecified_category",
+   "class_id": 11,
+   "size": 0,
+   "children": [
+    {
+     "name": "<unspecified_category>",
+     "size": 0,
+     "class_id": 11
+    }
+   ]
+  }
+ ],
+ "size": 181
+}

@@ -1,0 +1,2 @@
+var elements = [{title: "Data Overview",        icon: "fa-database", url: "/generator/data-overview"},
+				{title: "Upload Training Data", icon: "fa-upload",   url: "/generator/upload-training-data"}];

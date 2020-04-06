@@ -1,0 +1,78 @@
+nav#navbar
+
+	div(class="navbar-left")
+		a#logo-link(href="#{base_url}/")
+			div#logo
+				<i class="fa fa-share-alt"></i>&#8226; Aquila &#8226;
+
+	if showChartControls
+		div(class="navbar-left")
+			div(class="select-wrapper")
+				select(id="granularity-select")
+					option Days
+					option Weeks
+					option Months
+					option Years
+	if showDownloadYAML
+		div(class="navbar-left")
+			a(href="../files/categories.yml", download) <i class="fa fa-download"></i>&nbsp;&nbsp;yaml
+			a(href="../files/categories.txt", download) <i class="fa fa-download"></i>&nbsp;&nbsp;txt
+			form#upload-yaml-form
+				input#upload-yaml-input(type="file")
+				label#upload-yaml-label(for="upload-yaml-input") <i class="fa fa-upload"></i>&nbsp;&nbsp;Upload yaml
+				
+
+	div(class="navbar-right")
+		if false
+			div(class="dropdown-menu")
+				span Pages 
+					span(class="caret") &#9660;
+				ul(class="dropdown-menu-items")
+					li: a(href="#{base_url}/") Home
+					li: a(href="#{base_url}/generator") Evaluate Dataset
+					li(class="separator") Visualisations
+					li: a(href="#{base_url}/timeline") Timeline
+					li: a(href="#{base_url}/wordcloud") Word Cloud
+					li: a(href="http://144.6.233.15:7474/browser" target="_blank") Neo4J&nbsp;&nbsp;<i class="fa fa-external-link"></i>				
+					li(class="separator") Reports
+					li: a(href="#{base_url}/reports/capitalisation-normalisation-report") Capitalisation Normalisation
+					li: a(href="#{base_url}/reports/spelling-errors-report") Spelling Errors
+					li: a(href="#{base_url}/reports/acronym-detection-report") Acronym Detection
+					li: a(href="#{base_url}/reports/acronym-replacement-report") Acronym Replacement
+					li: a(href="#{base_url}/reports/error-words-report") Error Words
+					li(class="separator") Data Warehousing
+					li: a(href="#{base_url}/data-warehousing/category-tree") Category Tree
+					li: a(href="#{base_url}/data-warehousing/entity-recognition-report") Entity Recognition
+					li: a(href="#{base_url}/data-warehousing/association-rule-mining") Association Rule Mining
+					li: a(href="#{base_url}/data-warehousing/association-rule-mining-generator") Association Rule Mining (generator)
+					li: a(href="#{base_url}/data-warehousing/entity-category-graph") Entity Category Graph
+					li: a(href="#{base_url}/data-warehousing/entity-linking-graph") Entity Linking Graph
+					li: a(href="#{base_url}/data-warehousing/entity-linking-graph-light") Entity Linking Graph (light)
+					li: a(href="#{base_url}/data-warehousing/decision-tree") Decision Tree
+
+		if (!user)
+			div(class="dropdown-menu")
+				span Not logged in
+					span(class="caret") &#9660;	
+				ul(class="dropdown-menu-items")
+					li: a(href="#{base_url}/register") Register
+					li: a(href="#{base_url}/login?previous=" + path) Login
+
+		else
+			div(class="dropdown-menu")
+				span <i class="fa fa-folder"></i>Sample Project
+					span(class="caret") &#9660;	
+				ul(class="dropdown-menu-items")
+					li: a(href="#{base_url}/projects/new") <i class="fa fa-plus"></i>New project
+
+			div(class="dropdown-menu")
+				span <i class="fa fa-user"></i>Logged in as #{user.username} 
+					span(class="caret") &#9660;	
+				ul(class="dropdown-menu-items")
+					li: a(href="#{base_url}/") Profile
+					li: a(href="#{base_url}/logout") Logout
+
+
+
+	//div(class="navbar-center")
+	//	h1 #{title}

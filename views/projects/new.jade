@@ -1,0 +1,857 @@
+extends ../layouts/logged_in
+
+block head
+	link(rel='stylesheet', href='/stylesheets/new_project.css')
+	link(rel='stylesheet', href='/stylesheets/upload_widget.css')
+	script(src="/javascripts/jquery-3.2.1.min.js")
+
+block content
+	div#error-banner
+		<i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp; There was a problem communicating with the server. Data entered into the form may not be saved.<a href="#" id="close-error-banner"><i class="fa fa-close"></i></a>
+
+	div(class="container shadow")
+		
+		div(class="form-box shadow")
+			.header
+				h1 New Project
+				ul#breadcrumbs
+					li
+						a(href="#project-details") Project details
+					li 
+						a(href="#upload-data") Upload data
+					li 
+						a(href="#data-options") Data options
+					li 
+						a(href="#timeline") Timeline options
+					li 
+						a(href="#entity-recognition") Entity Recognition options
+					//li 
+					//	a(href="#entity-linking-graph") Entity Linking Graph options
+					li 
+						a(href="#review-and-submit") Review &amp; Submit
+			.body#new-project-form
+				form#project-details-form(method="post", action="project-details", data-form-name="project-details", class="form")
+					h2 Project details
+
+					fieldset
+
+						label(for="project-name") Project Name
+						input(name="project-name", id="project-name" required, placeholder="The name of the project.")
+
+						label(for="project-desc") Project Description
+						textarea(name="project-desc", id="project-desc", placeholder="A short description of the project.")
+
+					button(type="submit", class="submit-button") Next (Upload Data) &nbsp;
+						i.fa.fa-chevron-right
+
+				div#upload-data-form(method="post", action="upload-data", data-form-name="upload-data", class="form")
+
+					h2 Upload data
+
+					p#upload-dataset-warning.warning <i class="fa fa-exclamation-triangle"></i>&nbsp;&nbsp;Please note that uploading a new dataset will reset the proceeding forms.
+
+					fieldset
+
+						label(for="i-file-upload-evaluation-data") Evaluation data
+						p Please upload your evaluation data using the form below. It must be a .csv file. The first row must contain the column headings.
+						p For an example of the format required, please <a href="#">click here</a>.
+
+						- var formAction = 'upload-evaluation-data';
+						- var upload_required = true;
+						include partials/upload_widget
+
+						br
+						br
+
+						label(for="i-file-upload-category-hierarchy") Category hierarchy (optional)
+						p The category hierarchy is a list of categories in your data which may be arranged in a hierarchical structure. For example, "left_leg" may belong to the "leg" category, while "leg" belongs to "body_part". The category hierarchy will be used to perform entity recognition. It is required to generate the <i>Entity Recognition Report</i>, <i>Entity Linking Graph</i>, <i>Association Rule Mining</i>, and the <i>Decision Tree</i>.
+						p You may create new categories by entering them in the form below. To specify a parent category, place a space before the child category. The categories are visualised in the Category Hierarchy, which you may also use to create your hierarchy if you prefer. You may also select from a list of presets, such as the standard 4-class Named Entity Recognition model.
+
+						div#entity-categories-summary
+							p.ec-success Your entity categories have been successfully uploaded.
+							p.ec-loading <i class="fa fa-cog fa-spin"></i>&nbsp;&nbsp;Uploading entity categories...
+							p.ec-error Your category hierarchy contained an error and has not been saved.
+							div.box__success_details#entity-categories-summary-box
+						button.large-button#button-create-entity-categories Create entity categories&nbsp;<i class="fa fa-external-link"></i>
+
+
+
+						br 
+						br
+
+						label(for="i-file-upload-training-data") Training data (optional)
+						p Please upload your training data using the form below. If no training data is uploaded, deep learning will not appear as an option for Entity Recognition.
+						p For an example of the format required, please <a href="#">click here</a>.
+						p If you would like to create your own training data, please see our annotation tool, <a href="https://nlp-tools.org/redcoat/" _target="blank">Redcoat</a>.
+
+						- var formAction = 'upload-training-data';
+						include partials/upload_widget
+
+
+					
+					form(method="post", action="upload-data")
+						button(type="submit", class="submit-button") Next (Data options) &nbsp;
+							i.fa.fa-chevron-right
+
+				form#data-options-form(method="post", action="data-options", data-form-name="data-options", class="form")
+					h2 Data options
+					fieldset
+						label(for="i-text-field") Text field
+						p The "text field" is the column in your dataset that contains human-written text, such as a report of an incident.
+						select#i-text-field
+							option(value="12-adate") Accident Description
+							option(value="12-dseverity") Severity
+							option(value="12-eseverity") etc
+
+						label(for="i-data-cleaning") Data cleaning
+						p If required, your textual data will be cleaned in the following manner:
+						ul
+							li All words will be converted to lower-case
+							li (coming soon) Spelling errors will be corrected
+							li (coming soon) Acronyms will be expanded to their corresponding terms
+						select#i-data-cleaning
+							option(value="11aa-date") Yes
+							option(value="11bb-severity") No			
+
+					form(method="post", action="upload-data")
+						button(type="submit", class="submit-button") Next (Timeline options) &nbsp;
+							i.fa.fa-chevron-right
+
+				form#timeline-form(method="post", action="timeline", data-form-name="timeline", class="form")
+					h2 Timeline options
+					fieldset
+
+						//- label Text field
+						//- p The "text field" is the column in your dataset that contains human-written text, such as a report of an incident.
+						//- select
+						//- 	option(value="12-adate") Accident Description
+						//- 	option(value="12-dseverity") Severity
+						//- 	option(value="12-eseverity") etc
+
+						label(for="i-y-axis-label") y-Axis label
+						p The "y-Axis label" determines what will be written on the y-Axis of the timeline.
+						input(name="i-y-axis-label", id="i-y-axis-label", placeholder='The y-axis label for the timeline ("Accidents", for example).', required)
+
+						label(for="i-categorical-variable") Categorical variable
+						p The "categorical variable" determines the colours of each point on the timeline. This variable should have a small number of categories.
+						p Only column headings with less than 10 unique values in the dataset will appear in this list.
+						select#i-categorical-variable
+							option(value="11-date") Date
+							option(value="11-severity") Severity
+
+						label(for="i-tooltip-fields") Tooltip fields
+						p Please select the field(s) that should appear on the tooltip when hovering over a point on the timeline.
+					
+						ul#i-tooltip-fields.checkbox-list
+							li
+								input(type="checkbox" checked id="field1" name="field1" value="grrrr")
+								label(for="field1") Date
+							li
+								input(type="checkbox" checked id="field2" name="field2")
+								label(for="field2") Severity
+							li
+								input(type="checkbox" checked id="field3" name="field3")
+								label(for="field3") Area
+							li
+								input(type="checkbox" checked id="field4" name="field4")
+								label(for="field4") Place of Injury
+							li
+								input(type="checkbox" checked id="field5" name="field5")
+								label(for="field5") id
+					button(type="submit", class="submit-button") Next (Entity Recognition options) &nbsp;
+						i.fa.fa-chevron-right
+
+
+						
+				form#entity-recognition-form(method="post", action="entity-recognition", data-form-name="entity-recognition", class="form")
+					h2 Entity Recognition options
+					fieldset
+						label(for="i-entity-recognition-strategy") Entity recognition strategy
+						p Please select the entity recognition strategy you wish to use.
+						p <i>Dictionary-based</i> automatically tags any entities appearing in the category hierarchy with their respective categories. <i>Deep Learning</i> uses a neural network to intelligently tag each word or phrase as a specific entity. It works much more effectively when given a large amount of training data.
+						p In order to use Dictionary-based entity recognition, you will need to have uploaded a category hierarchy during the "Upload data" step. To use Deep Learning, you will need to have uploaded annotated training data.
+						select#i-entity-recognition-strategy
+							option(value="no-er") No entity recognition							
+							option(value="dictionary-based") Dictionary-based
+							option(value="deep-learning" disabled) Deep Learning
+
+						label(for="i-structured-fields") Structured fields
+						p If your dataset contains discrete structured fields that you wish to use as entity categories, please select them here. For example, if "Severity" is a column heading in your dataset, and every row has either "mild", "severe", and "traumatic" listed under "Severity", it would be ideal to use as an entity class. 
+						p Only column headings with less than 10 unique values in the dataset will appear in this list.
+						ul#i-structured-fields.checkbox-list
+							li
+								input(type="checkbox" checked id="field10" name="field10")
+								label(for="field10") Age Group
+							li
+								input(type="checkbox" checked id="field11" name="field11")
+								label(for="field11") Severity
+					button(type="submit", class="submit-button") Review &amp; Submit
+
+				form#review-and-submit(method="post", action="build-project", data-form-name="review-and-submit", class="form final-form")
+					input(type="hidden", name="_csrf", value="" + csrfToken)
+					input(type="hidden", name="_id", value="" + wip_project_id)
+					h2 Review and Submit
+					div#review-and-submit-tables
+					button(type="submit", class="submit-button-final") Submit &amp; Build Project
+						
+	div#tooltip.no-display
+		h2 Tooltip
+		p Content
+
+
+	div#entity-categories-window
+		div.inner
+			div.category-hierarchy
+				h3 Category Hierarchy
+				label Preset
+				select#entity-categories-preset
+					option(disabled selected value="no-preset") (no preset)
+					option(value="NER") NER (4 classes)
+					option(value="FIGER") FIGER (113 classes)
+					option(value="Mining") Mining accidents (177 classes)
+					option(value="Ultra-fine") Ultra-Fine (10,331 classes)
+				form#entity-categories-text-form.special-textarea-form
+					//div#entity-categories-validation.special-textarea-validation
+					//div.special-textarea-container
+						
+					textarea#entity-categories-textarea(rows="12", wrap="off"  cols="254" placeholder="example_class_1\nexample_class_2\n   example_child_1\n   example_child_2\nexample_class_3")
+					div#entity-categories-count-container
+
+
+
+			div.category-tree
+				h3 Visualisation
+				svg#svg-entity-categories
+				div#category-hierarchy-error
+					div.message Generate a category hierarchy using the menu on the left.
+			a.close <span>Save and close</span>&nbsp;<i class="fa fa-close"></i>
+
+
+block scripts
+
+	script(src="/javascripts/d3/d3.min.js")
+	script(src="/javascripts/d3/d3-context-menu.js")
+	script(src="/javascripts/shared/hierarchy_presets.js")
+	script(src="/javascripts/shared/hierarchy_validator.js")
+	script(type="text/javascript" src="/javascripts/generator/tooltip.js")
+	script(src="/javascripts/category-tree-visualisation.js")
+
+	script(src="/javascripts/setup_project/category_hierarchy.js")
+
+	script.
+
+		var errorBannerTimeout;
+		function displayServerErrorBanner() {
+			$("#error-banner").addClass("show");
+			//errorBannerTimeout = window.setTimeout(function() {
+				
+			//}, 5000);
+		}
+		$("#close-error-banner").on('click', function(e) {
+			e.preventDefault();
+			$("#error-banner").removeClass("show");
+		})
+
+	script.
+
+		var additionalReviewInfo = []; // Stores extra info, is used for form uploads.
+
+		var csrfToken   = "!{csrfToken}";
+		var wippid      = "!{wip_project_id}";
+
+		var forms = $("#new-project-form").children(".form");
+		var breadcrumbs = $("#breadcrumbs").children("li");
+		var currentForm = 0;
+		var completedForm = 0;
+		var totalForms = forms.length;
+
+		window.location.hash = $(forms[0]).data('form-name');
+
+		forms.hide();
+		$(forms[currentForm]).show();
+
+		getCurrentBreadcrumb().addClass("current");
+		getCurrentBreadcrumb().addClass("reached");
+
+		function getCurrentForm() {
+			return $(forms[currentForm])
+		}
+		function getCurrentBreadcrumb() {
+			return $(breadcrumbs[currentForm])
+		}
+
+		//var input_file = document.getElementById("input-file")
+		//var title_field = document.getElementById("title-field");
+		//var filename;
+		//- input_file.onchange = function(e) {
+		//- 	filename = input_file.value.replace("C:\\fakepath\\", "").replace(".csv", "")
+		//- 	if(title_field.value.length == 0)
+		//- 		title_field.value = filename;			
+
+
+		function goToNextForm() {
+			// Update form
+
+			currentForm++;
+			if(currentForm > completedForm) {
+				completedForm++;
+			}
+
+			window.location.hash = getCurrentForm().data('form-name');
+			// Update breadcrumbs
+		
+			for(var i = 0; i < currentForm; i++) {
+				$(breadcrumbs[i]).addClass("done");
+			}
+			
+		}
+
+
+
+
+
+
+
+
+		$(document).ready(function() {
+
+			
+
+
+			// Generate the "review and submit" table
+			var review_tables = $("#review-and-submit-tables");
+
+
+
+			function generateLabel(t) {
+				var label = "";
+				if(t.is("input[type=\"file\"]")) {
+					label = $("label[for='i-" + t.attr('id') + "']").html();
+				} else {
+					label = $("label[for='" + t.attr('id') + "']").html();
+				}
+				//- if(t.prop("required")) {
+				//- 	label += "*";
+				//- }
+				return label;
+				 
+			}
+
+			// A function to generate the value of a form input for the review table.
+			function generateValue(t) {
+				// Inputs				
+				var value = t.val();
+
+				// Selects
+				if(t.is("input[type=\"file\"]")) {
+					var value = "<span class=\"field-empty\">(not uploaded)</span>";
+					var f = t.closest("form");
+					if(f.hasClass("is-success")) {
+						console.log(t, "success")
+						value = f.find(".uploaded-filename").html(); // Perhaps also add some metadata
+					}
+				}
+
+				else if(t.is("select")) {
+					var value = t.find(":selected").text();
+				} 
+				// Checkbox lists
+				else if(t.is("ul.checkbox-list")) {
+					var value = "<ul>";
+					t.find("input:checked").each(function() {
+						var cblabel = $("label[for='" + $(this).attr('id') + "']");
+						value += "<li>" + cblabel.html() + "</li>";
+					});
+					value += "</ul>";
+				}
+				if(value == "" || value == "<ul></ul>") {
+					value = "<span class=\"field-empty\">(none)</span>";
+				}
+				return value;
+			}
+
+			function generateReviewTable() {
+				// Clear the review table.
+				review_tables.html("");
+
+				// Print each of the labels and form values to the review table, and add an event listener for when an input is changed so that it updates the table.
+				$(".form:not(.final-form)").each(function() {
+
+					var formTable = "";
+
+					formTable += "<table><thead><tr class=\"heading\"><th colspan=\"2\">" + $(this).find("h2").html() + "</td></tr></thead><tbody>";
+
+					$(this).find("input:not([type=\"checkbox\"]):not([type=\"hidden\"]), textarea, select, ul.checkbox-list").each(function() {
+
+						var value = generateValue($(this));
+						var label = generateLabel($(this));
+						console.log(additionalReviewInfo)
+						console.log($(this).attr('id'))
+						console.log(additionalReviewInfo[$(this).attr('id')])
+						console.log("...")
+						formTable += "<tr><td>" + label + "</td><td id=\"rti-" + $(this).attr('id') + "\">" + value + (additionalReviewInfo[$(this).attr('id')] || "") + "</td></tr>";
+					});
+
+					formTable += "</tbody</table>";
+					review_tables.append(formTable);
+				})
+			}
+
+
+			generateReviewTable();
+
+
+			$(".submit-button").on('click', function(e) {
+
+
+				var t = $(this).parent("form");
+
+			    var form = t;
+
+
+			    if(!form[0].checkValidity()) {
+			    	return;
+			    } else {
+			    	e.preventDefault();
+
+				    var url = form.attr('action');
+
+				    $.ajax({
+				           type: "POST",
+				           url: url,
+				           headers: { 'csrf-token': csrfToken }, //, 'wippid' : wippid },
+				           data: form.serialize(), // serializes the form's elements.
+				           success: function(data) {
+				               goToNextForm(); // show response from the server
+				           },
+				           error: function(data) {
+				           	alert("error")
+				           }
+				         });
+
+				    
+				    return false;	
+			    }		
+			});
+
+
+			$(window).bind('hashchange', function(e) { 
+
+
+				for(var i = 0; i < forms.length; i++) {
+					if("#" + $(forms[i]).data("form-name") == location.hash && i <= completedForm) {
+						currentForm = i;
+						break;
+					}
+				}
+
+				breadcrumbs.removeClass("current");
+				getCurrentBreadcrumb().addClass("current");
+				getCurrentBreadcrumb().addClass("reached");
+
+				forms.hide();
+				getCurrentForm().show();
+
+				generateReviewTable();
+			});
+
+		});
+
+
+
+
+
+	script.
+		// Upload form upon submitting new data 
+
+
+
+		function updateFormOnNewData(columnHeadings) {
+
+			
+			var liOptions = "";
+			var currentCheckboxId = 0;
+			function generateSelectOptions() {
+				var selectOptions = "";
+				for(var i = 0; i < columnHeadings.length; i++) {
+					selectOptions += "<option value=\"" + i + "\">" + columnHeadings[i] + "</option>";
+					currentCheckboxId++;
+				}
+				return selectOptions;			
+			}
+			function generateLiOptions() {
+				var liOptions = "";
+				for(var i = 0; i < columnHeadings.length; i++) {
+					liOptions += "<li><input type=\"checkbox\" checked id=\"cb-" + currentCheckboxId + "\" name=" + i  + "><label for=\"cb-" + currentCheckboxId + "\">" + columnHeadings[i] + "</label></li>";
+					currentCheckboxId++;
+				}
+				return liOptions;			
+			}
+
+
+
+			// Update the dropdowns
+			$("#i-text-field").html(generateSelectOptions()); // Should be auto-selected
+			$("#i-categorical-variable").html(generateSelectOptions()); // Should only allow fields with at most 10 categories
+			
+			$("#i-tooltip-fields").html(generateLiOptions());
+			$("#i-structured-fields").html(generateLiOptions()); // Should only allow fields with at most 10 categories		
+
+
+		}
+
+
+
+
+
+	// Upload widget
+	script.
+
+		'use strict';
+
+		var test = "hello\" there";
+
+		var MAX_FILESIZE = 1 * 1024 * 1024;
+		//var file_metadata = !{file_metadata};
+
+	
+
+
+
+		// Drag and drop code and css found here:
+		// https://css-tricks.com/examples/DragAndDropFileUploading/
+		;( function( $, window, document, undefined )
+		{
+
+
+			function renderSuccessBox(metadata, form_ele, success_details_ele, input_ele) {
+				form_ele.addClass( 'is-success' );
+				console.log(success_details_ele)
+				var details = "<table><tbody>";
+				var summary = "<ul>";
+				for(var i = 0; i < metadata.length; i++) {
+					var k = Object.keys(metadata[i])[0];
+					var v = metadata[i][k];
+					details += "<tr><td><b>" + k + ":</b></td><td>" + v + "</td><tr/>";
+					summary += "<li>" + k + ": " + v + "</li>";
+				}
+				details += "</tbody></table>"
+				summary += "</ul>";
+				success_details_ele.html(details); // remove final <br/> tag.
+				additionalReviewInfo[input_ele] = summary;
+			}
+
+			//- if(file_metadata) renderSuccessBox(file_metadata, $("#form-upload-tokenized"), $("#form-upload-tokenized").find('.box__success_details'), $("#li-upload-tokenized"), $("#saved-notification-upload-tokenized"));
+
+
+
+			// feature detection for drag&drop upload
+
+			var isAdvancedUpload = function()
+				{
+					var div = document.createElement( 'div' );
+					return ( ( 'draggable' in div ) || ( 'ondragstart' in div && 'ondrop' in div ) ) && 'FormData' in window && 'FileReader' in window;
+				}();
+
+
+			// applying the effect for every form
+
+			$( '.box' ).each( function()
+			{
+				var $form		 = $( this ),
+					$input		 = $form.find( 'input[type="file"]' ),
+					$label		 = $form.find( 'label' ),
+					$errorMsg	 = $form.find( '.box__error span' ),
+					$restart	 = $form.find( '.box__restart' ),
+					$successDets = $form.find( '.box__success_details' ),
+					$uploading   = $form.find( '.box__uploading'),
+					$uploadedFN  = $form.find( '.uploaded-filename'),
+					droppedFile  = null,
+					showFiles	 = function( file )
+					{
+						$label.text( file.name );
+					};
+
+
+				function validateFile(file) {
+					var a = checkFilesize(file);
+					var b = checkFiletype(file);
+
+					if(!(a && b)) {
+						$form.addClass( 'is-uploading' ).removeClass( 'is-error' );
+
+						var errMsg;
+						if(!a) { errMsg = "File must be less than #{max_filesize_mb}mb in size." }
+						if(!b) { errMsg = "File must be a plain text file (.txt)." }
+
+						// Send a message to the server to delete the documents of the project if client-side validation failed.
+
+						$.ajax(
+						{
+							url: 			$form.attr( 'action' ) + '-reset',
+							type:			$form.attr( 'method' ),
+							data: 			{},
+							dataType:		'json',
+							cache:			false,
+							contentType:	false,
+							processData:	false,
+							headers: { 'csrf-token': csrfToken, 'wippid' : wippid },
+							complete: function()
+							{
+								$form.removeClass( 'is-uploading' );
+							},
+							success: function( data )
+							{
+								$("#error-banner").removeClass("show");
+								$form.addClass('is-error');
+								$errorMsg.text(errMsg);	
+							},
+							error: function()
+							{								
+								displayServerErrorBanner();
+							}
+						});
+					}
+
+					return a && b;
+				}
+
+				function checkFilesize(file) {
+					if(file.size > MAX_FILESIZE) {
+						return false;
+					} else {
+						return true;
+					}
+				}
+
+				function checkFiletype(file) {
+					if(file.type != "text/csv") {
+						return false;									
+					} else {
+						return true;
+					}
+				}
+
+
+				// letting the server side to know we are going to make an Ajax request
+				$form.append( '<input type="hidden" name="ajax" value="1" />' );
+
+				$input.on('click', function() {
+
+					$(this).val("");
+				});
+
+				// automatically submit the form on file select
+				$input.on( 'change', function( e )
+				{	
+					additionalReviewInfo[$input.attr('id')] = "";	
+					$form.removeClass( 'is-error is-success' );
+					droppedFile = null; // Get rid of the dropped file the user may have dropped previously.
+					if(validateFile(e.target.files[0])) {
+						showFiles( e.target.files );					
+						$form.trigger( 'submit' );
+					}					
+				});
+
+
+				// drag&drop files if the feature is available
+				if( isAdvancedUpload )
+				{
+					$form
+					.addClass( 'has-advanced-upload' ) // letting the CSS part to know drag&drop is supported by the browser
+					.on( 'drag dragstart dragend dragover dragenter dragleave drop', function( e )
+					{	
+
+						// preventing the unwanted behaviours
+						e.preventDefault();
+						e.stopPropagation();
+					})
+					.on( 'dragover dragenter', function() //
+					{
+						// Disable drop if form already completed.
+						if( $form.hasClass("is-success") || $form.hasClass("is-uploading") ) {
+							return;
+						}
+
+						$form.addClass( 'is-dragover' );
+					})
+					.on( 'dragleave dragend drop', function()
+					{
+						$form.removeClass( 'is-dragover' );
+					})
+					.on( 'drop', function( e )
+					{
+
+						// Disable drop if form already completed.
+						if( $form.hasClass("is-success") || $form.hasClass("is-uploading") ) {							
+							return;
+						}
+
+						var droppedFiles = e.originalEvent.dataTransfer.files; // the files that were dropped
+
+						if(droppedFiles.length > 1) {							
+							$form.addClass('is-error');
+							$errorMsg.text("You may only upload 1 file at a time.");
+						} else {
+							droppedFile = droppedFiles[0];
+
+							if(validateFile(droppedFile)) {
+								console.log('file is fine')
+								showFiles( droppedFile );						
+								$form.trigger( 'submit' ); // automatically submit the form on file drop
+							}					
+						}					
+
+						
+					});
+				}
+
+
+
+
+				// if the form was submitted
+
+		        var progressBar = $(this).find('.progress-bar-fill')
+		        var progressBarContainer = $(this).find('.progress-bar-container')
+		        var progressPercent = $(this).find('.progress-percent-complete')
+
+				$form.on( 'submit', function( e )
+				{	
+
+					// preventing the duplicate submissions if the current one is in progress
+					if( $form.hasClass( 'is-uploading' ) ) return false;
+					progressBarContainer.removeClass("fade-out");
+					
+
+					$form.addClass( 'is-uploading' ).removeClass( 'is-error' );
+					$uploading.html("<i class=\"fa fa-spinner fa-spin\"></i>&nbsp;Uploading…");
+
+					if( isAdvancedUpload ) // ajax file upload for modern browsers
+					{
+						e.preventDefault();
+
+
+						// gathering the form data
+							
+						console.log('g', $form.get(0))
+
+						var ajaxData;
+						if( droppedFile ) {
+							ajaxData = new FormData();
+							ajaxData.append( $input.attr("name"), droppedFile );	
+						} else {
+							ajaxData = new FormData( $form.get( 0 ) );						
+						}
+
+						console.log(ajaxData);
+						
+						
+
+						var tokenizingTimeout;
+
+						// ajax request
+						$.ajax(
+						{
+
+							xhr: function() {
+								var xhr = new window.XMLHttpRequest();
+
+								xhr.upload.addEventListener("progress", function(evt) {
+								  if (evt.lengthComputable) {
+								    var percentComplete = evt.loaded / evt.total;
+								    percentComplete = parseInt(percentComplete * 100);
+
+								    progressBar.css("width", "" + percentComplete + "%")
+								    progressPercent.html("" + percentComplete + "%")
+
+								    if (percentComplete === 100) {
+								    	$uploading.html("<i class=\"fa fa-spinner fa-spin\"></i>&nbsp;Tokenizing…");
+								    	progressBarContainer.addClass("fade-out");
+								    	window.setTimeout(function() {
+								    		progressBar.css("width", "0%");
+								    	}, 500);
+								    	tokenizingTimeout = window.setTimeout(function() {
+								    		console.log('heres johnny')
+								    		$uploading.html("<i class=\"fa fa-spinner fa-spin\"></i>&nbsp;Tokenizing…<br/><span class=\"tokenization-time-info\">Tokenization is taking some time as your dataset is quite large.<br/>Please feel free to complete the rest of the form while tokenization is running.</span>");
+
+								    	}, 2000);
+								    }
+
+								  }
+								}, false);
+
+								return xhr;
+							},						
+							url: 			$form.attr( 'action' ),
+							type:			$form.attr( 'method' ),
+							data: 			ajaxData,
+							dataType:		'json',
+							cache:			false,
+							contentType:	false,
+							processData:	false,
+							headers: { 'csrf-token': csrfToken, 'wippid' : wippid },
+							complete: function()
+							{
+								$form.removeClass( 'is-uploading' );
+							},
+							success: function( data )
+							{
+								$("#error-banner").removeClass("show");
+								window.clearTimeout(tokenizingTimeout);
+								console.log(data);
+								var fileName = $input.val().split('\\').pop()
+								$uploadedFN.html(fileName)
+								
+								if( !data.success ) {
+									$form.addClass( 'is-error' );
+									$errorMsg.text( data.error );
+								} else {
+									renderSuccessBox(data.details, $form, $successDets, $input.attr('id'));
+									if(data.columnHeadings) {
+										updateFormOnNewData(data.columnHeadings);									
+										//$("#rti-" + $form.attr('id')).html(fileName + " <  < < ");
+									}
+									// TODO: Enable the next form and update the form select options to reflect the column headings.
+
+								}
+							},
+							error: function()
+							{								
+								//displayServerErrorBanner();
+							}
+						});
+					}
+					else // fallback Ajax solution upload for older browsers
+					{
+						var iframeName	= 'uploadiframe' + new Date().getTime(),
+							$iframe		= $( '<iframe name="' + iframeName + '" style="display: none;"></iframe>' );
+
+						$( 'body' ).append( $iframe );
+						$form.attr( 'target', iframeName );
+
+						$iframe.one( 'load', function()
+						{
+							var data = $.parseJSON( $iframe.contents().find( 'body' ).text() );
+							$form.removeClass( 'is-uploading' ).addClass( data.success == true ? 'is-success' : 'is-error' ).removeAttr( 'target' );
+							if( !data.success ) $errorMsg.text( data.error );
+							$iframe.remove();
+						});
+					}
+				});
+
+
+				// restart the form if has a state of error/success
+
+				$restart.on( 'click', function( e )
+				{
+					e.preventDefault();
+					$input.trigger( 'click' );
+				});
+
+				// Firefox focus bug fix for file input
+				$input
+				.on( 'focus', function(){ $input.addClass( 'has-focus' ); })
+				.on( 'blur', function(){ $input.removeClass( 'has-focus' ); });
+			});
+
+		})( jQuery, window, document );

@@ -1,0 +1,19 @@
+extends ../layouts/logged_in
+
+block content
+	div(id="chart-wrapper")
+		div(id="help-controls")
+			| Click and drag to move 
+			br
+			| Scroll to zoom
+
+		div!= chart["svg"]
+
+block scripts
+	script!= chart["chartInfo"]
+
+	script(type="text/javascript" src="#{base_url}/javascripts/d3/d3.min.js")
+	script(type="text/javascript" src="#{base_url}/javascripts/d3/d3.tip.v0.6.3.js")
+	script(type="text/javascript" src="#{base_url}/javascripts/chart.js")
+
+

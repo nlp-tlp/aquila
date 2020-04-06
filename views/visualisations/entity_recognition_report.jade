@@ -1,0 +1,58 @@
+extends ../layouts/logged_in
+
+block head
+	link(rel='stylesheet', href='/javascripts/jstree/dist/themes/default/style.min.css')
+	link(rel='stylesheet', href='/stylesheets/jstree.css')
+
+block content
+
+	div.erc-table
+		div#erc-table-left
+			div.erc-info#jstree-container
+				div.shadow
+					table
+						thead
+							tr
+								th Entity Categories
+					div#jstree.form-control
+
+			div.erc-info#bar-chart-container
+				div.shadow
+					table
+						thead
+							tr
+								th Bar Chart
+									//a.view-fullscreen#histogram-fullscreen(href="#")
+										i.fa.fa-arrow-circle-up
+					div#bar-chart
+					
+				
+
+
+		div#erc-table-right
+			p#filter-info Showing all <b>#{data.length}</b> entries.
+			div.table-container.shadow#erc-table-container		
+				table#entity-recognition-table
+					thead
+						tr
+							th Index
+							th Tagged Entry
+					tbody(id="report-table")
+						each val in data
+							tr(id = "row-" + val['Index'])
+								td !{val["Index"]}
+								td !{val["Tagged Entry"]}
+				div#loading-overlay
+			div#loading-message <i class="fa fa-cog fa-spin fa-lg fa-fw"></i>&nbsp;LOADING...
+
+
+block scripts	
+	script(type="text/javascript", src="#{base_url}/javascripts/data_warehousing/entity_appearances.js")
+	script(type="text/javascript", src="#{base_url}/javascripts/data_warehousing/categories.js")
+	script(type="text/javascript", src="https://code.jquery.com/jquery-2.2.3.min.js")
+	script(type="text/javascript" src="#{base_url}/javascripts/d3/d3.min.js")
+	script(type="text/javascript", src="#{base_url}/javascripts/data_warehousing/entity_appearances_graph.js")
+
+
+	script.
+		makeHierarchicalBarChart("/javascripts/data_warehousing/bar_chart_data.json", "entries");

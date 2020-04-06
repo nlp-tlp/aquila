@@ -1,0 +1,15 @@
+extends ../layout
+
+block content
+	div(class="container shadow")
+		table(class="acronyms")
+			thead
+				tr
+					th Acronym
+					th Count
+			tbody(id="report-table")
+				each val, index in data
+					tr
+						td !{index}
+						td !{val}
+

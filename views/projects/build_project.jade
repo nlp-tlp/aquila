@@ -1,0 +1,75 @@
+extends ../layouts/logged_in
+
+block head
+	link(rel='stylesheet', href='/stylesheets/new_project.css')
+	link(rel='stylesheet', href='/stylesheets/upload_widget.css')
+	script(src="/javascripts/jquery-3.2.1.min.js")
+
+block content
+	div(class="container shadow")
+		
+		div(class="new-project-box shadow")
+			.header
+				h1 New Project
+				ul#breadcrumbs
+					li.uploading <i class="fa fa-spin fa-cog"></i>&nbsp;&nbsp;Uploading project. Please wait...
+			.body#new-project-form
+				
+				div#uploading-console(class="form" data-form-name="upload-console")
+					<code id="io-info">Running pipeline...<br/></code>
+						
+
+block scripts
+
+	script(src="/socket.io/socket.io.js")
+	script.
+		var socket = io();
+		var moduleNumber = 1;
+		//var loadingBars = document.getElementsByClassName("progress-bar");
+		//var loadingBarBgs = document.getElementsByClassName("progress-bar-bg");
+		//var loadingBarTexts = document.getElementsByClassName("progress-bar-text");
+		var progressBarModules = document.getElementsByClassName("has-progress-bar");
+		var codeField = document.getElementById("io-info");
+		var tds = document.getElementsByTagName("td");
+		var lineNumber = 0;
+
+		//console.log(moduleJSON);
+
+		var currentModule = 0;
+
+		socket.on('module_progress', function(module_progress) {
+
+			function getCMandMP(mpString) {
+				var mpString = mpString.replace("|MP|: [", "")
+				var mpString = mpString.replace("]", "")
+				var mpString = mpString.replace(" ", "")		
+				var arr = mpString.split(",");
+				return { "CM": parseInt(arr[0]), "MP": parseInt(arr[1]) } // Current Module, Module Progress
+			}
+			
+
+			var CM_MP = getCMandMP(module_progress);
+			var CM  = CM_MP["CM"];
+			var MP = CM_MP["MP"];
+			console.log(CM, MP);
+			if(CM != currentModule) {
+				console.log(CM, currentModule);
+				currentModule = CM;
+			}
+			
+
+
+		});
+
+
+		socket.on('logentry',function(log_entry){
+			console.log(log_entry);
+
+			var lineBreak = "";
+			var count = (log_entry.match(/\r/g) || []).length;
+			lineNumber += count;
+			codeField.innerHTML = codeField.innerHTML.replace("<span class=\"blinking-cursor\">_</span>", "") + "<span class=\"line-number\">" + lineNumber + ". </span>" + log_entry.replace("\r", "<br/>") + "<span class=\"blinking-cursor\"></span><br/>";
+			codeField.scrollTop = codeField.scrollHeight;
+			//}
+
+		});

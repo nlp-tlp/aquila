@@ -1,0 +1,22 @@
+extends layout	
+block sublayout
+	//- if overflowHidden
+	//- 	if bodyWhiteBackground
+	//- 		body.overflow-hidden.white-background
+	//- 	else
+	//- 	body.overflow-hidden
+	//- else if bodyWhiteBackground
+	//- 	body.white-background
+	//- else
+	//- 	body
+	if bodyWhiteBackground
+		body.white-background
+	else
+		body
+	div#main-container
+		include ../partials/sidenav
+		main
+			if showLoadingScreen
+				div(id="loading-screen")
+					//div(class="loading") Loading...			
+			block content

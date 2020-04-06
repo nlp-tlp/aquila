@@ -1,0 +1,140 @@
+extends layouts/logged_out
+
+block content
+	section#welcome
+		h1#h1-welcome(data-content="Aquila") &#8226;Aquila&#8226;
+		h2#h2-byline(data-content="Knowledge Discovery Tool") Knowledge Discovery Tool
+		div.buttons
+			a(href="#{base_url}/register")
+				div.button#register-button
+					h2
+						//i.fa.fa-plus-circle
+						| Register
+			a(href="#{base_url}/login")
+				div.button#login-button
+					h2
+						//i.fa.fa-plus-circle
+						| Login
+	svg#background(height="1080" width="1920")
+	div.unsplash
+		| Photo found at <a href="https://unsplash.com/photos/tKkcPKULeVQ">Unsplash</a>.
+
+block scripts
+	script(type="text/javascript" src="/javascripts/d3/d3.min.js")
+	script.
+
+		// Most of this code was found here: http://bl.ocks.org/jhb/5955887
+
+
+
+		var w = 1920;
+		var h = 1080;
+		var linkDistance=50;
+
+		var colors = ["#fff", "#ddd", "#bbb", "#999"];
+
+		var dataset = {
+
+		nodes: [],
+		edges: []
+		};
+
+		for(var i = 0; i < 180; i++) {
+			dataset.nodes.push([]);
+		}
+
+		for(var i = 0; i < dataset.nodes.length; i++) {
+			r = Math.random()
+			if (r < 0.8) {
+				var m = Math.random() * 7;
+				for(var j = i; j < i+m; j++) {
+					if( (i+j) >= dataset.nodes.length) break;
+					if(i!=j){
+						r = Math.random();
+						if(r < 0.75) {
+							console.log('test')
+							dataset.edges.push( { source: i, target: i + j});
+						}
+					}
+				}				
+			}
+		}
+
+		//- for(var i = 0; i < 50; i++) {
+		//- 	dataset.edges.push({ source: Math.floor(Math.random() * 100), target: Math.floor(Math.random() * 100)});
+		//- }
+
+
+
+	 
+		var svg = d3.select("#background").attr({"width":w,"height":h});
+
+		var force = d3.layout.force()
+			.nodes(dataset.nodes)
+			.links(dataset.edges)
+			.size([w,h])
+			.linkDistance([linkDistance])
+			.charge([-600])
+			.theta(0.1)
+			.gravity(0.1)
+			.start();
+
+	 
+
+		var edges = svg.selectAll("line")
+		  .data(dataset.edges)
+		  .enter()
+		  .append("line")
+		  .attr("id",function(d,i) {return 'edge'+i})
+		  .style("stroke",function(d, i){return colors[i % 3]})
+		  .style("pointer-events", "none");
+		
+		var nodes = svg.selectAll("circle")
+		  .data(dataset.nodes)
+		  .enter()
+		  .append("circle")
+		  .attr({"r": function() { return 15 + (Math.random() * 20)} })
+		  .style("fill",function(d,i){return colors[i % 3];})
+		  .call(force.drag)
+
+
+		var edgepaths = svg.selectAll(".edgepath")
+			.data(dataset.edges)
+			.enter()
+			.append('path')
+			.attr({'d': function(d) {return 'M '+d.source.x+' '+d.source.y+' L '+ d.target.x +' '+d.target.y},
+				   'class':'edgepath',
+				   'fill-opacity':0,
+				   'stroke-opacity':0,
+				   'fill':'blue',
+				   'stroke':'red',
+				   'id':function(d,i) {return 'edgepath'+i}})
+			.style("pointer-events", "none");
+
+
+
+		force.on("tick", function(){
+
+			edges.attr({"x1": function(d){return d.source.x;},
+						"y1": function(d){return d.source.y;},
+						"x2": function(d){return d.target.x;},
+						"y2": function(d){return d.target.y;}
+			});
+
+			nodes.attr({"cx":function(d){return d.x;},
+						"cy":function(d){return d.y;}
+			});
+
+
+			edgepaths.attr('d', function(d) { var path='M '+d.source.x+' '+d.source.y+' L '+ d.target.x +' '+d.target.y;
+											   //console.log(d)
+											   return path});	   
+
+		});
+		window.setInterval(function(){
+			force.alpha(0.02);
+		}, 250);
+		window.setTimeout(function() {
+			document.getElementById("background").classList.add("fade-in");
+		}, 250);
+		

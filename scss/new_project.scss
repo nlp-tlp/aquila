@@ -1,0 +1,373 @@
+@import "mixins.scss";
+/* Generator */
+
+body {
+	background: darken(#163d7c, 4);
+	&:not(.white-background):before {
+		background-blend-mode: multiply;
+		opacity: 0.1;
+	}
+}
+
+#loading-screen {
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	position: fixed;
+	top: 0;
+	background: #eee;
+	-webkit-transition: opacity 0.2s ease-out;
+	-moz-transition:  opacity 0.2s ease-out;
+	-o-transition:  opacity 0.2s ease-out;
+	transition:  opacity 0.2s ease-out;
+	opacity: 1;
+	filter: alpha(opacity = 100);
+	text-align: center;
+	 .loading {
+		text-align: center;
+		margin-top: 50vh;
+		display: block;
+		color: #aaa;
+	    text-shadow: 1px 1px #ddd;
+	}
+	&.hide {
+		opacity: 0;
+		filter: alpha(opacity=0);
+	}
+	&.gone {
+		display: none;
+	}
+	z-index: 0;
+	background: #eaeaea;
+	background: -webkit-linear-gradient(135deg, #eee, #aaa); /* For Safari 5.1 to 6.0 */
+	background: -o-linear-gradient(135deg, #eee, #aaa); /* For Opera 11.1 to 12.0 */
+	background: -moz-linear-gradient(135deg, #eee, #aaa); /* For Firefox 3.6 to 15 */
+	background: linear-gradient(135deg, #eee, #aaa); /* Standard syntax */	
+	&:before {
+		width: 100%;
+		height: 100%;
+		position: absolute;
+		top: 0;
+		left: 0;
+		content: " ";
+		background-image: url('/images/background.png');
+		z-index: -10;
+		opacity: 0.5;
+		filter: alpha(opacity = 50)
+	}
+}
+
+.container {
+	width: 1280px;
+	margin: 0 auto;
+	@media(max-width: 1280px) {
+		width: 100%;
+	}
+
+}
+.shadow {
+	box-shadow: 3px 0px 2px -2px #222, 0px 3px 2px -2px #222;
+}
+
+@keyframes loadingbar {
+	0% { max-width: 0; }
+	100% { max-width: 100% }
+}
+
+code {
+	font-family: "Courier New", serif;
+	min-height: 500px;
+	display: block;
+}
+
+
+
+
+#breadcrumbs {
+	padding: 0;
+	font-size: 15px;
+	text-align: center;
+	user-select: none;
+
+	li {
+		color: #aaa;
+		display: inline-block;
+		padding: 0;
+		padding-left: 12px;
+		
+		&.uploading {
+			color: #444;
+		}
+
+		a {
+			text-decoration: none;
+			pointer-events: none;
+			color: #aaa;
+			&:hover {
+				text-decoration: underline;
+			}
+		}
+		&.reached a {
+			color: #222;
+
+			pointer-events: auto;
+
+		}
+
+		&.current {
+			color: #222;
+			font-weight: bold;
+		}
+		&:not(.current) {
+			letter-spacing: 0.4px;
+		}
+
+		&.done {
+			color: #444;
+		}
+		&:first-child {
+			padding-left: 0;
+		}
+		&:not(:first-child):before {
+			font-family: FontAwesome;
+			content: "\f054";
+			padding-right: 12px;
+			font-size: 11px;
+		}
+	}
+
+}
+
+#new-project-form {
+	position: relative;
+	width: 100%;
+	.form {
+		padding: 25px 40px;
+		opacity: 1;
+		display: block;
+	
+	}
+	label {
+		font-weight: bold;
+	}
+	h2 {
+		margin: 10px 0;
+		margin-bottom: 10px;
+	}
+
+	fieldset {
+		border: none;
+		outline: none;
+	}
+}
+
+#upload-form {
+	hr {
+		border: 0;
+		border-top: 1px dotted #ccc;
+		margin-bottom: 15px;
+		margin-top: -5px;
+	}
+	&.hide {
+		display: none;
+	}
+}
+@keyframes blinking-cursor {
+	0% {
+		opacity: 1;
+	}
+	49% {
+		opacity: 1;
+	}
+	50% {
+		opacity: 0;
+	}
+	99% {
+		opacity: 0;
+	}
+}
+#progress-report {
+	code#io-info {
+		height: 760px;
+		background: #222;
+		font-family: 'Courier New', 'serif';
+		display: block;
+		//overflow-y: scroll;
+		padding: 15px;
+		line-height: 120%;
+		color: white;
+		span.line-number {
+			font-family: 'Courier New', 'serif';
+			margin-right: 20px;
+			color: #bbb;
+		}
+		span.blinking-cursor {
+			-webkit-animation: blinking-cursor 1s infinite;
+			animation: blinking-cursor 1s infinite;
+
+		}
+	}
+}
+
+
+
+#legend .circle.circle-normal 	{ background: #fafafa; border: 1px solid #ccc; }
+#legend .circle.circle-dataset  { background: rgba(5, 83, 250, 0.2); border: 1px solid rgba(5, 83, 250, 0.2);}
+#legend .circle.circle-output 	{ background: rgba(250, 185, 5, 0.6);  border: 1px solid rgba(250, 185, 5, 0.6);}
+#legend .circle.circle-toggle 	{ 
+	background: white;  border: 1px solid darken(#444, 7);
+	position: relative;
+	overflow: hidden;
+	&:after {
+		z-index: 1000;
+		pointer-events: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 0;
+		height: 0;
+		border-style: solid;
+		border-width: 15px 15px 0 0;
+		border-color: #444 transparent transparent transparent;
+		content: " ";
+	}
+}
+
+.has-tooltip {
+	cursor: help;
+}
+
+#tooltip {
+	position: absolute;
+	z-index: 100000;
+	padding: 30px 20px 10px 20px;
+	background: rgba(255, 255, 255, 0.9);
+	opacity: 0;
+	filter: alpha(opacity = 0);
+	border: 1px solid #ccc;
+	width: 350px;
+	position: fixed;
+	font-size: 0.75em;
+	line-height: 170%;
+	text-align: justify;
+	h2 {
+		border-bottom: 1px dotted #ddd;
+		padding-bottom: 5px;
+		margin-bottom: -6px;
+		font-size: 1.3em;
+	}
+	@include transition(opacity, 0.1s, ease);
+	&.show {
+		opacity: 1;
+		filter: alpha(opacity = 100);
+	}
+	hr {
+		border-color: #ccc;
+	}
+	&.no-display {
+		display: none;
+	}
+}
+
+
+
+ul.checkbox-list {
+	
+
+	padding: 0;
+	li {
+		display: block; 
+		list-style: none;
+		padding: 5px 0;
+		label {
+			display: inline;
+			font-weight: normal !important;
+			user-select: none; 
+			padding: 5px;
+			margin-left: -3px;
+
+		}
+
+		input[type="checkbox"], input[type="radio"] {
+			display: inline;
+			width: 30px;
+			margin: 0;
+			padding: 5px;
+		}
+	}
+
+
+}
+
+
+p.warning {
+	color: #d83434;
+}
+
+#review-and-submit {
+	width: 60%;
+	margin: 0 auto;
+
+}
+
+#review-and-submit table {
+	border: 1px solid #ddd;
+}
+
+
+#review-and-submit table td, #review-and-submit table th {
+	text-align: left;
+	padding: 10px 20px;
+
+}
+#review-and-submit table td {
+	&:first-child {
+		width: 50%;
+		text-align: right;
+		font-weight: bold;
+	}
+	ul {
+		padding: 0 15px;
+		margin: 0;
+	}
+}
+#review-and-submit table thead th {
+	font-weight: bold;
+	text-align: center;
+	width: 100%;
+	border-bottom: 1px solid #ddd;
+	background: #f1f1f1;
+	font-size: 16px;
+}
+#review-and-submit .field-empty {
+	color: #bbb;
+}
+
+#error-banner {
+	position: fixed;
+	top: 50px;
+	width: 85%;
+	left: 15%;
+	right: 0;	
+	box-sizing: border-box;
+	background: rgb(255, 255, 17);
+	padding: 8px 20px;
+	z-index: 100000;
+	font-size: 0.9em;
+	text-align: center;
+	opacity: 0;
+	transition: opacity 0.3s ease;
+	pointer-events: none;
+	&.show {
+		pointer-events: auto;
+		opacity: 1;
+	}
+	a#close-error-banner {
+		float: right;
+		color: #222;
+		opacity: 0.8;
+		&:hover, &:active, &:focus {
+			opacity: 1;
+		}
+	}
+}

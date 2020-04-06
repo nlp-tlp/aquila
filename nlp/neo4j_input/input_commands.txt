@@ -1,0 +1,16 @@
+LOAD CSV WITH HEADERS FROM "file:///neo4j_np_ids.csv" AS csvLine
+CREATE (n:NounPhrase { id: toInt(csvLine.id), phrase: csvLine.Phrase})
+
+CREATE INDEX ON :NounPhrase(phrase)
+CREATE CONSTRAINT ON (n:NounPhrase) ASSERT n.id IS UNIQUE
+
+LOAD CSV WITH HEADERS FROM "file:///neo4j_rp_ids.csv" AS csvLine
+CREATE (r:RelationPhrase { id: toInt(csvLine.id), phrase: csvLine.Phrase})
+
+CREATE INDEX ON :RelationPhrase(phrase)
+CREATE CONSTRAINT ON (r:RelationPhrase) ASSERT r.id IS UNIQUE
+
+USING PERIODIC COMMIT 500
+LOAD CSV WITH HEADERS FROM "file:///neo4j_np_to_rp_to_np.csv" AS csvLine
+MATCH (n:NounPhrase { id: toInt(csvLine.nounphraseId)}),(r:RelationPhrase { id: toInt(csvLine.relationphraseId)})
+CREATE (n)-[:LINKED_TO]->(r)

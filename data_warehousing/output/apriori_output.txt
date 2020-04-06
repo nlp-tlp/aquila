@@ -1,0 +1,1466 @@
+------------------------ RULES:
+Rule: ('equipment',) ==> ('age_15_24',) , 0.667
+Rule: ('age_15_24',) ==> ('injured_person',) , 0.632
+Rule: ('age_15_24',) ==> ('male',) , 0.842
+Rule: ('driving',) ==> ('age_25_34',) , 0.750
+Rule: ('fatal',) ==> ('age_25_34',) , 0.667
+Rule: ('age_25_34',) ==> ('male',) , 0.917
+Rule: ('knee',) ==> ('age_35_44',) , 0.750
+Rule: ('leg',) ==> ('age_35_44',) , 0.667
+Rule: ('age_35_44',) ==> ('male',) , 0.978
+Rule: ('strain',) ==> ('age_35_44',) , 0.750
+Rule: ('age_45_54',) ==> ('injured_person',) , 0.600
+Rule: ('age_45_54',) ==> ('male',) , 0.933
+Rule: ('age_45_54',) ==> ('serious',) , 0.800
+Rule: ('groin',) ==> ('age_55_64',) , 0.667
+Rule: ('age_55_64',) ==> ('male',) , 0.935
+Rule: ('age_55_64',) ==> ('serious',) , 0.645
+Rule: ('age_65_100',) ==> ('injured_person',) , 0.650
+Rule: ('age_65_100',) ==> ('male',) , 1.000
+Rule: ('ankle',) ==> ('injured_person',) , 1.000
+Rule: ('ankle',) ==> ('male',) , 1.000
+Rule: ('ankle',) ==> ('serious',) , 0.667
+Rule: ('arm',) ==> ('injured_person',) , 0.750
+Rule: ('arm',) ==> ('male',) , 1.000
+Rule: ('equipment',) ==> ('back',) , 0.667
+Rule: ('back',) ==> ('male',) , 0.933
+Rule: ('back',) ==> ('serious',) , 0.700
+Rule: ('break',) ==> ('female',) , 0.667
+Rule: ('break',) ==> ('serious',) , 0.667
+Rule: ('car',) ==> ('injured_person',) , 0.800
+Rule: ('car',) ==> ('male',) , 1.000
+Rule: ('car',) ==> ('serious',) , 0.800
+Rule: ('caught_between',) ==> ('male',) , 1.000
+Rule: ('caught_between',) ==> ('serious',) , 1.000
+Rule: ('chest',) ==> ('male',) , 1.000
+Rule: ('chute',) ==> ('male',) , 1.000
+Rule: ('contusion',) ==> ('male',) , 1.000
+Rule: ('contusion',) ==> ('minor',) , 1.000
+Rule: ('conveyor',) ==> ('male',) , 1.000
+Rule: ('crusher',) ==> ('injured_person',) , 0.750
+Rule: ('crusher',) ==> ('male',) , 0.750
+Rule: ('dozer',) ==> ('male',) , 1.000
+Rule: ('driving',) ==> ('injured_person',) , 0.750
+Rule: ('driving',) ==> ('male',) , 1.000
+Rule: ('driving',) ==> ('serious',) , 0.750
+Rule: ('ear',) ==> ('male',) , 1.000
+Rule: ('elbow',) ==> ('male',) , 1.000
+Rule: ('elbow',) ==> ('serious',) , 1.000
+Rule: ('equipment',) ==> ('injured_person',) , 1.000
+Rule: ('equipment',) ==> ('male',) , 1.000
+Rule: ('equipment',) ==> ('minor',) , 0.667
+Rule: ('eye',) ==> ('injured_person',) , 0.667
+Rule: ('eye',) ==> ('male',) , 1.000
+Rule: ('fall',) ==> ('male',) , 0.818
+Rule: ('fall',) ==> ('serious',) , 0.636
+Rule: ('fatal',) ==> ('male',) , 1.000
+Rule: ('groin',) ==> ('female',) , 0.667
+Rule: ('female',) ==> ('injured_person',) , 0.636
+Rule: ('female',) ==> ('serious',) , 0.818
+Rule: ('foot',) ==> ('injured_person',) , 0.625
+Rule: ('foot',) ==> ('male',) , 0.875
+Rule: ('foot',) ==> ('serious',) , 0.750
+Rule: ('fracture',) ==> ('injured_person',) , 0.667
+Rule: ('fracture',) ==> ('male',) , 1.000
+Rule: ('groin',) ==> ('injured_person',) , 0.667
+Rule: ('groin',) ==> ('serious',) , 1.000
+Rule: ('hand',) ==> ('male',) , 0.889
+Rule: ('hand',) ==> ('serious',) , 0.889
+Rule: ('haul_truck',) ==> ('injured_person',) , 0.714
+Rule: ('haul_truck',) ==> ('male',) , 1.000
+Rule: ('haul_truck',) ==> ('minor',) , 0.857
+Rule: ('head',) ==> ('male',) , 0.875
+Rule: ('head',) ==> ('serious',) , 0.875
+Rule: ('knee',) ==> ('injured_person',) , 1.000
+Rule: ('left_hand',) ==> ('injured_person',) , 0.667
+Rule: ('injured_person',) ==> ('male',) , 0.923
+Rule: ('minor',) ==> ('injured_person',) , 0.720
+Rule: ('right_ankle',) ==> ('injured_person',) , 1.000
+Rule: ('right_elbow',) ==> ('injured_person',) , 1.000
+Rule: ('right_hand',) ==> ('injured_person',) , 0.667
+Rule: ('right_knee',) ==> ('injured_person',) , 1.000
+Rule: ('sprain',) ==> ('injured_person',) , 1.000
+Rule: ('injury',) ==> ('male',) , 1.000
+Rule: ('injury',) ==> ('serious',) , 0.889
+Rule: ('knee',) ==> ('male',) , 1.000
+Rule: ('laceration',) ==> ('male',) , 1.000
+Rule: ('laceration',) ==> ('serious',) , 0.600
+Rule: ('left_ankle',) ==> ('male',) , 0.750
+Rule: ('left_foot',) ==> ('male',) , 1.000
+Rule: ('left_hand',) ==> ('male',) , 1.000
+Rule: ('left_shoulder',) ==> ('male',) , 1.000
+Rule: ('left_shoulder',) ==> ('serious',) , 1.000
+Rule: ('leg',) ==> ('male',) , 0.889
+Rule: ('sprain',) ==> ('leg',) , 0.667
+Rule: ('lower_back',) ==> ('male',) , 1.000
+Rule: ('minor',) ==> ('male',) , 0.980
+Rule: ('mouth',) ==> ('male',) , 1.000
+Rule: ('ndi',) ==> ('male',) , 0.958
+Rule: ('neck',) ==> ('male',) , 1.000
+Rule: ('operator',) ==> ('male',) , 1.000
+Rule: ('person',) ==> ('male',) , 1.000
+Rule: ('pipe',) ==> ('male',) , 1.000
+Rule: ('pump',) ==> ('male',) , 1.000
+Rule: ('right_ankle',) ==> ('male',) , 1.000
+Rule: ('right_elbow',) ==> ('male',) , 1.000
+Rule: ('right_eye',) ==> ('male',) , 1.000
+Rule: ('right_hand',) ==> ('male',) , 1.000
+Rule: ('right_knee',) ==> ('male',) , 1.000
+Rule: ('serious',) ==> ('male',) , 0.913
+Rule: ('shoulder',) ==> ('male',) , 1.000
+Rule: ('sprain',) ==> ('male',) , 0.667
+Rule: ('stepping',) ==> ('male',) , 1.000
+Rule: ('strain',) ==> ('male',) , 1.000
+Rule: ('supervisor',) ==> ('male',) , 1.000
+Rule: ('thumb',) ==> ('male',) , 1.000
+Rule: ('walking',) ==> ('male',) , 1.000
+Rule: ('worker',) ==> ('male',) , 1.000
+Rule: ('wrist',) ==> ('male',) , 1.000
+Rule: ('neck',) ==> ('minor',) , 0.600
+Rule: ('shoulder',) ==> ('minor',) , 0.750
+Rule: ('stepping',) ==> ('minor',) , 0.600
+Rule: ('mouth',) ==> ('serious',) , 1.000
+Rule: ('muscle',) ==> ('serious',) , 1.000
+Rule: ('person',) ==> ('serious',) , 1.000
+Rule: ('pipe',) ==> ('serious',) , 0.833
+Rule: ('pump',) ==> ('serious',) , 0.800
+Rule: ('right_hand',) ==> ('serious',) , 0.667
+Rule: ('right_knee',) ==> ('serious',) , 0.667
+Rule: ('worker',) ==> ('serious',) , 0.750
+Rule: ('age_15_24', 'back') ==> ('male',) , 0.667
+Rule: ('age_15_24', 'back') ==> ('serious',) , 1.000
+Rule: ('age_15_24', 'crusher') ==> ('injured_person',) , 1.000
+Rule: ('age_15_24', 'crusher') ==> ('male',) , 0.667
+Rule: ('crusher', 'serious') ==> ('age_15_24',) , 1.000
+Rule: ('age_15_24', 'crusher') ==> ('serious',) , 0.667
+Rule: ('equipment', 'injured_person') ==> ('age_15_24',) , 0.667
+Rule: ('age_15_24', 'equipment') ==> ('injured_person',) , 1.000
+Rule: ('equipment',) ==> ('age_15_24', 'injured_person') , 0.667
+Rule: ('equipment', 'male') ==> ('age_15_24',) , 0.667
+Rule: ('age_15_24', 'equipment') ==> ('male',) , 1.000
+Rule: ('equipment',) ==> ('age_15_24', 'male') , 0.667
+Rule: ('age_15_24', 'female') ==> ('injured_person',) , 0.667
+Rule: ('age_15_24', 'female') ==> ('serious',) , 0.667
+Rule: ('age_15_24', 'male') ==> ('injured_person',) , 0.625
+Rule: ('age_15_24', 'injured_person') ==> ('male',) , 0.833
+Rule: ('age_15_24', 'minor') ==> ('injured_person',) , 0.667
+Rule: ('age_15_24', 'right_hand') ==> ('injured_person',) , 1.000
+Rule: ('age_15_24', 'serious') ==> ('injured_person',) , 0.625
+Rule: ('age_15_24', 'injury') ==> ('male',) , 1.000
+Rule: ('age_15_24', 'minor') ==> ('male',) , 0.889
+Rule: ('age_15_24', 'ndi') ==> ('male',) , 1.000
+Rule: ('age_15_24', 'right_hand') ==> ('male',) , 1.000
+Rule: ('age_15_24', 'serious') ==> ('male',) , 0.750
+Rule: ('age_15_24', 'walking') ==> ('male',) , 1.000
+Rule: ('age_15_24', 'walking') ==> ('minor',) , 1.000
+Rule: ('age_15_24', 'right_hand') ==> ('serious',) , 1.000
+Rule: ('age_25_34', 'back') ==> ('male',) , 1.000
+Rule: ('back', 'walking') ==> ('age_25_34',) , 0.667
+Rule: ('age_25_34', 'walking') ==> ('back',) , 0.667
+Rule: ('age_25_34', 'conveyor') ==> ('male',) , 1.000
+Rule: ('driving', 'injured_person') ==> ('age_25_34',) , 0.667
+Rule: ('age_25_34', 'driving') ==> ('injured_person',) , 0.667
+Rule: ('driving', 'male') ==> ('age_25_34',) , 0.750
+Rule: ('age_25_34', 'driving') ==> ('male',) , 1.000
+Rule: ('driving',) ==> ('age_25_34', 'male') , 0.750
+Rule: ('driving', 'serious') ==> ('age_25_34',) , 0.667
+Rule: ('age_25_34', 'driving') ==> ('serious',) , 0.667
+Rule: ('fatal', 'male') ==> ('age_25_34',) , 0.667
+Rule: ('age_25_34', 'fatal') ==> ('male',) , 1.000
+Rule: ('fatal',) ==> ('age_25_34', 'male') , 0.667
+Rule: ('age_25_34', 'female') ==> ('injured_person',) , 0.667
+Rule: ('age_25_34', 'female') ==> ('serious',) , 0.667
+Rule: ('age_25_34', 'hand') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'hand') ==> ('serious',) , 0.750
+Rule: ('age_25_34', 'haul_truck') ==> ('injured_person',) , 0.667
+Rule: ('age_25_34', 'haul_truck') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'haul_truck') ==> ('minor',) , 0.667
+Rule: ('age_25_34', 'injured_person') ==> ('male',) , 0.846
+Rule: ('age_25_34', 'minor') ==> ('injured_person',) , 0.600
+Rule: ('age_25_34', 'left_foot') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'lower_back') ==> ('male',) , 1.000
+Rule: ('lower_back', 'ndi') ==> ('age_25_34',) , 1.000
+Rule: ('age_25_34', 'lower_back') ==> ('ndi',) , 0.667
+Rule: ('age_25_34', 'minor') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'ndi') ==> ('male',) , 0.857
+Rule: ('age_25_34', 'neck') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'serious') ==> ('male',) , 0.882
+Rule: ('age_25_34', 'walking') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'worker') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'walking') ==> ('serious',) , 0.667
+Rule: ('serious', 'worker') ==> ('age_25_34',) , 0.667
+Rule: ('age_25_34', 'worker') ==> ('serious',) , 1.000
+Rule: ('arm', 'leg') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'arm') ==> ('leg',) , 1.000
+Rule: ('age_35_44', 'arm') ==> ('male',) , 1.000
+Rule: ('arm', 'ndi') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'arm') ==> ('ndi',) , 1.000
+Rule: ('back', 'injury') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'injury') ==> ('back',) , 1.000
+Rule: ('back', 'knee') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'knee') ==> ('back',) , 0.667
+Rule: ('age_35_44', 'back') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'back') ==> ('serious',) , 0.889
+Rule: ('back', 'strain') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'strain') ==> ('back',) , 0.667
+Rule: ('age_35_44', 'car') ==> ('injured_person',) , 1.000
+Rule: ('age_35_44', 'car') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'car') ==> ('serious',) , 1.000
+Rule: ('age_35_44', 'caught_between') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'caught_between') ==> ('serious',) , 1.000
+Rule: ('age_35_44', 'crusher') ==> ('injured_person',) , 0.667
+Rule: ('age_35_44', 'crusher') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'foot') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'fracture') ==> ('injured_person',) , 1.000
+Rule: ('age_35_44', 'fracture') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'hand') ==> ('serious',) , 1.000
+Rule: ('age_35_44', 'haul_truck') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'haul_truck') ==> ('minor',) , 1.000
+Rule: ('age_35_44', 'injury') ==> ('injured_person',) , 0.667
+Rule: ('injured_person', 'knee') ==> ('age_35_44',) , 0.750
+Rule: ('age_35_44', 'knee') ==> ('injured_person',) , 1.000
+Rule: ('knee',) ==> ('age_35_44', 'injured_person') , 0.750
+Rule: ('age_35_44', 'laceration') ==> ('injured_person',) , 0.667
+Rule: ('age_35_44', 'left_foot') ==> ('injured_person',) , 0.667
+Rule: ('age_35_44', 'left_hand') ==> ('injured_person',) , 0.600
+Rule: ('injured_person', 'leg') ==> ('age_35_44',) , 0.750
+Rule: ('age_35_44', 'injured_person') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'minor') ==> ('injured_person',) , 0.833
+Rule: ('age_35_44', 'walking') ==> ('injured_person',) , 0.667
+Rule: ('age_35_44', 'injury') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'injury') ==> ('serious',) , 1.000
+Rule: ('knee', 'male') ==> ('age_35_44',) , 0.750
+Rule: ('age_35_44', 'knee') ==> ('male',) , 1.000
+Rule: ('knee',) ==> ('age_35_44', 'male') , 0.750
+Rule: ('knee', 'minor') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'knee') ==> ('minor',) , 0.667
+Rule: ('age_35_44', 'laceration') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'laceration') ==> ('serious',) , 0.667
+Rule: ('age_35_44', 'left_foot') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'left_foot') ==> ('serious',) , 0.667
+Rule: ('age_35_44', 'left_hand') ==> ('male',) , 1.000
+Rule: ('left_hand', 'minor') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'left_hand') ==> ('minor',) , 0.600
+Rule: ('leg', 'male') ==> ('age_35_44',) , 0.750
+Rule: ('age_35_44', 'leg') ==> ('male',) , 1.000
+Rule: ('leg',) ==> ('age_35_44', 'male') , 0.667
+Rule: ('leg', 'ndi') ==> ('age_35_44',) , 1.000
+Rule: ('leg', 'operator') ==> ('age_35_44',) , 1.000
+Rule: ('leg', 'serious') ==> ('age_35_44',) , 0.750
+Rule: ('age_35_44', 'minor') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'ndi') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'operator') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'pipe') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'pump') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'serious') ==> ('male',) , 0.962
+Rule: ('male', 'strain') ==> ('age_35_44',) , 0.750
+Rule: ('age_35_44', 'strain') ==> ('male',) , 1.000
+Rule: ('strain',) ==> ('age_35_44', 'male') , 0.750
+Rule: ('age_35_44', 'walking') ==> ('male',) , 1.000
+Rule: ('minor', 'operator') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'walking') ==> ('minor',) , 0.667
+Rule: ('pipe', 'serious') ==> ('age_35_44',) , 0.600
+Rule: ('age_35_44', 'pipe') ==> ('serious',) , 1.000
+Rule: ('age_35_44', 'pump') ==> ('serious',) , 1.000
+Rule: ('serious', 'strain') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'strain') ==> ('serious',) , 0.667
+Rule: ('arm', 'injured_person') ==> ('age_45_54',) , 0.667
+Rule: ('age_45_54', 'arm') ==> ('injured_person',) , 1.000
+Rule: ('age_45_54', 'arm') ==> ('male',) , 1.000
+Rule: ('arm', 'minor') ==> ('age_45_54',) , 1.000
+Rule: ('age_45_54', 'arm') ==> ('minor',) , 1.000
+Rule: ('age_45_54', 'back') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'back') ==> ('serious',) , 0.600
+Rule: ('age_45_54', 'fall') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'female') ==> ('injured_person',) , 1.000
+Rule: ('age_45_54', 'female') ==> ('serious',) , 1.000
+Rule: ('age_45_54', 'foot') ==> ('injured_person',) , 1.000
+Rule: ('age_45_54', 'foot') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'foot') ==> ('serious',) , 1.000
+Rule: ('age_45_54', 'fracture') ==> ('male',) , 1.000
+Rule: ('fracture', 'serious') ==> ('age_45_54',) , 0.667
+Rule: ('age_45_54', 'fracture') ==> ('serious',) , 1.000
+Rule: ('head', 'injured_person') ==> ('age_45_54',) , 1.000
+Rule: ('age_45_54', 'head') ==> ('male',) , 0.750
+Rule: ('age_45_54', 'head') ==> ('serious',) , 1.000
+Rule: ('age_45_54', 'injured_person') ==> ('male',) , 0.889
+Rule: ('age_45_54', 'minor') ==> ('injured_person',) , 1.000
+Rule: ('age_45_54', 'injured_person') ==> ('serious',) , 0.722
+Rule: ('age_45_54', 'walking') ==> ('injured_person',) , 0.667
+Rule: ('age_45_54', 'laceration') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'laceration') ==> ('serious',) , 0.667
+Rule: ('age_45_54', 'left_hand') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'left_hand') ==> ('serious',) , 1.000
+Rule: ('age_45_54', 'lower_back') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'lower_back') ==> ('serious',) , 1.000
+Rule: ('age_45_54', 'minor') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'serious') ==> ('male',) , 0.917
+Rule: ('age_45_54', 'male') ==> ('serious',) , 0.786
+Rule: ('age_45_54',) ==> ('male', 'serious') , 0.733
+Rule: ('age_45_54', 'walking') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'walking') ==> ('serious',) , 0.667
+Rule: ('age_55_64', 'back') ==> ('male',) , 0.833
+Rule: ('age_55_64', 'back') ==> ('serious',) , 0.667
+Rule: ('age_55_64', 'conveyor') ==> ('male',) , 1.000
+Rule: ('conveyor', 'ndi') ==> ('age_55_64',) , 0.667
+Rule: ('age_55_64', 'conveyor') ==> ('ndi',) , 1.000
+Rule: ('age_55_64', 'female') ==> ('serious',) , 1.000
+Rule: ('groin', 'serious') ==> ('age_55_64',) , 0.667
+Rule: ('age_55_64', 'groin') ==> ('serious',) , 1.000
+Rule: ('groin',) ==> ('age_55_64', 'serious') , 0.667
+Rule: ('age_55_64', 'head') ==> ('male',) , 1.000
+Rule: ('age_55_64', 'injured_person') ==> ('male',) , 0.923
+Rule: ('age_55_64', 'injured_person') ==> ('serious',) , 0.692
+Rule: ('age_55_64', 'walking') ==> ('injured_person',) , 1.000
+Rule: ('age_55_64', 'left_foot') ==> ('male',) , 1.000
+Rule: ('age_55_64', 'leg') ==> ('male',) , 1.000
+Rule: ('age_55_64', 'minor') ==> ('male',) , 1.000
+Rule: ('age_55_64', 'ndi') ==> ('male',) , 1.000
+Rule: ('age_55_64', 'serious') ==> ('male',) , 0.900
+Rule: ('age_55_64', 'male') ==> ('serious',) , 0.621
+Rule: ('age_55_64', 'shoulder') ==> ('male',) , 1.000
+Rule: ('age_55_64', 'walking') ==> ('male',) , 1.000
+Rule: ('minor', 'shoulder') ==> ('age_55_64',) , 0.667
+Rule: ('age_55_64', 'shoulder') ==> ('minor',) , 1.000
+Rule: ('age_55_64', 'walking') ==> ('serious',) , 1.000
+Rule: ('age_65_100', 'dozer') ==> ('male',) , 1.000
+Rule: ('dozer', 'minor') ==> ('age_65_100',) , 0.667
+Rule: ('age_65_100', 'dozer') ==> ('minor',) , 1.000
+Rule: ('fall', 'injured_person') ==> ('age_65_100',) , 0.667
+Rule: ('age_65_100', 'fall') ==> ('injured_person',) , 0.667
+Rule: ('age_65_100', 'fall') ==> ('male',) , 1.000
+Rule: ('age_65_100', 'fall') ==> ('serious',) , 1.000
+Rule: ('age_65_100', 'foot') ==> ('injured_person',) , 0.667
+Rule: ('age_65_100', 'foot') ==> ('male',) , 1.000
+Rule: ('age_65_100', 'foot') ==> ('serious',) , 0.667
+Rule: ('age_65_100', 'hand') ==> ('male',) , 1.000
+Rule: ('age_65_100', 'hand') ==> ('serious',) , 1.000
+Rule: ('age_65_100', 'male') ==> ('injured_person',) , 0.650
+Rule: ('age_65_100', 'injured_person') ==> ('male',) , 1.000
+Rule: ('age_65_100',) ==> ('injured_person', 'male') , 0.650
+Rule: ('age_65_100', 'minor') ==> ('injured_person',) , 0.857
+Rule: ('age_65_100', 'injury') ==> ('male',) , 1.000
+Rule: ('age_65_100', 'injury') ==> ('serious',) , 1.000
+Rule: ('age_65_100', 'laceration') ==> ('male',) , 1.000
+Rule: ('age_65_100', 'minor') ==> ('male',) , 1.000
+Rule: ('age_65_100', 'ndi') ==> ('male',) , 1.000
+Rule: ('age_65_100', 'right_hand') ==> ('male',) , 1.000
+Rule: ('age_65_100', 'serious') ==> ('male',) , 1.000
+Rule: ('ankle', 'male') ==> ('injured_person',) , 1.000
+Rule: ('ankle', 'injured_person') ==> ('male',) , 1.000
+Rule: ('ankle',) ==> ('injured_person', 'male') , 1.000
+Rule: ('ankle', 'serious') ==> ('injured_person',) , 1.000
+Rule: ('ankle', 'injured_person') ==> ('serious',) , 0.667
+Rule: ('ankle',) ==> ('injured_person', 'serious') , 0.667
+Rule: ('ankle', 'serious') ==> ('male',) , 1.000
+Rule: ('ankle', 'male') ==> ('serious',) , 0.667
+Rule: ('ankle',) ==> ('male', 'serious') , 0.667
+Rule: ('arm', 'male') ==> ('injured_person',) , 0.750
+Rule: ('arm', 'injured_person') ==> ('male',) , 1.000
+Rule: ('arm',) ==> ('injured_person', 'male') , 0.750
+Rule: ('arm', 'minor') ==> ('injured_person',) , 1.000
+Rule: ('arm', 'injured_person') ==> ('minor',) , 0.667
+Rule: ('arm', 'leg') ==> ('male',) , 1.000
+Rule: ('leg', 'ndi') ==> ('arm',) , 0.667
+Rule: ('arm', 'ndi') ==> ('leg',) , 1.000
+Rule: ('arm', 'leg') ==> ('ndi',) , 1.000
+Rule: ('arm', 'minor') ==> ('male',) , 1.000
+Rule: ('arm', 'ndi') ==> ('male',) , 1.000
+Rule: ('back', 'conveyor') ==> ('male',) , 1.000
+Rule: ('conveyor', 'serious') ==> ('back',) , 1.000
+Rule: ('back', 'conveyor') ==> ('serious',) , 1.000
+Rule: ('equipment', 'injured_person') ==> ('back',) , 0.667
+Rule: ('back', 'equipment') ==> ('injured_person',) , 1.000
+Rule: ('equipment',) ==> ('back', 'injured_person') , 0.667
+Rule: ('equipment', 'male') ==> ('back',) , 0.667
+Rule: ('back', 'equipment') ==> ('male',) , 1.000
+Rule: ('equipment',) ==> ('back', 'male') , 0.667
+Rule: ('back', 'female') ==> ('serious',) , 1.000
+Rule: ('back', 'foot') ==> ('injured_person',) , 0.667
+Rule: ('back', 'foot') ==> ('male',) , 0.667
+Rule: ('back', 'foot') ==> ('serious',) , 0.667
+Rule: ('back', 'head') ==> ('male',) , 1.000
+Rule: ('back', 'head') ==> ('serious',) , 1.000
+Rule: ('back', 'injury') ==> ('injured_person',) , 0.667
+Rule: ('back', 'knee') ==> ('injured_person',) , 1.000
+Rule: ('back', 'injured_person') ==> ('male',) , 1.000
+Rule: ('back', 'minor') ==> ('injured_person',) , 0.800
+Rule: ('back', 'injured_person') ==> ('serious',) , 0.600
+Rule: ('back', 'injury') ==> ('male',) , 1.000
+Rule: ('back', 'injury') ==> ('serious',) , 1.000
+Rule: ('back', 'knee') ==> ('male',) , 1.000
+Rule: ('back', 'minor') ==> ('male',) , 1.000
+Rule: ('back', 'ndi') ==> ('male',) , 1.000
+Rule: ('back', 'neck') ==> ('male',) , 1.000
+Rule: ('back', 'pipe') ==> ('male',) , 1.000
+Rule: ('back', 'serious') ==> ('male',) , 0.905
+Rule: ('back', 'male') ==> ('serious',) , 0.679
+Rule: ('back',) ==> ('male', 'serious') , 0.633
+Rule: ('back', 'strain') ==> ('male',) , 1.000
+Rule: ('back', 'walking') ==> ('male',) , 1.000
+Rule: ('neck', 'serious') ==> ('back',) , 1.000
+Rule: ('back', 'neck') ==> ('serious',) , 1.000
+Rule: ('back', 'pipe') ==> ('serious',) , 1.000
+Rule: ('serious', 'strain') ==> ('back',) , 1.000
+Rule: ('back', 'strain') ==> ('serious',) , 1.000
+Rule: ('back', 'walking') ==> ('serious',) , 0.667
+Rule: ('car', 'male') ==> ('injured_person',) , 0.800
+Rule: ('car', 'injured_person') ==> ('male',) , 1.000
+Rule: ('car',) ==> ('injured_person', 'male') , 0.800
+Rule: ('car', 'serious') ==> ('injured_person',) , 0.750
+Rule: ('car', 'injured_person') ==> ('serious',) , 0.750
+Rule: ('car',) ==> ('injured_person', 'serious') , 0.600
+Rule: ('car', 'serious') ==> ('male',) , 1.000
+Rule: ('car', 'male') ==> ('serious',) , 0.800
+Rule: ('car',) ==> ('male', 'serious') , 0.800
+Rule: ('caught_between', 'injured_person') ==> ('male',) , 1.000
+Rule: ('caught_between', 'injured_person') ==> ('serious',) , 1.000
+Rule: ('caught_between', 'serious') ==> ('male',) , 1.000
+Rule: ('caught_between', 'male') ==> ('serious',) , 1.000
+Rule: ('caught_between',) ==> ('male', 'serious') , 1.000
+Rule: ('contusion', 'minor') ==> ('male',) , 1.000
+Rule: ('contusion', 'male') ==> ('minor',) , 1.000
+Rule: ('contusion',) ==> ('male', 'minor') , 1.000
+Rule: ('conveyor', 'injured_person') ==> ('male',) , 1.000
+Rule: ('conveyor', 'ndi') ==> ('male',) , 1.000
+Rule: ('conveyor', 'serious') ==> ('male',) , 1.000
+Rule: ('crusher', 'male') ==> ('injured_person',) , 0.833
+Rule: ('crusher', 'injured_person') ==> ('male',) , 0.833
+Rule: ('crusher',) ==> ('injured_person', 'male') , 0.625
+Rule: ('crusher', 'minor') ==> ('injured_person',) , 1.000
+Rule: ('crusher', 'ndi') ==> ('injured_person',) , 0.667
+Rule: ('crusher', 'serious') ==> ('injured_person',) , 1.000
+Rule: ('crusher', 'minor') ==> ('male',) , 1.000
+Rule: ('crusher', 'ndi') ==> ('male',) , 0.667
+Rule: ('dozer', 'injured_person') ==> ('male',) , 1.000
+Rule: ('dozer', 'minor') ==> ('injured_person',) , 0.667
+Rule: ('dozer', 'injured_person') ==> ('minor',) , 0.667
+Rule: ('dozer', 'minor') ==> ('male',) , 1.000
+Rule: ('dozer', 'serious') ==> ('male',) , 1.000
+Rule: ('driving', 'male') ==> ('injured_person',) , 0.750
+Rule: ('driving', 'injured_person') ==> ('male',) , 1.000
+Rule: ('driving',) ==> ('injured_person', 'male') , 0.750
+Rule: ('driving', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('driving', 'injured_person') ==> ('serious',) , 0.667
+Rule: ('driving', 'serious') ==> ('male',) , 1.000
+Rule: ('driving', 'male') ==> ('serious',) , 0.750
+Rule: ('driving',) ==> ('male', 'serious') , 0.750
+Rule: ('elbow', 'serious') ==> ('male',) , 1.000
+Rule: ('elbow', 'male') ==> ('serious',) , 1.000
+Rule: ('elbow',) ==> ('male', 'serious') , 1.000
+Rule: ('equipment', 'male') ==> ('injured_person',) , 1.000
+Rule: ('equipment', 'injured_person') ==> ('male',) , 1.000
+Rule: ('equipment',) ==> ('injured_person', 'male') , 1.000
+Rule: ('equipment', 'minor') ==> ('injured_person',) , 1.000
+Rule: ('equipment', 'injured_person') ==> ('minor',) , 0.667
+Rule: ('equipment',) ==> ('injured_person', 'minor') , 0.667
+Rule: ('equipment', 'minor') ==> ('male',) , 1.000
+Rule: ('equipment', 'male') ==> ('minor',) , 0.667
+Rule: ('equipment',) ==> ('male', 'minor') , 0.667
+Rule: ('eye', 'male') ==> ('injured_person',) , 0.667
+Rule: ('eye', 'injured_person') ==> ('male',) , 1.000
+Rule: ('eye',) ==> ('injured_person', 'male') , 0.667
+Rule: ('fall', 'injured_person') ==> ('male',) , 0.667
+Rule: ('fall', 'injured_person') ==> ('serious',) , 0.667
+Rule: ('fall', 'ndi') ==> ('male',) , 0.667
+Rule: ('fall', 'serious') ==> ('male',) , 1.000
+Rule: ('fall', 'male') ==> ('serious',) , 0.778
+Rule: ('fall',) ==> ('male', 'serious') , 0.636
+Rule: ('groin', 'injured_person') ==> ('female',) , 1.000
+Rule: ('female', 'groin') ==> ('injured_person',) , 1.000
+Rule: ('groin',) ==> ('female', 'injured_person') , 0.667
+Rule: ('groin', 'serious') ==> ('female',) , 0.667
+Rule: ('female', 'groin') ==> ('serious',) , 1.000
+Rule: ('groin',) ==> ('female', 'serious') , 0.667
+Rule: ('female', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('female', 'injured_person') ==> ('serious',) , 0.857
+Rule: ('foot', 'male') ==> ('injured_person',) , 0.714
+Rule: ('foot', 'injured_person') ==> ('male',) , 1.000
+Rule: ('foot',) ==> ('injured_person', 'male') , 0.625
+Rule: ('foot', 'minor') ==> ('injured_person',) , 1.000
+Rule: ('foot', 'injured_person') ==> ('serious',) , 0.600
+Rule: ('foot', 'minor') ==> ('male',) , 1.000
+Rule: ('foot', 'serious') ==> ('male',) , 0.833
+Rule: ('foot', 'male') ==> ('serious',) , 0.714
+Rule: ('foot',) ==> ('male', 'serious') , 0.625
+Rule: ('fracture', 'male') ==> ('injured_person',) , 0.667
+Rule: ('fracture', 'injured_person') ==> ('male',) , 1.000
+Rule: ('fracture',) ==> ('injured_person', 'male') , 0.667
+Rule: ('fracture', 'minor') ==> ('injured_person',) , 0.667
+Rule: ('fracture', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('fracture', 'minor') ==> ('male',) , 1.000
+Rule: ('fracture', 'serious') ==> ('male',) , 1.000
+Rule: ('groin', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('groin', 'injured_person') ==> ('serious',) , 1.000
+Rule: ('groin',) ==> ('injured_person', 'serious') , 0.667
+Rule: ('hand', 'injured_person') ==> ('male',) , 1.000
+Rule: ('hand', 'injured_person') ==> ('serious',) , 1.000
+Rule: ('hand', 'laceration') ==> ('male',) , 1.000
+Rule: ('hand', 'laceration') ==> ('serious',) , 1.000
+Rule: ('hand', 'right_hand') ==> ('male',) , 1.000
+Rule: ('hand', 'serious') ==> ('male',) , 0.875
+Rule: ('hand', 'male') ==> ('serious',) , 0.875
+Rule: ('hand',) ==> ('male', 'serious') , 0.778
+Rule: ('hand', 'right_hand') ==> ('serious',) , 1.000
+Rule: ('haul_truck', 'male') ==> ('injured_person',) , 0.714
+Rule: ('haul_truck', 'injured_person') ==> ('male',) , 1.000
+Rule: ('haul_truck',) ==> ('injured_person', 'male') , 0.714
+Rule: ('haul_truck', 'minor') ==> ('injured_person',) , 0.667
+Rule: ('haul_truck', 'injured_person') ==> ('minor',) , 0.800
+Rule: ('haul_truck', 'minor') ==> ('male',) , 1.000
+Rule: ('haul_truck', 'male') ==> ('minor',) , 0.857
+Rule: ('haul_truck',) ==> ('male', 'minor') , 0.857
+Rule: ('head', 'injured_person') ==> ('serious',) , 1.000
+Rule: ('head', 'serious') ==> ('male',) , 0.857
+Rule: ('head', 'male') ==> ('serious',) , 0.857
+Rule: ('head',) ==> ('male', 'serious') , 0.750
+Rule: ('injured_person', 'injury') ==> ('male',) , 1.000
+Rule: ('injury', 'serious') ==> ('injured_person',) , 0.625
+Rule: ('injured_person', 'injury') ==> ('serious',) , 1.000
+Rule: ('knee', 'male') ==> ('injured_person',) , 1.000
+Rule: ('injured_person', 'knee') ==> ('male',) , 1.000
+Rule: ('knee',) ==> ('injured_person', 'male') , 1.000
+Rule: ('knee', 'minor') ==> ('injured_person',) , 1.000
+Rule: ('knee', 'serious') ==> ('injured_person',) , 1.000
+Rule: ('injured_person', 'laceration') ==> ('male',) , 1.000
+Rule: ('injured_person', 'laceration') ==> ('serious',) , 0.600
+Rule: ('left_ankle', 'serious') ==> ('injured_person',) , 1.000
+Rule: ('injured_person', 'left_ankle') ==> ('serious',) , 1.000
+Rule: ('injured_person', 'left_foot') ==> ('male',) , 1.000
+Rule: ('left_hand', 'male') ==> ('injured_person',) , 0.667
+Rule: ('injured_person', 'left_hand') ==> ('male',) , 1.000
+Rule: ('left_hand',) ==> ('injured_person', 'male') , 0.667
+Rule: ('left_hand', 'minor') ==> ('injured_person',) , 0.667
+Rule: ('left_hand', 'ndi') ==> ('injured_person',) , 1.000
+Rule: ('injured_person', 'leg') ==> ('male',) , 0.750
+Rule: ('leg', 'sprain') ==> ('injured_person',) , 1.000
+Rule: ('injured_person', 'sprain') ==> ('leg',) , 0.667
+Rule: ('sprain',) ==> ('injured_person', 'leg') , 0.667
+Rule: ('male', 'minor') ==> ('injured_person',) , 0.714
+Rule: ('injured_person', 'minor') ==> ('male',) , 0.972
+Rule: ('minor',) ==> ('injured_person', 'male') , 0.700
+Rule: ('injured_person', 'ndi') ==> ('male',) , 1.000
+Rule: ('injured_person', 'neck') ==> ('male',) , 1.000
+Rule: ('injured_person', 'operator') ==> ('male',) , 1.000
+Rule: ('injured_person', 'pipe') ==> ('male',) , 1.000
+Rule: ('male', 'right_ankle') ==> ('injured_person',) , 1.000
+Rule: ('injured_person', 'right_ankle') ==> ('male',) , 1.000
+Rule: ('right_ankle',) ==> ('injured_person', 'male') , 1.000
+Rule: ('male', 'right_elbow') ==> ('injured_person',) , 1.000
+Rule: ('injured_person', 'right_elbow') ==> ('male',) , 1.000
+Rule: ('right_elbow',) ==> ('injured_person', 'male') , 1.000
+Rule: ('injured_person', 'right_eye') ==> ('male',) , 1.000
+Rule: ('male', 'right_hand') ==> ('injured_person',) , 0.667
+Rule: ('injured_person', 'right_hand') ==> ('male',) , 1.000
+Rule: ('right_hand',) ==> ('injured_person', 'male') , 0.667
+Rule: ('male', 'right_knee') ==> ('injured_person',) , 1.000
+Rule: ('injured_person', 'right_knee') ==> ('male',) , 1.000
+Rule: ('right_knee',) ==> ('injured_person', 'male') , 1.000
+Rule: ('injured_person', 'serious') ==> ('male',) , 0.875
+Rule: ('male', 'sprain') ==> ('injured_person',) , 1.000
+Rule: ('injured_person', 'sprain') ==> ('male',) , 0.667
+Rule: ('sprain',) ==> ('injured_person', 'male') , 0.667
+Rule: ('injured_person', 'stepping') ==> ('male',) , 1.000
+Rule: ('injured_person', 'walking') ==> ('male',) , 1.000
+Rule: ('minor', 'neck') ==> ('injured_person',) , 0.667
+Rule: ('injured_person', 'neck') ==> ('minor',) , 1.000
+Rule: ('minor', 'stepping') ==> ('injured_person',) , 0.667
+Rule: ('injured_person', 'stepping') ==> ('minor',) , 1.000
+Rule: ('right_hand', 'serious') ==> ('injured_person',) , 0.750
+Rule: ('injured_person', 'right_hand') ==> ('serious',) , 0.750
+Rule: ('right_knee', 'serious') ==> ('injured_person',) , 1.000
+Rule: ('injured_person', 'right_knee') ==> ('serious',) , 0.667
+Rule: ('right_knee',) ==> ('injured_person', 'serious') , 0.667
+Rule: ('serious', 'walking') ==> ('injured_person',) , 0.714
+Rule: ('injured_person', 'walking') ==> ('serious',) , 0.625
+Rule: ('injury', 'right_hand') ==> ('male',) , 1.000
+Rule: ('injury', 'serious') ==> ('male',) , 1.000
+Rule: ('injury', 'male') ==> ('serious',) , 0.889
+Rule: ('injury',) ==> ('male', 'serious') , 0.889
+Rule: ('injury', 'walking') ==> ('male',) , 1.000
+Rule: ('injury', 'right_hand') ==> ('serious',) , 1.000
+Rule: ('knee', 'minor') ==> ('male',) , 1.000
+Rule: ('knee', 'serious') ==> ('male',) , 1.000
+Rule: ('laceration', 'left_hand') ==> ('male',) , 1.000
+Rule: ('laceration', 'minor') ==> ('male',) , 1.000
+Rule: ('laceration', 'ndi') ==> ('male',) , 1.000
+Rule: ('laceration', 'serious') ==> ('male',) , 1.000
+Rule: ('laceration', 'male') ==> ('serious',) , 0.600
+Rule: ('laceration',) ==> ('male', 'serious') , 0.600
+Rule: ('left_ankle', 'minor') ==> ('male',) , 1.000
+Rule: ('left_ankle', 'male') ==> ('minor',) , 0.667
+Rule: ('left_foot', 'minor') ==> ('male',) , 1.000
+Rule: ('left_foot', 'serious') ==> ('male',) , 1.000
+Rule: ('left_foot', 'stepping') ==> ('male',) , 1.000
+Rule: ('minor', 'stepping') ==> ('left_foot',) , 0.667
+Rule: ('left_foot', 'stepping') ==> ('minor',) , 1.000
+Rule: ('left_foot', 'minor') ==> ('stepping',) , 0.667
+Rule: ('left_hand', 'minor') ==> ('male',) , 1.000
+Rule: ('left_hand', 'ndi') ==> ('male',) , 1.000
+Rule: ('left_hand', 'serious') ==> ('male',) , 1.000
+Rule: ('left_shoulder', 'serious') ==> ('male',) , 1.000
+Rule: ('left_shoulder', 'male') ==> ('serious',) , 1.000
+Rule: ('left_shoulder',) ==> ('male', 'serious') , 1.000
+Rule: ('leg', 'ndi') ==> ('male',) , 1.000
+Rule: ('leg', 'operator') ==> ('male',) , 1.000
+Rule: ('leg', 'serious') ==> ('male',) , 1.000
+Rule: ('lower_back', 'ndi') ==> ('male',) , 1.000
+Rule: ('lower_back', 'serious') ==> ('male',) , 1.000
+Rule: ('minor', 'neck') ==> ('male',) , 1.000
+Rule: ('male', 'neck') ==> ('minor',) , 0.600
+Rule: ('neck',) ==> ('male', 'minor') , 0.600
+Rule: ('minor', 'operator') ==> ('male',) , 1.000
+Rule: ('minor', 'shoulder') ==> ('male',) , 1.000
+Rule: ('male', 'shoulder') ==> ('minor',) , 0.750
+Rule: ('shoulder',) ==> ('male', 'minor') , 0.750
+Rule: ('minor', 'stepping') ==> ('male',) , 1.000
+Rule: ('male', 'stepping') ==> ('minor',) , 0.600
+Rule: ('stepping',) ==> ('male', 'minor') , 0.600
+Rule: ('minor', 'walking') ==> ('male',) , 1.000
+Rule: ('mouth', 'serious') ==> ('male',) , 1.000
+Rule: ('male', 'mouth') ==> ('serious',) , 1.000
+Rule: ('mouth',) ==> ('male', 'serious') , 1.000
+Rule: ('ndi', 'operator') ==> ('male',) , 1.000
+Rule: ('ndi', 'right_eye') ==> ('male',) , 1.000
+Rule: ('neck', 'serious') ==> ('male',) , 1.000
+Rule: ('operator', 'serious') ==> ('male',) , 1.000
+Rule: ('person', 'serious') ==> ('male',) , 1.000
+Rule: ('male', 'person') ==> ('serious',) , 1.000
+Rule: ('person',) ==> ('male', 'serious') , 1.000
+Rule: ('pipe', 'serious') ==> ('male',) , 1.000
+Rule: ('male', 'pipe') ==> ('serious',) , 0.833
+Rule: ('pipe',) ==> ('male', 'serious') , 0.833
+Rule: ('pump', 'serious') ==> ('male',) , 1.000
+Rule: ('male', 'pump') ==> ('serious',) , 0.800
+Rule: ('pump',) ==> ('male', 'serious') , 0.800
+Rule: ('right_hand', 'serious') ==> ('male',) , 1.000
+Rule: ('male', 'right_hand') ==> ('serious',) , 0.667
+Rule: ('right_hand',) ==> ('male', 'serious') , 0.667
+Rule: ('right_knee', 'serious') ==> ('male',) , 1.000
+Rule: ('male', 'right_knee') ==> ('serious',) , 0.667
+Rule: ('right_knee',) ==> ('male', 'serious') , 0.667
+Rule: ('serious', 'stepping') ==> ('male',) , 1.000
+Rule: ('serious', 'strain') ==> ('male',) , 1.000
+Rule: ('serious', 'walking') ==> ('male',) , 1.000
+Rule: ('serious', 'worker') ==> ('male',) , 1.000
+Rule: ('male', 'worker') ==> ('serious',) , 0.750
+Rule: ('worker',) ==> ('male', 'serious') , 0.750
+Rule: ('age_15_24', 'back', 'serious') ==> ('male',) , 0.667
+Rule: ('age_15_24', 'back', 'male') ==> ('serious',) , 1.000
+Rule: ('age_15_24', 'back') ==> ('male', 'serious') , 0.667
+Rule: ('age_15_24', 'crusher', 'male') ==> ('injured_person',) , 1.000
+Rule: ('age_15_24', 'crusher', 'injured_person') ==> ('male',) , 0.667
+Rule: ('age_15_24', 'crusher') ==> ('injured_person', 'male') , 0.667
+Rule: ('crusher', 'injured_person', 'serious') ==> ('age_15_24',) , 1.000
+Rule: ('age_15_24', 'crusher', 'serious') ==> ('injured_person',) , 1.000
+Rule: ('age_15_24', 'crusher', 'injured_person') ==> ('serious',) , 0.667
+Rule: ('crusher', 'serious') ==> ('age_15_24', 'injured_person') , 1.000
+Rule: ('age_15_24', 'crusher') ==> ('injured_person', 'serious') , 0.667
+Rule: ('equipment', 'injured_person', 'male') ==> ('age_15_24',) , 0.667
+Rule: ('age_15_24', 'equipment', 'male') ==> ('injured_person',) , 1.000
+Rule: ('age_15_24', 'equipment', 'injured_person') ==> ('male',) , 1.000
+Rule: ('equipment', 'male') ==> ('age_15_24', 'injured_person') , 0.667
+Rule: ('equipment', 'injured_person') ==> ('age_15_24', 'male') , 0.667
+Rule: ('age_15_24', 'equipment') ==> ('injured_person', 'male') , 1.000
+Rule: ('equipment',) ==> ('age_15_24', 'injured_person', 'male') , 0.667
+Rule: ('age_15_24', 'male', 'minor') ==> ('injured_person',) , 0.625
+Rule: ('age_15_24', 'injured_person', 'minor') ==> ('male',) , 0.833
+Rule: ('age_15_24', 'male', 'right_hand') ==> ('injured_person',) , 1.000
+Rule: ('age_15_24', 'injured_person', 'right_hand') ==> ('male',) , 1.000
+Rule: ('age_15_24', 'right_hand') ==> ('injured_person', 'male') , 1.000
+Rule: ('age_15_24', 'male', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('age_15_24', 'injured_person', 'serious') ==> ('male',) , 0.800
+Rule: ('injured_person', 'right_hand', 'serious') ==> ('age_15_24',) , 0.667
+Rule: ('age_15_24', 'right_hand', 'serious') ==> ('injured_person',) , 1.000
+Rule: ('age_15_24', 'injured_person', 'right_hand') ==> ('serious',) , 1.000
+Rule: ('age_15_24', 'right_hand') ==> ('injured_person', 'serious') , 1.000
+Rule: ('age_15_24', 'minor', 'walking') ==> ('male',) , 1.000
+Rule: ('age_15_24', 'male', 'walking') ==> ('minor',) , 1.000
+Rule: ('age_15_24', 'walking') ==> ('male', 'minor') , 1.000
+Rule: ('age_15_24', 'right_hand', 'serious') ==> ('male',) , 1.000
+Rule: ('age_15_24', 'male', 'right_hand') ==> ('serious',) , 1.000
+Rule: ('age_15_24', 'right_hand') ==> ('male', 'serious') , 1.000
+Rule: ('age_25_34', 'back', 'minor') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'back', 'ndi') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'back', 'serious') ==> ('male',) , 1.000
+Rule: ('back', 'male', 'walking') ==> ('age_25_34',) , 0.667
+Rule: ('age_25_34', 'male', 'walking') ==> ('back',) , 0.667
+Rule: ('age_25_34', 'back', 'walking') ==> ('male',) , 1.000
+Rule: ('back', 'walking') ==> ('age_25_34', 'male') , 0.667
+Rule: ('age_25_34', 'walking') ==> ('back', 'male') , 0.667
+Rule: ('driving', 'injured_person', 'male') ==> ('age_25_34',) , 0.667
+Rule: ('age_25_34', 'driving', 'male') ==> ('injured_person',) , 0.667
+Rule: ('age_25_34', 'driving', 'injured_person') ==> ('male',) , 1.000
+Rule: ('driving', 'injured_person') ==> ('age_25_34', 'male') , 0.667
+Rule: ('age_25_34', 'driving') ==> ('injured_person', 'male') , 0.667
+Rule: ('driving', 'male', 'serious') ==> ('age_25_34',) , 0.667
+Rule: ('age_25_34', 'driving', 'serious') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'driving', 'male') ==> ('serious',) , 0.667
+Rule: ('driving', 'serious') ==> ('age_25_34', 'male') , 0.667
+Rule: ('age_25_34', 'driving') ==> ('male', 'serious') , 0.667
+Rule: ('age_25_34', 'female', 'serious') ==> ('injured_person',) , 1.000
+Rule: ('age_25_34', 'female', 'injured_person') ==> ('serious',) , 1.000
+Rule: ('age_25_34', 'female') ==> ('injured_person', 'serious') , 0.667
+Rule: ('age_25_34', 'hand', 'injured_person') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'hand', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('age_25_34', 'hand', 'injured_person') ==> ('serious',) , 1.000
+Rule: ('age_25_34', 'hand', 'serious') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'hand', 'male') ==> ('serious',) , 0.750
+Rule: ('age_25_34', 'hand') ==> ('male', 'serious') , 0.750
+Rule: ('age_25_34', 'haul_truck', 'male') ==> ('injured_person',) , 0.667
+Rule: ('age_25_34', 'haul_truck', 'injured_person') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'haul_truck') ==> ('injured_person', 'male') , 0.667
+Rule: ('age_25_34', 'haul_truck', 'minor') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'haul_truck', 'male') ==> ('minor',) , 0.667
+Rule: ('age_25_34', 'haul_truck') ==> ('male', 'minor') , 0.667
+Rule: ('age_25_34', 'male', 'minor') ==> ('injured_person',) , 0.600
+Rule: ('age_25_34', 'injured_person', 'minor') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'minor') ==> ('injured_person', 'male') , 0.600
+Rule: ('age_25_34', 'injured_person', 'serious') ==> ('male',) , 0.667
+Rule: ('lower_back', 'male', 'ndi') ==> ('age_25_34',) , 1.000
+Rule: ('age_25_34', 'lower_back', 'ndi') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'lower_back', 'male') ==> ('ndi',) , 0.667
+Rule: ('lower_back', 'ndi') ==> ('age_25_34', 'male') , 1.000
+Rule: ('age_25_34', 'lower_back') ==> ('male', 'ndi') , 0.667
+Rule: ('age_25_34', 'serious', 'walking') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'male', 'walking') ==> ('serious',) , 0.667
+Rule: ('age_25_34', 'walking') ==> ('male', 'serious') , 0.667
+Rule: ('male', 'serious', 'worker') ==> ('age_25_34',) , 0.667
+Rule: ('age_25_34', 'serious', 'worker') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'male', 'worker') ==> ('serious',) , 1.000
+Rule: ('serious', 'worker') ==> ('age_25_34', 'male') , 0.667
+Rule: ('age_25_34', 'worker') ==> ('male', 'serious') , 1.000
+Rule: ('arm', 'leg', 'male') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'arm', 'male') ==> ('leg',) , 1.000
+Rule: ('age_35_44', 'arm', 'leg') ==> ('male',) , 1.000
+Rule: ('arm', 'leg') ==> ('age_35_44', 'male') , 1.000
+Rule: ('age_35_44', 'arm') ==> ('leg', 'male') , 1.000
+Rule: ('arm', 'leg', 'ndi') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'leg', 'ndi') ==> ('arm',) , 0.667
+Rule: ('age_35_44', 'arm', 'ndi') ==> ('leg',) , 1.000
+Rule: ('age_35_44', 'arm', 'leg') ==> ('ndi',) , 1.000
+Rule: ('leg', 'ndi') ==> ('age_35_44', 'arm') , 0.667
+Rule: ('arm', 'ndi') ==> ('age_35_44', 'leg') , 1.000
+Rule: ('arm', 'leg') ==> ('age_35_44', 'ndi') , 1.000
+Rule: ('age_35_44', 'arm') ==> ('leg', 'ndi') , 1.000
+Rule: ('arm', 'male', 'ndi') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'arm', 'ndi') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'arm', 'male') ==> ('ndi',) , 1.000
+Rule: ('arm', 'ndi') ==> ('age_35_44', 'male') , 1.000
+Rule: ('age_35_44', 'arm') ==> ('male', 'ndi') , 1.000
+Rule: ('back', 'injured_person', 'injury') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'injured_person', 'injury') ==> ('back',) , 1.000
+Rule: ('age_35_44', 'back', 'injury') ==> ('injured_person',) , 0.667
+Rule: ('back', 'injury') ==> ('age_35_44', 'injured_person') , 0.667
+Rule: ('age_35_44', 'injury') ==> ('back', 'injured_person') , 0.667
+Rule: ('back', 'injured_person', 'knee') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'injured_person', 'knee') ==> ('back',) , 0.667
+Rule: ('age_35_44', 'back', 'knee') ==> ('injured_person',) , 1.000
+Rule: ('back', 'knee') ==> ('age_35_44', 'injured_person') , 1.000
+Rule: ('age_35_44', 'knee') ==> ('back', 'injured_person') , 0.667
+Rule: ('age_35_44', 'back', 'injured_person') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'back', 'injured_person') ==> ('serious',) , 0.750
+Rule: ('back', 'injury', 'male') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'injury', 'male') ==> ('back',) , 1.000
+Rule: ('age_35_44', 'back', 'injury') ==> ('male',) , 1.000
+Rule: ('back', 'injury') ==> ('age_35_44', 'male') , 1.000
+Rule: ('age_35_44', 'injury') ==> ('back', 'male') , 1.000
+Rule: ('back', 'injury', 'serious') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'injury', 'serious') ==> ('back',) , 1.000
+Rule: ('age_35_44', 'back', 'injury') ==> ('serious',) , 1.000
+Rule: ('back', 'injury') ==> ('age_35_44', 'serious') , 1.000
+Rule: ('age_35_44', 'injury') ==> ('back', 'serious') , 1.000
+Rule: ('back', 'knee', 'male') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'knee', 'male') ==> ('back',) , 0.667
+Rule: ('age_35_44', 'back', 'knee') ==> ('male',) , 1.000
+Rule: ('back', 'knee') ==> ('age_35_44', 'male') , 1.000
+Rule: ('age_35_44', 'knee') ==> ('back', 'male') , 0.667
+Rule: ('age_35_44', 'back', 'serious') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'back', 'male') ==> ('serious',) , 0.889
+Rule: ('age_35_44', 'back') ==> ('male', 'serious') , 0.889
+Rule: ('back', 'male', 'strain') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'male', 'strain') ==> ('back',) , 0.667
+Rule: ('age_35_44', 'back', 'strain') ==> ('male',) , 1.000
+Rule: ('back', 'strain') ==> ('age_35_44', 'male') , 1.000
+Rule: ('age_35_44', 'strain') ==> ('back', 'male') , 0.667
+Rule: ('back', 'serious', 'strain') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'serious', 'strain') ==> ('back',) , 1.000
+Rule: ('age_35_44', 'back', 'strain') ==> ('serious',) , 1.000
+Rule: ('serious', 'strain') ==> ('age_35_44', 'back') , 1.000
+Rule: ('back', 'strain') ==> ('age_35_44', 'serious') , 1.000
+Rule: ('age_35_44', 'strain') ==> ('back', 'serious') , 0.667
+Rule: ('age_35_44', 'car', 'male') ==> ('injured_person',) , 1.000
+Rule: ('age_35_44', 'car', 'injured_person') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'car') ==> ('injured_person', 'male') , 1.000
+Rule: ('car', 'injured_person', 'serious') ==> ('age_35_44',) , 0.667
+Rule: ('age_35_44', 'car', 'serious') ==> ('injured_person',) , 1.000
+Rule: ('age_35_44', 'car', 'injured_person') ==> ('serious',) , 1.000
+Rule: ('age_35_44', 'car') ==> ('injured_person', 'serious') , 1.000
+Rule: ('age_35_44', 'car', 'serious') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'car', 'male') ==> ('serious',) , 1.000
+Rule: ('age_35_44', 'car') ==> ('male', 'serious') , 1.000
+Rule: ('age_35_44', 'caught_between', 'serious') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'caught_between', 'male') ==> ('serious',) , 1.000
+Rule: ('age_35_44', 'caught_between') ==> ('male', 'serious') , 1.000
+Rule: ('age_35_44', 'crusher', 'male') ==> ('injured_person',) , 0.667
+Rule: ('age_35_44', 'crusher', 'injured_person') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'crusher') ==> ('injured_person', 'male') , 0.667
+Rule: ('age_35_44', 'fracture', 'male') ==> ('injured_person',) , 1.000
+Rule: ('age_35_44', 'fracture', 'injured_person') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'fracture') ==> ('injured_person', 'male') , 1.000
+Rule: ('age_35_44', 'haul_truck', 'minor') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'haul_truck', 'male') ==> ('minor',) , 1.000
+Rule: ('age_35_44', 'haul_truck') ==> ('male', 'minor') , 1.000
+Rule: ('age_35_44', 'injury', 'male') ==> ('injured_person',) , 0.667
+Rule: ('age_35_44', 'injured_person', 'injury') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'injury') ==> ('injured_person', 'male') , 0.667
+Rule: ('age_35_44', 'injury', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('age_35_44', 'injured_person', 'injury') ==> ('serious',) , 1.000
+Rule: ('age_35_44', 'injury') ==> ('injured_person', 'serious') , 0.667
+Rule: ('injured_person', 'knee', 'male') ==> ('age_35_44',) , 0.750
+Rule: ('age_35_44', 'knee', 'male') ==> ('injured_person',) , 1.000
+Rule: ('age_35_44', 'injured_person', 'knee') ==> ('male',) , 1.000
+Rule: ('knee', 'male') ==> ('age_35_44', 'injured_person') , 0.750
+Rule: ('injured_person', 'knee') ==> ('age_35_44', 'male') , 0.750
+Rule: ('age_35_44', 'knee') ==> ('injured_person', 'male') , 1.000
+Rule: ('knee',) ==> ('age_35_44', 'injured_person', 'male') , 0.750
+Rule: ('injured_person', 'knee', 'minor') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'knee', 'minor') ==> ('injured_person',) , 1.000
+Rule: ('age_35_44', 'injured_person', 'knee') ==> ('minor',) , 0.667
+Rule: ('knee', 'minor') ==> ('age_35_44', 'injured_person') , 1.000
+Rule: ('age_35_44', 'knee') ==> ('injured_person', 'minor') , 0.667
+Rule: ('age_35_44', 'laceration', 'male') ==> ('injured_person',) , 0.667
+Rule: ('age_35_44', 'injured_person', 'laceration') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'laceration') ==> ('injured_person', 'male') , 0.667
+Rule: ('age_35_44', 'left_foot', 'male') ==> ('injured_person',) , 0.667
+Rule: ('age_35_44', 'injured_person', 'left_foot') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'left_foot') ==> ('injured_person', 'male') , 0.667
+Rule: ('age_35_44', 'left_hand', 'male') ==> ('injured_person',) , 0.600
+Rule: ('age_35_44', 'injured_person', 'left_hand') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'left_hand') ==> ('injured_person', 'male') , 0.600
+Rule: ('injured_person', 'left_hand', 'minor') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'left_hand', 'minor') ==> ('injured_person',) , 0.667
+Rule: ('age_35_44', 'injured_person', 'left_hand') ==> ('minor',) , 0.667
+Rule: ('left_hand', 'minor') ==> ('age_35_44', 'injured_person') , 0.667
+Rule: ('injured_person', 'leg', 'male') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'injured_person', 'leg') ==> ('male',) , 1.000
+Rule: ('injured_person', 'leg') ==> ('age_35_44', 'male') , 0.750
+Rule: ('injured_person', 'leg', 'serious') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'leg', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('age_35_44', 'injured_person', 'leg') ==> ('serious',) , 0.667
+Rule: ('age_35_44', 'male', 'minor') ==> ('injured_person',) , 0.833
+Rule: ('age_35_44', 'injured_person', 'minor') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'minor') ==> ('injured_person', 'male') , 0.833
+Rule: ('age_35_44', 'injured_person', 'ndi') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'injured_person', 'serious') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'male', 'walking') ==> ('injured_person',) , 0.667
+Rule: ('age_35_44', 'injured_person', 'walking') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'walking') ==> ('injured_person', 'male') , 0.667
+Rule: ('injured_person', 'minor', 'walking') ==> ('age_35_44',) , 0.667
+Rule: ('age_35_44', 'minor', 'walking') ==> ('injured_person',) , 1.000
+Rule: ('age_35_44', 'injured_person', 'walking') ==> ('minor',) , 1.000
+Rule: ('age_35_44', 'walking') ==> ('injured_person', 'minor') , 0.667
+Rule: ('age_35_44', 'injury', 'serious') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'injury', 'male') ==> ('serious',) , 1.000
+Rule: ('age_35_44', 'injury') ==> ('male', 'serious') , 1.000
+Rule: ('knee', 'male', 'minor') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'knee', 'minor') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'knee', 'male') ==> ('minor',) , 0.667
+Rule: ('knee', 'minor') ==> ('age_35_44', 'male') , 1.000
+Rule: ('age_35_44', 'knee') ==> ('male', 'minor') , 0.667
+Rule: ('age_35_44', 'laceration', 'serious') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'laceration', 'male') ==> ('serious',) , 0.667
+Rule: ('age_35_44', 'laceration') ==> ('male', 'serious') , 0.667
+Rule: ('age_35_44', 'left_foot', 'serious') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'left_foot', 'male') ==> ('serious',) , 0.667
+Rule: ('age_35_44', 'left_foot') ==> ('male', 'serious') , 0.667
+Rule: ('left_hand', 'male', 'minor') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'left_hand', 'minor') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'left_hand', 'male') ==> ('minor',) , 0.600
+Rule: ('left_hand', 'minor') ==> ('age_35_44', 'male') , 1.000
+Rule: ('age_35_44', 'left_hand') ==> ('male', 'minor') , 0.600
+Rule: ('leg', 'male', 'ndi') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'leg', 'ndi') ==> ('male',) , 1.000
+Rule: ('leg', 'ndi') ==> ('age_35_44', 'male') , 1.000
+Rule: ('leg', 'male', 'operator') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'leg', 'operator') ==> ('male',) , 1.000
+Rule: ('leg', 'operator') ==> ('age_35_44', 'male') , 1.000
+Rule: ('leg', 'male', 'serious') ==> ('age_35_44',) , 0.750
+Rule: ('age_35_44', 'leg', 'serious') ==> ('male',) , 1.000
+Rule: ('leg', 'serious') ==> ('age_35_44', 'male') , 0.750
+Rule: ('male', 'minor', 'operator') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'minor', 'operator') ==> ('male',) , 1.000
+Rule: ('minor', 'operator') ==> ('age_35_44', 'male') , 1.000
+Rule: ('age_35_44', 'minor', 'walking') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'male', 'walking') ==> ('minor',) , 0.667
+Rule: ('age_35_44', 'walking') ==> ('male', 'minor') , 0.667
+Rule: ('male', 'pipe', 'serious') ==> ('age_35_44',) , 0.600
+Rule: ('age_35_44', 'pipe', 'serious') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'male', 'pipe') ==> ('serious',) , 1.000
+Rule: ('pipe', 'serious') ==> ('age_35_44', 'male') , 0.600
+Rule: ('age_35_44', 'pipe') ==> ('male', 'serious') , 1.000
+Rule: ('age_35_44', 'pump', 'serious') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'male', 'pump') ==> ('serious',) , 1.000
+Rule: ('age_35_44', 'pump') ==> ('male', 'serious') , 1.000
+Rule: ('male', 'serious', 'strain') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'serious', 'strain') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'male', 'strain') ==> ('serious',) , 0.667
+Rule: ('serious', 'strain') ==> ('age_35_44', 'male') , 1.000
+Rule: ('age_35_44', 'strain') ==> ('male', 'serious') , 0.667
+Rule: ('arm', 'injured_person', 'male') ==> ('age_45_54',) , 0.667
+Rule: ('age_45_54', 'arm', 'male') ==> ('injured_person',) , 1.000
+Rule: ('age_45_54', 'arm', 'injured_person') ==> ('male',) , 1.000
+Rule: ('arm', 'injured_person') ==> ('age_45_54', 'male') , 0.667
+Rule: ('age_45_54', 'arm') ==> ('injured_person', 'male') , 1.000
+Rule: ('arm', 'injured_person', 'minor') ==> ('age_45_54',) , 1.000
+Rule: ('age_45_54', 'arm', 'minor') ==> ('injured_person',) , 1.000
+Rule: ('age_45_54', 'arm', 'injured_person') ==> ('minor',) , 1.000
+Rule: ('arm', 'minor') ==> ('age_45_54', 'injured_person') , 1.000
+Rule: ('arm', 'injured_person') ==> ('age_45_54', 'minor') , 0.667
+Rule: ('age_45_54', 'arm') ==> ('injured_person', 'minor') , 1.000
+Rule: ('arm', 'male', 'minor') ==> ('age_45_54',) , 1.000
+Rule: ('age_45_54', 'arm', 'minor') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'arm', 'male') ==> ('minor',) , 1.000
+Rule: ('arm', 'minor') ==> ('age_45_54', 'male') , 1.000
+Rule: ('age_45_54', 'arm') ==> ('male', 'minor') , 1.000
+Rule: ('age_45_54', 'back', 'injured_person') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'back', 'minor') ==> ('injured_person',) , 1.000
+Rule: ('age_45_54', 'back', 'injured_person') ==> ('minor',) , 1.000
+Rule: ('age_45_54', 'back', 'minor') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'back', 'serious') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'back', 'male') ==> ('serious',) , 0.600
+Rule: ('age_45_54', 'back') ==> ('male', 'serious') , 0.600
+Rule: ('age_45_54', 'female', 'serious') ==> ('injured_person',) , 1.000
+Rule: ('age_45_54', 'female', 'injured_person') ==> ('serious',) , 1.000
+Rule: ('age_45_54', 'female') ==> ('injured_person', 'serious') , 1.000
+Rule: ('age_45_54', 'foot', 'male') ==> ('injured_person',) , 1.000
+Rule: ('age_45_54', 'foot', 'injured_person') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'foot') ==> ('injured_person', 'male') , 1.000
+Rule: ('foot', 'injured_person', 'serious') ==> ('age_45_54',) , 0.667
+Rule: ('age_45_54', 'foot', 'serious') ==> ('injured_person',) , 1.000
+Rule: ('age_45_54', 'foot', 'injured_person') ==> ('serious',) , 1.000
+Rule: ('age_45_54', 'foot') ==> ('injured_person', 'serious') , 1.000
+Rule: ('age_45_54', 'foot', 'serious') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'foot', 'male') ==> ('serious',) , 1.000
+Rule: ('age_45_54', 'foot') ==> ('male', 'serious') , 1.000
+Rule: ('fracture', 'male', 'serious') ==> ('age_45_54',) , 0.667
+Rule: ('age_45_54', 'fracture', 'serious') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'fracture', 'male') ==> ('serious',) , 1.000
+Rule: ('fracture', 'serious') ==> ('age_45_54', 'male') , 0.667
+Rule: ('age_45_54', 'fracture') ==> ('male', 'serious') , 1.000
+Rule: ('head', 'injured_person', 'serious') ==> ('age_45_54',) , 1.000
+Rule: ('age_45_54', 'head', 'injured_person') ==> ('serious',) , 1.000
+Rule: ('head', 'injured_person') ==> ('age_45_54', 'serious') , 1.000
+Rule: ('age_45_54', 'head', 'serious') ==> ('male',) , 0.750
+Rule: ('age_45_54', 'head', 'male') ==> ('serious',) , 1.000
+Rule: ('age_45_54', 'head') ==> ('male', 'serious') , 0.750
+Rule: ('age_45_54', 'male', 'minor') ==> ('injured_person',) , 1.000
+Rule: ('age_45_54', 'injured_person', 'minor') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'minor') ==> ('injured_person', 'male') , 1.000
+Rule: ('age_45_54', 'injured_person', 'serious') ==> ('male',) , 0.846
+Rule: ('age_45_54', 'injured_person', 'male') ==> ('serious',) , 0.688
+Rule: ('age_45_54', 'injured_person') ==> ('male', 'serious') , 0.611
+Rule: ('age_45_54', 'male', 'walking') ==> ('injured_person',) , 0.667
+Rule: ('age_45_54', 'injured_person', 'walking') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'walking') ==> ('injured_person', 'male') , 0.667
+Rule: ('age_45_54', 'laceration', 'serious') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'laceration', 'male') ==> ('serious',) , 0.667
+Rule: ('age_45_54', 'laceration') ==> ('male', 'serious') , 0.667
+Rule: ('age_45_54', 'left_hand', 'serious') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'left_hand', 'male') ==> ('serious',) , 1.000
+Rule: ('age_45_54', 'left_hand') ==> ('male', 'serious') , 1.000
+Rule: ('age_45_54', 'lower_back', 'serious') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'lower_back', 'male') ==> ('serious',) , 1.000
+Rule: ('age_45_54', 'lower_back') ==> ('male', 'serious') , 1.000
+Rule: ('age_45_54', 'serious', 'walking') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'male', 'walking') ==> ('serious',) , 0.667
+Rule: ('age_45_54', 'walking') ==> ('male', 'serious') , 0.667
+Rule: ('age_55_64', 'back', 'ndi') ==> ('male',) , 1.000
+Rule: ('age_55_64', 'back', 'serious') ==> ('male',) , 0.750
+Rule: ('age_55_64', 'back', 'male') ==> ('serious',) , 0.600
+Rule: ('conveyor', 'male', 'ndi') ==> ('age_55_64',) , 0.667
+Rule: ('age_55_64', 'conveyor', 'ndi') ==> ('male',) , 1.000
+Rule: ('age_55_64', 'conveyor', 'male') ==> ('ndi',) , 1.000
+Rule: ('conveyor', 'ndi') ==> ('age_55_64', 'male') , 0.667
+Rule: ('age_55_64', 'conveyor') ==> ('male', 'ndi') , 1.000
+Rule: ('age_55_64', 'injured_person', 'minor') ==> ('male',) , 1.000
+Rule: ('age_55_64', 'injured_person', 'serious') ==> ('male',) , 0.889
+Rule: ('age_55_64', 'injured_person', 'male') ==> ('serious',) , 0.667
+Rule: ('age_55_64', 'injured_person') ==> ('male', 'serious') , 0.615
+Rule: ('age_55_64', 'male', 'walking') ==> ('injured_person',) , 1.000
+Rule: ('age_55_64', 'injured_person', 'walking') ==> ('male',) , 1.000
+Rule: ('age_55_64', 'walking') ==> ('injured_person', 'male') , 1.000
+Rule: ('injured_person', 'serious', 'walking') ==> ('age_55_64',) , 0.600
+Rule: ('age_55_64', 'serious', 'walking') ==> ('injured_person',) , 1.000
+Rule: ('age_55_64', 'injured_person', 'walking') ==> ('serious',) , 1.000
+Rule: ('age_55_64', 'walking') ==> ('injured_person', 'serious') , 1.000
+Rule: ('male', 'minor', 'shoulder') ==> ('age_55_64',) , 0.667
+Rule: ('age_55_64', 'minor', 'shoulder') ==> ('male',) , 1.000
+Rule: ('age_55_64', 'male', 'shoulder') ==> ('minor',) , 1.000
+Rule: ('minor', 'shoulder') ==> ('age_55_64', 'male') , 0.667
+Rule: ('age_55_64', 'shoulder') ==> ('male', 'minor') , 1.000
+Rule: ('age_55_64', 'serious', 'walking') ==> ('male',) , 1.000
+Rule: ('age_55_64', 'male', 'walking') ==> ('serious',) , 1.000
+Rule: ('age_55_64', 'walking') ==> ('male', 'serious') , 1.000
+Rule: ('dozer', 'male', 'minor') ==> ('age_65_100',) , 0.667
+Rule: ('age_65_100', 'dozer', 'minor') ==> ('male',) , 1.000
+Rule: ('age_65_100', 'dozer', 'male') ==> ('minor',) , 1.000
+Rule: ('dozer', 'minor') ==> ('age_65_100', 'male') , 0.667
+Rule: ('age_65_100', 'dozer') ==> ('male', 'minor') , 1.000
+Rule: ('fall', 'injured_person', 'male') ==> ('age_65_100',) , 1.000
+Rule: ('age_65_100', 'fall', 'male') ==> ('injured_person',) , 0.667
+Rule: ('age_65_100', 'fall', 'injured_person') ==> ('male',) , 1.000
+Rule: ('fall', 'injured_person') ==> ('age_65_100', 'male') , 0.667
+Rule: ('age_65_100', 'fall') ==> ('injured_person', 'male') , 0.667
+Rule: ('fall', 'injured_person', 'serious') ==> ('age_65_100',) , 1.000
+Rule: ('age_65_100', 'fall', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('age_65_100', 'fall', 'injured_person') ==> ('serious',) , 1.000
+Rule: ('fall', 'injured_person') ==> ('age_65_100', 'serious') , 0.667
+Rule: ('age_65_100', 'fall') ==> ('injured_person', 'serious') , 0.667
+Rule: ('age_65_100', 'fall', 'serious') ==> ('male',) , 1.000
+Rule: ('age_65_100', 'fall', 'male') ==> ('serious',) , 1.000
+Rule: ('age_65_100', 'fall') ==> ('male', 'serious') , 1.000
+Rule: ('age_65_100', 'foot', 'male') ==> ('injured_person',) , 0.667
+Rule: ('age_65_100', 'foot', 'injured_person') ==> ('male',) , 1.000
+Rule: ('age_65_100', 'foot') ==> ('injured_person', 'male') , 0.667
+Rule: ('age_65_100', 'foot', 'serious') ==> ('male',) , 1.000
+Rule: ('age_65_100', 'foot', 'male') ==> ('serious',) , 0.667
+Rule: ('age_65_100', 'foot') ==> ('male', 'serious') , 0.667
+Rule: ('age_65_100', 'hand', 'serious') ==> ('male',) , 1.000
+Rule: ('age_65_100', 'hand', 'male') ==> ('serious',) , 1.000
+Rule: ('age_65_100', 'hand') ==> ('male', 'serious') , 1.000
+Rule: ('age_65_100', 'male', 'minor') ==> ('injured_person',) , 0.857
+Rule: ('age_65_100', 'injured_person', 'minor') ==> ('male',) , 1.000
+Rule: ('age_65_100', 'minor') ==> ('injured_person', 'male') , 0.857
+Rule: ('age_65_100', 'injured_person', 'ndi') ==> ('male',) , 1.000
+Rule: ('age_65_100', 'injured_person', 'serious') ==> ('male',) , 1.000
+Rule: ('age_65_100', 'injury', 'serious') ==> ('male',) , 1.000
+Rule: ('age_65_100', 'injury', 'male') ==> ('serious',) , 1.000
+Rule: ('age_65_100', 'injury') ==> ('male', 'serious') , 1.000
+Rule: ('ankle', 'male', 'serious') ==> ('injured_person',) , 1.000
+Rule: ('ankle', 'injured_person', 'serious') ==> ('male',) , 1.000
+Rule: ('ankle', 'injured_person', 'male') ==> ('serious',) , 0.667
+Rule: ('ankle', 'serious') ==> ('injured_person', 'male') , 1.000
+Rule: ('ankle', 'male') ==> ('injured_person', 'serious') , 0.667
+Rule: ('ankle', 'injured_person') ==> ('male', 'serious') , 0.667
+Rule: ('ankle',) ==> ('injured_person', 'male', 'serious') , 0.667
+Rule: ('arm', 'male', 'minor') ==> ('injured_person',) , 1.000
+Rule: ('arm', 'injured_person', 'minor') ==> ('male',) , 1.000
+Rule: ('arm', 'injured_person', 'male') ==> ('minor',) , 0.667
+Rule: ('arm', 'minor') ==> ('injured_person', 'male') , 1.000
+Rule: ('arm', 'injured_person') ==> ('male', 'minor') , 0.667
+Rule: ('leg', 'male', 'ndi') ==> ('arm',) , 0.667
+Rule: ('arm', 'male', 'ndi') ==> ('leg',) , 1.000
+Rule: ('arm', 'leg', 'ndi') ==> ('male',) , 1.000
+Rule: ('arm', 'leg', 'male') ==> ('ndi',) , 1.000
+Rule: ('leg', 'ndi') ==> ('arm', 'male') , 0.667
+Rule: ('arm', 'ndi') ==> ('leg', 'male') , 1.000
+Rule: ('arm', 'leg') ==> ('male', 'ndi') , 1.000
+Rule: ('conveyor', 'male', 'serious') ==> ('back',) , 1.000
+Rule: ('back', 'conveyor', 'serious') ==> ('male',) , 1.000
+Rule: ('back', 'conveyor', 'male') ==> ('serious',) , 1.000
+Rule: ('conveyor', 'serious') ==> ('back', 'male') , 1.000
+Rule: ('back', 'conveyor') ==> ('male', 'serious') , 1.000
+Rule: ('equipment', 'injured_person', 'male') ==> ('back',) , 0.667
+Rule: ('back', 'equipment', 'male') ==> ('injured_person',) , 1.000
+Rule: ('back', 'equipment', 'injured_person') ==> ('male',) , 1.000
+Rule: ('equipment', 'male') ==> ('back', 'injured_person') , 0.667
+Rule: ('equipment', 'injured_person') ==> ('back', 'male') , 0.667
+Rule: ('back', 'equipment') ==> ('injured_person', 'male') , 1.000
+Rule: ('equipment',) ==> ('back', 'injured_person', 'male') , 0.667
+Rule: ('back', 'foot', 'male') ==> ('injured_person',) , 1.000
+Rule: ('back', 'foot', 'injured_person') ==> ('male',) , 1.000
+Rule: ('back', 'foot') ==> ('injured_person', 'male') , 0.667
+Rule: ('back', 'head', 'serious') ==> ('male',) , 1.000
+Rule: ('back', 'head', 'male') ==> ('serious',) , 1.000
+Rule: ('back', 'head') ==> ('male', 'serious') , 1.000
+Rule: ('back', 'injury', 'male') ==> ('injured_person',) , 0.667
+Rule: ('back', 'injured_person', 'injury') ==> ('male',) , 1.000
+Rule: ('back', 'injury') ==> ('injured_person', 'male') , 0.667
+Rule: ('back', 'injury', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('back', 'injured_person', 'injury') ==> ('serious',) , 1.000
+Rule: ('back', 'injury') ==> ('injured_person', 'serious') , 0.667
+Rule: ('back', 'knee', 'male') ==> ('injured_person',) , 1.000
+Rule: ('back', 'injured_person', 'knee') ==> ('male',) , 1.000
+Rule: ('back', 'knee') ==> ('injured_person', 'male') , 1.000
+Rule: ('back', 'male', 'minor') ==> ('injured_person',) , 0.800
+Rule: ('back', 'injured_person', 'minor') ==> ('male',) , 1.000
+Rule: ('back', 'minor') ==> ('injured_person', 'male') , 0.800
+Rule: ('back', 'injured_person', 'serious') ==> ('male',) , 1.000
+Rule: ('back', 'injured_person', 'male') ==> ('serious',) , 0.600
+Rule: ('back', 'injured_person') ==> ('male', 'serious') , 0.600
+Rule: ('back', 'injury', 'serious') ==> ('male',) , 1.000
+Rule: ('back', 'injury', 'male') ==> ('serious',) , 1.000
+Rule: ('back', 'injury') ==> ('male', 'serious') , 1.000
+Rule: ('male', 'neck', 'serious') ==> ('back',) , 1.000
+Rule: ('back', 'neck', 'serious') ==> ('male',) , 1.000
+Rule: ('back', 'male', 'neck') ==> ('serious',) , 1.000
+Rule: ('neck', 'serious') ==> ('back', 'male') , 1.000
+Rule: ('back', 'neck') ==> ('male', 'serious') , 1.000
+Rule: ('back', 'pipe', 'serious') ==> ('male',) , 1.000
+Rule: ('back', 'male', 'pipe') ==> ('serious',) , 1.000
+Rule: ('back', 'pipe') ==> ('male', 'serious') , 1.000
+Rule: ('male', 'serious', 'strain') ==> ('back',) , 1.000
+Rule: ('back', 'serious', 'strain') ==> ('male',) , 1.000
+Rule: ('back', 'male', 'strain') ==> ('serious',) , 1.000
+Rule: ('serious', 'strain') ==> ('back', 'male') , 1.000
+Rule: ('back', 'strain') ==> ('male', 'serious') , 1.000
+Rule: ('back', 'serious', 'walking') ==> ('male',) , 1.000
+Rule: ('back', 'male', 'walking') ==> ('serious',) , 0.667
+Rule: ('back', 'walking') ==> ('male', 'serious') , 0.667
+Rule: ('car', 'male', 'serious') ==> ('injured_person',) , 0.750
+Rule: ('car', 'injured_person', 'serious') ==> ('male',) , 1.000
+Rule: ('car', 'injured_person', 'male') ==> ('serious',) , 0.750
+Rule: ('car', 'serious') ==> ('injured_person', 'male') , 0.750
+Rule: ('car', 'male') ==> ('injured_person', 'serious') , 0.600
+Rule: ('car', 'injured_person') ==> ('male', 'serious') , 0.750
+Rule: ('car',) ==> ('injured_person', 'male', 'serious') , 0.600
+Rule: ('caught_between', 'injured_person', 'serious') ==> ('male',) , 1.000
+Rule: ('caught_between', 'injured_person', 'male') ==> ('serious',) , 1.000
+Rule: ('caught_between', 'injured_person') ==> ('male', 'serious') , 1.000
+Rule: ('crusher', 'male', 'minor') ==> ('injured_person',) , 1.000
+Rule: ('crusher', 'injured_person', 'minor') ==> ('male',) , 1.000
+Rule: ('crusher', 'minor') ==> ('injured_person', 'male') , 1.000
+Rule: ('crusher', 'male', 'ndi') ==> ('injured_person',) , 1.000
+Rule: ('crusher', 'injured_person', 'ndi') ==> ('male',) , 1.000
+Rule: ('crusher', 'ndi') ==> ('injured_person', 'male') , 0.667
+Rule: ('dozer', 'male', 'minor') ==> ('injured_person',) , 0.667
+Rule: ('dozer', 'injured_person', 'minor') ==> ('male',) , 1.000
+Rule: ('dozer', 'injured_person', 'male') ==> ('minor',) , 0.667
+Rule: ('dozer', 'minor') ==> ('injured_person', 'male') , 0.667
+Rule: ('dozer', 'injured_person') ==> ('male', 'minor') , 0.667
+Rule: ('driving', 'male', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('driving', 'injured_person', 'serious') ==> ('male',) , 1.000
+Rule: ('driving', 'injured_person', 'male') ==> ('serious',) , 0.667
+Rule: ('driving', 'serious') ==> ('injured_person', 'male') , 0.667
+Rule: ('driving', 'injured_person') ==> ('male', 'serious') , 0.667
+Rule: ('equipment', 'male', 'minor') ==> ('injured_person',) , 1.000
+Rule: ('equipment', 'injured_person', 'minor') ==> ('male',) , 1.000
+Rule: ('equipment', 'injured_person', 'male') ==> ('minor',) , 0.667
+Rule: ('equipment', 'minor') ==> ('injured_person', 'male') , 1.000
+Rule: ('equipment', 'male') ==> ('injured_person', 'minor') , 0.667
+Rule: ('equipment', 'injured_person') ==> ('male', 'minor') , 0.667
+Rule: ('equipment',) ==> ('injured_person', 'male', 'minor') , 0.667
+Rule: ('fall', 'injured_person', 'serious') ==> ('male',) , 1.000
+Rule: ('fall', 'injured_person', 'male') ==> ('serious',) , 1.000
+Rule: ('fall', 'injured_person') ==> ('male', 'serious') , 0.667
+Rule: ('groin', 'injured_person', 'serious') ==> ('female',) , 1.000
+Rule: ('female', 'groin', 'serious') ==> ('injured_person',) , 1.000
+Rule: ('female', 'groin', 'injured_person') ==> ('serious',) , 1.000
+Rule: ('groin', 'serious') ==> ('female', 'injured_person') , 0.667
+Rule: ('groin', 'injured_person') ==> ('female', 'serious') , 1.000
+Rule: ('female', 'groin') ==> ('injured_person', 'serious') , 1.000
+Rule: ('groin',) ==> ('female', 'injured_person', 'serious') , 0.667
+Rule: ('foot', 'male', 'minor') ==> ('injured_person',) , 1.000
+Rule: ('foot', 'injured_person', 'minor') ==> ('male',) , 1.000
+Rule: ('foot', 'minor') ==> ('injured_person', 'male') , 1.000
+Rule: ('foot', 'male', 'serious') ==> ('injured_person',) , 0.600
+Rule: ('foot', 'injured_person', 'serious') ==> ('male',) , 1.000
+Rule: ('foot', 'injured_person', 'male') ==> ('serious',) , 0.600
+Rule: ('foot', 'injured_person') ==> ('male', 'serious') , 0.600
+Rule: ('fracture', 'male', 'minor') ==> ('injured_person',) , 0.667
+Rule: ('fracture', 'injured_person', 'minor') ==> ('male',) , 1.000
+Rule: ('fracture', 'minor') ==> ('injured_person', 'male') , 0.667
+Rule: ('fracture', 'male', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('fracture', 'injured_person', 'serious') ==> ('male',) , 1.000
+Rule: ('fracture', 'serious') ==> ('injured_person', 'male') , 0.667
+Rule: ('hand', 'injured_person', 'serious') ==> ('male',) , 1.000
+Rule: ('hand', 'injured_person', 'male') ==> ('serious',) , 1.000
+Rule: ('hand', 'injured_person') ==> ('male', 'serious') , 1.000
+Rule: ('hand', 'laceration', 'serious') ==> ('male',) , 1.000
+Rule: ('hand', 'laceration', 'male') ==> ('serious',) , 1.000
+Rule: ('hand', 'laceration') ==> ('male', 'serious') , 1.000
+Rule: ('hand', 'right_hand', 'serious') ==> ('male',) , 1.000
+Rule: ('hand', 'male', 'right_hand') ==> ('serious',) , 1.000
+Rule: ('hand', 'right_hand') ==> ('male', 'serious') , 1.000
+Rule: ('haul_truck', 'male', 'minor') ==> ('injured_person',) , 0.667
+Rule: ('haul_truck', 'injured_person', 'minor') ==> ('male',) , 1.000
+Rule: ('haul_truck', 'injured_person', 'male') ==> ('minor',) , 0.800
+Rule: ('haul_truck', 'minor') ==> ('injured_person', 'male') , 0.667
+Rule: ('haul_truck', 'injured_person') ==> ('male', 'minor') , 0.800
+Rule: ('injury', 'male', 'serious') ==> ('injured_person',) , 0.625
+Rule: ('injured_person', 'injury', 'serious') ==> ('male',) , 1.000
+Rule: ('injured_person', 'injury', 'male') ==> ('serious',) , 1.000
+Rule: ('injury', 'serious') ==> ('injured_person', 'male') , 0.625
+Rule: ('injured_person', 'injury') ==> ('male', 'serious') , 1.000
+Rule: ('knee', 'male', 'minor') ==> ('injured_person',) , 1.000
+Rule: ('injured_person', 'knee', 'minor') ==> ('male',) , 1.000
+Rule: ('knee', 'minor') ==> ('injured_person', 'male') , 1.000
+Rule: ('knee', 'male', 'serious') ==> ('injured_person',) , 1.000
+Rule: ('injured_person', 'knee', 'serious') ==> ('male',) , 1.000
+Rule: ('knee', 'serious') ==> ('injured_person', 'male') , 1.000
+Rule: ('injured_person', 'laceration', 'serious') ==> ('male',) , 1.000
+Rule: ('injured_person', 'laceration', 'male') ==> ('serious',) , 0.600
+Rule: ('injured_person', 'laceration') ==> ('male', 'serious') , 0.600
+Rule: ('injured_person', 'left_foot', 'serious') ==> ('male',) , 1.000
+Rule: ('left_hand', 'male', 'minor') ==> ('injured_person',) , 0.667
+Rule: ('injured_person', 'left_hand', 'minor') ==> ('male',) , 1.000
+Rule: ('left_hand', 'minor') ==> ('injured_person', 'male') , 0.667
+Rule: ('left_hand', 'male', 'ndi') ==> ('injured_person',) , 1.000
+Rule: ('injured_person', 'left_hand', 'ndi') ==> ('male',) , 1.000
+Rule: ('left_hand', 'ndi') ==> ('injured_person', 'male') , 1.000
+Rule: ('injured_person', 'left_hand', 'serious') ==> ('male',) , 1.000
+Rule: ('injured_person', 'leg', 'serious') ==> ('male',) , 1.000
+Rule: ('injured_person', 'leg', 'male') ==> ('serious',) , 0.667
+Rule: ('male', 'minor', 'neck') ==> ('injured_person',) , 0.667
+Rule: ('injured_person', 'minor', 'neck') ==> ('male',) , 1.000
+Rule: ('injured_person', 'male', 'neck') ==> ('minor',) , 1.000
+Rule: ('minor', 'neck') ==> ('injured_person', 'male') , 0.667
+Rule: ('injured_person', 'neck') ==> ('male', 'minor') , 1.000
+Rule: ('male', 'minor', 'stepping') ==> ('injured_person',) , 0.667
+Rule: ('injured_person', 'minor', 'stepping') ==> ('male',) , 1.000
+Rule: ('injured_person', 'male', 'stepping') ==> ('minor',) , 1.000
+Rule: ('minor', 'stepping') ==> ('injured_person', 'male') , 0.667
+Rule: ('injured_person', 'stepping') ==> ('male', 'minor') , 1.000
+Rule: ('injured_person', 'minor', 'walking') ==> ('male',) , 1.000
+Rule: ('male', 'right_hand', 'serious') ==> ('injured_person',) , 0.750
+Rule: ('injured_person', 'right_hand', 'serious') ==> ('male',) , 1.000
+Rule: ('injured_person', 'male', 'right_hand') ==> ('serious',) , 0.750
+Rule: ('right_hand', 'serious') ==> ('injured_person', 'male') , 0.750
+Rule: ('injured_person', 'right_hand') ==> ('male', 'serious') , 0.750
+Rule: ('male', 'right_knee', 'serious') ==> ('injured_person',) , 1.000
+Rule: ('injured_person', 'right_knee', 'serious') ==> ('male',) , 1.000
+Rule: ('injured_person', 'male', 'right_knee') ==> ('serious',) , 0.667
+Rule: ('right_knee', 'serious') ==> ('injured_person', 'male') , 1.000
+Rule: ('male', 'right_knee') ==> ('injured_person', 'serious') , 0.667
+Rule: ('injured_person', 'right_knee') ==> ('male', 'serious') , 0.667
+Rule: ('right_knee',) ==> ('injured_person', 'male', 'serious') , 0.667
+Rule: ('male', 'serious', 'walking') ==> ('injured_person',) , 0.714
+Rule: ('injured_person', 'serious', 'walking') ==> ('male',) , 1.000
+Rule: ('injured_person', 'male', 'walking') ==> ('serious',) , 0.625
+Rule: ('serious', 'walking') ==> ('injured_person', 'male') , 0.714
+Rule: ('injured_person', 'walking') ==> ('male', 'serious') , 0.625
+Rule: ('injury', 'right_hand', 'serious') ==> ('male',) , 1.000
+Rule: ('injury', 'male', 'right_hand') ==> ('serious',) , 1.000
+Rule: ('injury', 'right_hand') ==> ('male', 'serious') , 1.000
+Rule: ('male', 'minor', 'stepping') ==> ('left_foot',) , 0.667
+Rule: ('left_foot', 'minor', 'stepping') ==> ('male',) , 1.000
+Rule: ('left_foot', 'male', 'stepping') ==> ('minor',) , 1.000
+Rule: ('left_foot', 'male', 'minor') ==> ('stepping',) , 0.667
+Rule: ('minor', 'stepping') ==> ('left_foot', 'male') , 0.667
+Rule: ('left_foot', 'stepping') ==> ('male', 'minor') , 1.000
+Rule: ('left_foot', 'minor') ==> ('male', 'stepping') , 0.667
+Rule: ('injured_person', 'male', 'right_hand', 'serious') ==> ('age_15_24',) , 0.667
+Rule: ('age_15_24', 'male', 'right_hand', 'serious') ==> ('injured_person',) , 1.000
+Rule: ('age_15_24', 'injured_person', 'right_hand', 'serious') ==> ('male',) , 1.000
+Rule: ('age_15_24', 'injured_person', 'male', 'right_hand') ==> ('serious',) , 1.000
+Rule: ('injured_person', 'right_hand', 'serious') ==> ('age_15_24', 'male') , 0.667
+Rule: ('age_15_24', 'right_hand', 'serious') ==> ('injured_person', 'male') , 1.000
+Rule: ('age_15_24', 'male', 'right_hand') ==> ('injured_person', 'serious') , 1.000
+Rule: ('age_15_24', 'injured_person', 'right_hand') ==> ('male', 'serious') , 1.000
+Rule: ('age_15_24', 'right_hand') ==> ('injured_person', 'male', 'serious') , 1.000
+Rule: ('age_25_34', 'hand', 'male', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('age_25_34', 'hand', 'injured_person', 'serious') ==> ('male',) , 1.000
+Rule: ('age_25_34', 'hand', 'injured_person', 'male') ==> ('serious',) , 1.000
+Rule: ('age_25_34', 'hand', 'serious') ==> ('injured_person', 'male') , 0.667
+Rule: ('age_25_34', 'hand', 'injured_person') ==> ('male', 'serious') , 1.000
+Rule: ('arm', 'leg', 'male', 'ndi') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'leg', 'male', 'ndi') ==> ('arm',) , 0.667
+Rule: ('age_35_44', 'arm', 'male', 'ndi') ==> ('leg',) , 1.000
+Rule: ('age_35_44', 'arm', 'leg', 'ndi') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'arm', 'leg', 'male') ==> ('ndi',) , 1.000
+Rule: ('leg', 'male', 'ndi') ==> ('age_35_44', 'arm') , 0.667
+Rule: ('arm', 'male', 'ndi') ==> ('age_35_44', 'leg') , 1.000
+Rule: ('arm', 'leg', 'ndi') ==> ('age_35_44', 'male') , 1.000
+Rule: ('arm', 'leg', 'male') ==> ('age_35_44', 'ndi') , 1.000
+Rule: ('age_35_44', 'leg', 'ndi') ==> ('arm', 'male') , 0.667
+Rule: ('age_35_44', 'arm', 'ndi') ==> ('leg', 'male') , 1.000
+Rule: ('age_35_44', 'arm', 'male') ==> ('leg', 'ndi') , 1.000
+Rule: ('age_35_44', 'arm', 'leg') ==> ('male', 'ndi') , 1.000
+Rule: ('leg', 'ndi') ==> ('age_35_44', 'arm', 'male') , 0.667
+Rule: ('arm', 'ndi') ==> ('age_35_44', 'leg', 'male') , 1.000
+Rule: ('arm', 'leg') ==> ('age_35_44', 'male', 'ndi') , 1.000
+Rule: ('age_35_44', 'arm') ==> ('leg', 'male', 'ndi') , 1.000
+Rule: ('back', 'injured_person', 'injury', 'male') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'injured_person', 'injury', 'male') ==> ('back',) , 1.000
+Rule: ('age_35_44', 'back', 'injury', 'male') ==> ('injured_person',) , 0.667
+Rule: ('age_35_44', 'back', 'injured_person', 'injury') ==> ('male',) , 1.000
+Rule: ('back', 'injury', 'male') ==> ('age_35_44', 'injured_person') , 0.667
+Rule: ('back', 'injured_person', 'injury') ==> ('age_35_44', 'male') , 1.000
+Rule: ('age_35_44', 'injury', 'male') ==> ('back', 'injured_person') , 0.667
+Rule: ('age_35_44', 'injured_person', 'injury') ==> ('back', 'male') , 1.000
+Rule: ('age_35_44', 'back', 'injury') ==> ('injured_person', 'male') , 0.667
+Rule: ('back', 'injury') ==> ('age_35_44', 'injured_person', 'male') , 0.667
+Rule: ('age_35_44', 'injury') ==> ('back', 'injured_person', 'male') , 0.667
+Rule: ('back', 'injured_person', 'injury', 'serious') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'injured_person', 'injury', 'serious') ==> ('back',) , 1.000
+Rule: ('age_35_44', 'back', 'injury', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('age_35_44', 'back', 'injured_person', 'serious') ==> ('injury',) , 0.667
+Rule: ('age_35_44', 'back', 'injured_person', 'injury') ==> ('serious',) , 1.000
+Rule: ('back', 'injury', 'serious') ==> ('age_35_44', 'injured_person') , 0.667
+Rule: ('back', 'injured_person', 'injury') ==> ('age_35_44', 'serious') , 1.000
+Rule: ('age_35_44', 'injury', 'serious') ==> ('back', 'injured_person') , 0.667
+Rule: ('age_35_44', 'injured_person', 'injury') ==> ('back', 'serious') , 1.000
+Rule: ('age_35_44', 'back', 'injury') ==> ('injured_person', 'serious') , 0.667
+Rule: ('back', 'injury') ==> ('age_35_44', 'injured_person', 'serious') , 0.667
+Rule: ('age_35_44', 'injury') ==> ('back', 'injured_person', 'serious') , 0.667
+Rule: ('back', 'injured_person', 'knee', 'male') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'injured_person', 'knee', 'male') ==> ('back',) , 0.667
+Rule: ('age_35_44', 'back', 'knee', 'male') ==> ('injured_person',) , 1.000
+Rule: ('age_35_44', 'back', 'injured_person', 'knee') ==> ('male',) , 1.000
+Rule: ('back', 'knee', 'male') ==> ('age_35_44', 'injured_person') , 1.000
+Rule: ('back', 'injured_person', 'knee') ==> ('age_35_44', 'male') , 1.000
+Rule: ('age_35_44', 'knee', 'male') ==> ('back', 'injured_person') , 0.667
+Rule: ('age_35_44', 'injured_person', 'knee') ==> ('back', 'male') , 0.667
+Rule: ('age_35_44', 'back', 'knee') ==> ('injured_person', 'male') , 1.000
+Rule: ('back', 'knee') ==> ('age_35_44', 'injured_person', 'male') , 1.000
+Rule: ('age_35_44', 'knee') ==> ('back', 'injured_person', 'male') , 0.667
+Rule: ('age_35_44', 'back', 'injured_person', 'serious') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'back', 'injured_person', 'male') ==> ('serious',) , 0.750
+Rule: ('age_35_44', 'back', 'injured_person') ==> ('male', 'serious') , 0.750
+Rule: ('back', 'injury', 'male', 'serious') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'injury', 'male', 'serious') ==> ('back',) , 1.000
+Rule: ('age_35_44', 'back', 'injury', 'serious') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'back', 'injury', 'male') ==> ('serious',) , 1.000
+Rule: ('back', 'injury', 'serious') ==> ('age_35_44', 'male') , 1.000
+Rule: ('back', 'injury', 'male') ==> ('age_35_44', 'serious') , 1.000
+Rule: ('age_35_44', 'injury', 'serious') ==> ('back', 'male') , 1.000
+Rule: ('age_35_44', 'injury', 'male') ==> ('back', 'serious') , 1.000
+Rule: ('age_35_44', 'back', 'injury') ==> ('male', 'serious') , 1.000
+Rule: ('back', 'injury') ==> ('age_35_44', 'male', 'serious') , 1.000
+Rule: ('age_35_44', 'injury') ==> ('back', 'male', 'serious') , 1.000
+Rule: ('back', 'male', 'serious', 'strain') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'male', 'serious', 'strain') ==> ('back',) , 1.000
+Rule: ('age_35_44', 'back', 'serious', 'strain') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'back', 'male', 'strain') ==> ('serious',) , 1.000
+Rule: ('male', 'serious', 'strain') ==> ('age_35_44', 'back') , 1.000
+Rule: ('back', 'serious', 'strain') ==> ('age_35_44', 'male') , 1.000
+Rule: ('back', 'male', 'strain') ==> ('age_35_44', 'serious') , 1.000
+Rule: ('age_35_44', 'serious', 'strain') ==> ('back', 'male') , 1.000
+Rule: ('age_35_44', 'male', 'strain') ==> ('back', 'serious') , 0.667
+Rule: ('age_35_44', 'back', 'strain') ==> ('male', 'serious') , 1.000
+Rule: ('serious', 'strain') ==> ('age_35_44', 'back', 'male') , 1.000
+Rule: ('back', 'strain') ==> ('age_35_44', 'male', 'serious') , 1.000
+Rule: ('age_35_44', 'strain') ==> ('back', 'male', 'serious') , 0.667
+Rule: ('car', 'injured_person', 'male', 'serious') ==> ('age_35_44',) , 0.667
+Rule: ('age_35_44', 'car', 'male', 'serious') ==> ('injured_person',) , 1.000
+Rule: ('age_35_44', 'car', 'injured_person', 'serious') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'car', 'injured_person', 'male') ==> ('serious',) , 1.000
+Rule: ('car', 'injured_person', 'serious') ==> ('age_35_44', 'male') , 0.667
+Rule: ('age_35_44', 'car', 'serious') ==> ('injured_person', 'male') , 1.000
+Rule: ('age_35_44', 'car', 'male') ==> ('injured_person', 'serious') , 1.000
+Rule: ('age_35_44', 'car', 'injured_person') ==> ('male', 'serious') , 1.000
+Rule: ('age_35_44', 'car') ==> ('injured_person', 'male', 'serious') , 1.000
+Rule: ('age_35_44', 'injury', 'male', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('age_35_44', 'injured_person', 'injury', 'serious') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'injured_person', 'injury', 'male') ==> ('serious',) , 1.000
+Rule: ('age_35_44', 'injury', 'serious') ==> ('injured_person', 'male') , 0.667
+Rule: ('age_35_44', 'injury', 'male') ==> ('injured_person', 'serious') , 0.667
+Rule: ('age_35_44', 'injured_person', 'injury') ==> ('male', 'serious') , 1.000
+Rule: ('age_35_44', 'injury') ==> ('injured_person', 'male', 'serious') , 0.667
+Rule: ('injured_person', 'knee', 'male', 'minor') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'knee', 'male', 'minor') ==> ('injured_person',) , 1.000
+Rule: ('age_35_44', 'injured_person', 'knee', 'minor') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'injured_person', 'knee', 'male') ==> ('minor',) , 0.667
+Rule: ('knee', 'male', 'minor') ==> ('age_35_44', 'injured_person') , 1.000
+Rule: ('injured_person', 'knee', 'minor') ==> ('age_35_44', 'male') , 1.000
+Rule: ('age_35_44', 'knee', 'minor') ==> ('injured_person', 'male') , 1.000
+Rule: ('age_35_44', 'knee', 'male') ==> ('injured_person', 'minor') , 0.667
+Rule: ('age_35_44', 'injured_person', 'knee') ==> ('male', 'minor') , 0.667
+Rule: ('knee', 'minor') ==> ('age_35_44', 'injured_person', 'male') , 1.000
+Rule: ('age_35_44', 'knee') ==> ('injured_person', 'male', 'minor') , 0.667
+Rule: ('injured_person', 'left_hand', 'male', 'minor') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'left_hand', 'male', 'minor') ==> ('injured_person',) , 0.667
+Rule: ('age_35_44', 'injured_person', 'left_hand', 'minor') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'injured_person', 'left_hand', 'male') ==> ('minor',) , 0.667
+Rule: ('left_hand', 'male', 'minor') ==> ('age_35_44', 'injured_person') , 0.667
+Rule: ('injured_person', 'left_hand', 'minor') ==> ('age_35_44', 'male') , 1.000
+Rule: ('age_35_44', 'left_hand', 'minor') ==> ('injured_person', 'male') , 0.667
+Rule: ('age_35_44', 'injured_person', 'left_hand') ==> ('male', 'minor') , 0.667
+Rule: ('left_hand', 'minor') ==> ('age_35_44', 'injured_person', 'male') , 0.667
+Rule: ('injured_person', 'leg', 'male', 'serious') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'leg', 'male', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('age_35_44', 'injured_person', 'leg', 'serious') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'injured_person', 'leg', 'male') ==> ('serious',) , 0.667
+Rule: ('injured_person', 'leg', 'serious') ==> ('age_35_44', 'male') , 1.000
+Rule: ('injured_person', 'leg', 'male') ==> ('age_35_44', 'serious') , 0.667
+Rule: ('age_35_44', 'leg', 'serious') ==> ('injured_person', 'male') , 0.667
+Rule: ('age_35_44', 'injured_person', 'leg') ==> ('male', 'serious') , 0.667
+Rule: ('injured_person', 'male', 'minor', 'walking') ==> ('age_35_44',) , 0.667
+Rule: ('age_35_44', 'male', 'minor', 'walking') ==> ('injured_person',) , 1.000
+Rule: ('age_35_44', 'injured_person', 'minor', 'walking') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'injured_person', 'male', 'walking') ==> ('minor',) , 1.000
+Rule: ('injured_person', 'minor', 'walking') ==> ('age_35_44', 'male') , 0.667
+Rule: ('age_35_44', 'minor', 'walking') ==> ('injured_person', 'male') , 1.000
+Rule: ('age_35_44', 'male', 'walking') ==> ('injured_person', 'minor') , 0.667
+Rule: ('age_35_44', 'injured_person', 'walking') ==> ('male', 'minor') , 1.000
+Rule: ('age_35_44', 'walking') ==> ('injured_person', 'male', 'minor') , 0.667
+Rule: ('arm', 'injured_person', 'male', 'minor') ==> ('age_45_54',) , 1.000
+Rule: ('age_45_54', 'arm', 'male', 'minor') ==> ('injured_person',) , 1.000
+Rule: ('age_45_54', 'arm', 'injured_person', 'minor') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'arm', 'injured_person', 'male') ==> ('minor',) , 1.000
+Rule: ('arm', 'male', 'minor') ==> ('age_45_54', 'injured_person') , 1.000
+Rule: ('arm', 'injured_person', 'minor') ==> ('age_45_54', 'male') , 1.000
+Rule: ('arm', 'injured_person', 'male') ==> ('age_45_54', 'minor') , 0.667
+Rule: ('age_45_54', 'arm', 'minor') ==> ('injured_person', 'male') , 1.000
+Rule: ('age_45_54', 'arm', 'male') ==> ('injured_person', 'minor') , 1.000
+Rule: ('age_45_54', 'arm', 'injured_person') ==> ('male', 'minor') , 1.000
+Rule: ('arm', 'minor') ==> ('age_45_54', 'injured_person', 'male') , 1.000
+Rule: ('arm', 'injured_person') ==> ('age_45_54', 'male', 'minor') , 0.667
+Rule: ('age_45_54', 'arm') ==> ('injured_person', 'male', 'minor') , 1.000
+Rule: ('age_45_54', 'back', 'male', 'minor') ==> ('injured_person',) , 1.000
+Rule: ('age_45_54', 'back', 'injured_person', 'minor') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'back', 'injured_person', 'male') ==> ('minor',) , 1.000
+Rule: ('age_45_54', 'back', 'minor') ==> ('injured_person', 'male') , 1.000
+Rule: ('age_45_54', 'back', 'injured_person') ==> ('male', 'minor') , 1.000
+Rule: ('foot', 'injured_person', 'male', 'serious') ==> ('age_45_54',) , 0.667
+Rule: ('age_45_54', 'foot', 'male', 'serious') ==> ('injured_person',) , 1.000
+Rule: ('age_45_54', 'foot', 'injured_person', 'serious') ==> ('male',) , 1.000
+Rule: ('age_45_54', 'foot', 'injured_person', 'male') ==> ('serious',) , 1.000
+Rule: ('foot', 'injured_person', 'serious') ==> ('age_45_54', 'male') , 0.667
+Rule: ('age_45_54', 'foot', 'serious') ==> ('injured_person', 'male') , 1.000
+Rule: ('age_45_54', 'foot', 'male') ==> ('injured_person', 'serious') , 1.000
+Rule: ('age_45_54', 'foot', 'injured_person') ==> ('male', 'serious') , 1.000
+Rule: ('age_45_54', 'foot') ==> ('injured_person', 'male', 'serious') , 1.000
+Rule: ('injured_person', 'male', 'serious', 'walking') ==> ('age_55_64',) , 0.600
+Rule: ('age_55_64', 'male', 'serious', 'walking') ==> ('injured_person',) , 1.000
+Rule: ('age_55_64', 'injured_person', 'serious', 'walking') ==> ('male',) , 1.000
+Rule: ('age_55_64', 'injured_person', 'male', 'walking') ==> ('serious',) , 1.000
+Rule: ('injured_person', 'serious', 'walking') ==> ('age_55_64', 'male') , 0.600
+Rule: ('age_55_64', 'serious', 'walking') ==> ('injured_person', 'male') , 1.000
+Rule: ('age_55_64', 'male', 'walking') ==> ('injured_person', 'serious') , 1.000
+Rule: ('age_55_64', 'injured_person', 'walking') ==> ('male', 'serious') , 1.000
+Rule: ('age_55_64', 'walking') ==> ('injured_person', 'male', 'serious') , 1.000
+Rule: ('fall', 'injured_person', 'male', 'serious') ==> ('age_65_100',) , 1.000
+Rule: ('age_65_100', 'fall', 'male', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('age_65_100', 'fall', 'injured_person', 'serious') ==> ('male',) , 1.000
+Rule: ('age_65_100', 'fall', 'injured_person', 'male') ==> ('serious',) , 1.000
+Rule: ('fall', 'injured_person', 'serious') ==> ('age_65_100', 'male') , 1.000
+Rule: ('fall', 'injured_person', 'male') ==> ('age_65_100', 'serious') , 1.000
+Rule: ('age_65_100', 'fall', 'serious') ==> ('injured_person', 'male') , 0.667
+Rule: ('age_65_100', 'fall', 'male') ==> ('injured_person', 'serious') , 0.667
+Rule: ('age_65_100', 'fall', 'injured_person') ==> ('male', 'serious') , 1.000
+Rule: ('fall', 'injured_person') ==> ('age_65_100', 'male', 'serious') , 0.667
+Rule: ('age_65_100', 'fall') ==> ('injured_person', 'male', 'serious') , 0.667
+Rule: ('back', 'injury', 'male', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('back', 'injured_person', 'injury', 'serious') ==> ('male',) , 1.000
+Rule: ('back', 'injured_person', 'injury', 'male') ==> ('serious',) , 1.000
+Rule: ('back', 'injury', 'serious') ==> ('injured_person', 'male') , 0.667
+Rule: ('back', 'injury', 'male') ==> ('injured_person', 'serious') , 0.667
+Rule: ('back', 'injured_person', 'injury') ==> ('male', 'serious') , 1.000
+Rule: ('back', 'injury') ==> ('injured_person', 'male', 'serious') , 0.667
+Rule: ('back', 'injured_person', 'injury', 'male', 'serious') ==> ('age_35_44',) , 1.000
+Rule: ('age_35_44', 'injured_person', 'injury', 'male', 'serious') ==> ('back',) , 1.000
+Rule: ('age_35_44', 'back', 'injury', 'male', 'serious') ==> ('injured_person',) , 0.667
+Rule: ('age_35_44', 'back', 'injured_person', 'male', 'serious') ==> ('injury',) , 0.667
+Rule: ('age_35_44', 'back', 'injured_person', 'injury', 'serious') ==> ('male',) , 1.000
+Rule: ('age_35_44', 'back', 'injured_person', 'injury', 'male') ==> ('serious',) , 1.000
+Rule: ('back', 'injury', 'male', 'serious') ==> ('age_35_44', 'injured_person') , 0.667
+Rule: ('back', 'injured_person', 'injury', 'serious') ==> ('age_35_44', 'male') , 1.000
+Rule: ('back', 'injured_person', 'injury', 'male') ==> ('age_35_44', 'serious') , 1.000
+Rule: ('age_35_44', 'injury', 'male', 'serious') ==> ('back', 'injured_person') , 0.667
+Rule: ('age_35_44', 'injured_person', 'injury', 'serious') ==> ('back', 'male') , 1.000
+Rule: ('age_35_44', 'injured_person', 'injury', 'male') ==> ('back', 'serious') , 1.000
+Rule: ('age_35_44', 'back', 'injury', 'serious') ==> ('injured_person', 'male') , 0.667
+Rule: ('age_35_44', 'back', 'injury', 'male') ==> ('injured_person', 'serious') , 0.667
+Rule: ('age_35_44', 'back', 'injured_person', 'serious') ==> ('injury', 'male') , 0.667
+Rule: ('age_35_44', 'back', 'injured_person', 'injury') ==> ('male', 'serious') , 1.000
+Rule: ('back', 'injury', 'serious') ==> ('age_35_44', 'injured_person', 'male') , 0.667
+Rule: ('back', 'injury', 'male') ==> ('age_35_44', 'injured_person', 'serious') , 0.667
+Rule: ('back', 'injured_person', 'injury') ==> ('age_35_44', 'male', 'serious') , 1.000
+Rule: ('age_35_44', 'injury', 'serious') ==> ('back', 'injured_person', 'male') , 0.667
+Rule: ('age_35_44', 'injury', 'male') ==> ('back', 'injured_person', 'serious') , 0.667
+Rule: ('age_35_44', 'injured_person', 'injury') ==> ('back', 'male', 'serious') , 1.000
+Rule: ('age_35_44', 'back', 'injury') ==> ('injured_person', 'male', 'serious') , 0.667
+Rule: ('back', 'injury') ==> ('age_35_44', 'injured_person', 'male', 'serious') , 0.667
+Rule: ('age_35_44', 'injury') ==> ('back', 'injured_person', 'male', 'serious') , 0.667

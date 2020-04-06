@@ -1,0 +1,38 @@
+@import "colours.scss";
+
+/* required LIB STYLES */
+/* .Treant se automatski dodaje na svaki chart conatiner */
+.Treant { position: relative; overflow: hidden; padding: 0 !important; }
+.Treant > .node,
+.Treant > .pseudo { position: absolute; display: block; visibility: hidden; }
+.Treant.Treant-loaded .node,
+.Treant.Treant-loaded .pseudo { visibility: visible; }
+.Treant > .pseudo { width: 0; height: 0; border: none; padding: 0; }
+.Treant .collapse-switch { width: 3px; height: 3px; display: block; border: 1px solid black; position: absolute; top: 1px; right: 1px; cursor: pointer; }
+.Treant .collapsed .collapse-switch { background-color: #868DEE; }
+.Treant > .node img {	border: none; float: left; }
+
+.Treant > .node {
+	border: 1px solid #ddd;
+	padding: 5px 10px;
+	box-sizing: border-box; 
+	border-radius: 3px;
+	min-width: 200px;
+	text-align: center;
+	font-size: 12px;
+	color: #222;
+	cursor: default;
+	//text-shadow: 1px 1px rgba(0, 0, 0, 0.7);
+}
+
+//$color-list: #222, #e32636, #2239A1, #9966cc, #007fff, #ff2052, #ff8c00, #BF217D, #ffc40c, #7E4DA3, #369C78, #B3601D, #3DA63D;
+
+@each $color in $color-list {
+	$i: index($color-list, $color);
+	.Treant > .node-color-#{$i - 1} {
+		background: $color;
+		border: 1px solid darken($color, 6);
+	}
+}
+
+

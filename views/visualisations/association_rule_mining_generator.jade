@@ -1,0 +1,76 @@
+extends ../layouts/logged_in
+
+block head
+	link(rel='stylesheet', href='/javascripts/jstree/dist/themes/default/style.min.css')
+	link(rel='stylesheet', href='/stylesheets/jstree.css')
+
+block content
+	div(class="container")
+
+		div#association-rules-controls.shadow
+			form#association-rule-form(method="post")
+				div.third
+					label(for="ar-support") Support
+					input#ar-support(type="number", placeholder="0.15", name="ar-support", step="0.001")
+				div.third
+					label(for="ar-conf") Confidence
+					input#ar-conf(type="number", placeholder="0.6", name="ar-conf", step="0.001")
+				div.third
+					input(type="submit", value="Generate")
+
+
+		//table.association-rules.shadow
+			thead
+				tr
+					th Rule
+					th Support
+					th Confidence
+			tbody(id="report-table")
+				each val, index in data
+					tr
+						td !{index}
+						td !{val}
+
+		div#association-rules-code.shadow
+			code.
+				Enter support and confidence values to generate a list of rules.
+
+
+block scripts
+	script(type="text/javascript", src="https://code.jquery.com/jquery-2.2.3.min.js")
+	script(src="/socket.io/socket.io.js")
+	script.
+
+		var form = $("#association-rule-form");
+		var arc_code = $("#association-rules-code code");
+
+		form.submit(function(event) {
+			arc_code.html("");
+			arc_code.html("Loading...");
+			event.preventDefault(); // Stops browser from navigating away from page
+			var data = {};
+			data["support"] = $('#ar-support').val();
+			data["confidence"] = $('#ar-conf').val();
+			// build a json object or do something with the form, store in data
+
+			$.post('/data-warehousing/association-rule-mining', data, function(data){
+			    // Do things
+			});
+
+		});
+
+
+		
+		
+		/*form.submit(function() {
+			
+		});*/
+
+
+		var socket = io();
+		socket.on('starting_code', function(logentry) {
+			arc_code.html("");
+		});
+		socket.on('logentry', function(logentry) {
+			arc_code.html(arc_code.html() +  logentry.replace("Rule: ", "<b>Rule: </b>").replace("item: ", "<b>item: </b>") + "<br/>");
+		});

@@ -1,0 +1,25 @@
+extends ../layouts/logged_in
+
+block head
+	link(href="stylesheets/d3/d3.slider.css"  rel="stylesheet" type="text/css")
+
+block content
+	div(class="wordclouds")
+		div(class="left")
+			h2(class="center") Noun Phrases
+			svg(id="chart-noun" class="shadow chart")
+			div(id="slider-wrapper-noun")
+				div(id="wordcloud-slider-noun")
+		div(class="right")
+			h2(class="center") Relation Phrases
+			svg(id="chart-relation" class="shadow chart")
+			div(id="slider-wrapper-relation")
+				div(id="wordcloud-slider-relation")
+
+block scripts
+	script(type="text/javascript" src="#{base_url}/javascripts/d3/d3.min.js")
+	script(type="text/javascript" src="#{base_url}/javascripts/d3/d3.layout.cloud.js")
+	script(type="text/javascript" src="#{base_url}/javascripts/d3/d3.slider.js")
+	script(type="text/javascript" src="#{base_url}/javascripts/wordcloud_data/wordcloud_noun_phrases.js")
+	script(type="text/javascript" src="#{base_url}/javascripts/wordcloud_data/wordcloud_relation_phrases.js")
+	script(type="text/javascript" src="#{base_url}/javascripts/wordcloud.js")

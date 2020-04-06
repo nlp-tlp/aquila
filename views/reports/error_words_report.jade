@@ -1,0 +1,18 @@
+extends ../layout
+
+block content
+	div(class="container shadow")
+		table(class="error-words")
+			thead
+				tr
+					th Word
+					th Count
+					th(colspan="10") Suggestions
+			tbody(id="report-table")
+				each val, index in data
+					tr
+						td !{index}
+						td !{val["Count"]}
+						each suggestion in val["Suggestions"]
+							td(style="font-size: 0.7em") !{suggestion}
+

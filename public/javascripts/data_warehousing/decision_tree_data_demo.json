@@ -1,0 +1,44 @@
+{
+  "name": "foot",
+  "sp_id": 1,
+  "children": [
+    {
+      "name": "leg",
+      "sp_id": 1,
+      "children": [
+        {
+          "name": "crush_injury",
+          "sp_id": 2,
+          "children": [
+            {
+              "name": "minor",
+              "sp_id": 5
+            },
+            {
+              "name": "serious",
+              "sp_id": 5
+            }
+          ]
+        },
+        {
+          "name": "light_vehicle",
+          "sp_id": 4,
+          "children": [
+            {
+              "name": "serious",
+              "sp_id": 5
+            },
+            {
+              "name": "minor",
+              "sp_id": 5
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "name": "minor",
+      "sp_id": 5
+    }
+  ]
+}

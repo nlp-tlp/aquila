@@ -1,0 +1,23 @@
+@import "../node_modules/font-awesome/scss/font-awesome";
+@import "colours.scss";
+
+$primary-blue: blue;
+$primary-font:  'Source Sans Pro', sans-serif;	
+$primary-orange: orange;
+$error-red: red;
+
+
+@mixin transition($element, $time, $transition) {
+    -webkit-transition: $element $time $transition;
+       -moz-transition: $element $time $transition;
+        -ms-transition: $element $time $transition;
+         -o-transition: $element $time $transition;
+            transition: $element $time $transition;
+}
+
+
+$dark-blue: #163d7c;
+$nice-blue: #3089ff;
+
+$primary-blue: #3089ff;
+

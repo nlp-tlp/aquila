@@ -1,0 +1,19 @@
+extends ../layouts/layout
+
+block content
+	div(class="container shadow")
+		table
+			thead
+				tr
+					th Index
+					th Original
+					th Replacement
+			tbody(id="report-table")
+				each val in data
+					tr
+						td !{val["Index"]}
+						td !{val["Original"]}
+						td !{val["Modified"]}
+
+block scripts
+	script(type="text/javascript", src="/javascripts/report_table.js")

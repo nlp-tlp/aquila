@@ -1,0 +1,444 @@
+extends ../layouts/logged_in
+
+block content
+
+	div#entity-linking-graph
+
+
+
+block scripts	
+	script(type="text/javascript", src="#{base_url}/javascripts/data_warehousing/d3_graph_data_nodes.js")
+	script(type="text/javascript", src="#{base_url}/javascripts/data_warehousing/d3_graph_data_inter_class_links.js")
+	script(type="text/javascript", src="https://code.jquery.com/jquery-2.2.3.min.js")
+	script(type="text/javascript" src="#{base_url}/javascripts/d3/d3.min.js")
+
+
+
+	script.
+
+		// Define the dimensions of the visualization. We're using
+		// a size that's convenient for displaying the graphic on
+		// http://jsDataV.is
+
+		var width = 1920,
+		    height = 950;
+
+		// Define the data for the example. In general, a force layout
+		// requires two data arrays. The first array, here named `nodes`,
+		// contains the object that are the focal point of the visualization.
+		// The second array, called `links` below, identifies all the links
+		// between the nodes. (The more mathematical term is "edges.")
+
+		// For the simplest possible example we only define two nodes. As
+		// far as D3 is concerned, nodes are arbitrary objects. Normally the
+		// objects wouldn't be initialized with `x` and `y` properties like
+		// we're doing below. When those properties are present, they tell
+		// D3 where to place the nodes before the force layout starts its
+		// magic. More typically, they're left out of the nodes and D3 picks
+		// random locations for each node. We're defining them here so we can
+		// get a consistent application of the layout which lets us see the
+		// effects of different properties.
+
+		/*var nodes = [
+		    { x:   width/3, y: height/2, sp_id: 1, name: "leg", size: 30 },
+		    { x: 2*width/3, y: height/2, sp_id: 1, name: "foot", size: 20 },
+		    { sp_id: 2, name: "ute", size: 40 },
+		    { sp_id: 3, name: "pipe", size: 70 }
+		];
+
+		// The `links` array contains objects with a `source` and a `target`
+		// property. The values of those properties are the indices in
+		// the `nodes` array of the two endpoints of the link.
+
+		var links = [
+		    { source: 0, target: 1, value: 4 },
+		    { source: 0, target: 2, value: 7 },
+		    { source: 0, target: 3, value: 4 },
+		    { source: 1, target: 2, value: 7 }
+		];*/
+
+		// Here's were the code begins. We start off by creating an SVG
+		// container to hold the visualization. We only need to specify
+		// the dimensions for this container.
+
+
+		var svg = d3.select('#entity-linking-graph').append('svg')
+		    .attr('width', width)
+		    .attr('height', height)		   
+			.call(d3.behavior.zoom()
+			.on("zoom", function () {					
+				svg.attr("transform", "translate(" + (d3.event.translate[0] - width/2 + (width) * (d3.event.scale/2)) + ", "  +  (d3.event.translate[1] + -height + (width) *(d3.event.scale /2)) + ") scale(" + (d3.event.scale * 1)+ ")");
+				svg.attr("class", "chart grabbing");
+				label.style("font-size", 12 / d3.event.scale)
+				//edgelabelCircle.attr("r", function(d) { return (4 + d.value.toString().length * 4) / d3.event.scale })
+		    
+
+			})
+			.on("zoomend", function() {
+				svg.attr("class", "chart");
+			}))
+			.append("g")
+			
+
+		// Now we create a force layout object and define its properties.
+		// Those include the dimensions of the visualization and the arrays
+		// of nodes and links.
+
+		var clusters = new Array(15);
+
+		d3.layout.pack()
+			.sort(null)
+			.size([width, height])
+			.children(function(d) { return d.values; })
+			.value(function(d) { return d.size * d.size; })
+			.nodes({values: d3.nest()
+			.key(function(d) { return d.sp_id; })
+			.entries(nodes)});
+
+
+		var force = d3.layout.force()
+		    .size([width, height])
+		    .links(interClassLinks)
+		    .nodes(nodes)
+		    .gravity(0.8)
+		    .friction(.2)
+		    .theta(0.1)
+		    //.charge(6000)
+		    .charge(function(d) { return -(d.size * d.size * 20)})
+		   	.linkDistance(function(d) {
+		      if(d.source.sp_id == d.target.sp_id) {
+		      	return 250;
+		      } else{
+		      	return 600;
+		      }
+		      //return 200;
+			  //return d.value * 20;
+			})   
+
+		    .on("tick", tick);
+
+		var drag = force.drag()
+		    .on("dragstart", dragstart)
+
+
+		// http://bl.ocks.org/eyaler/10586116
+		var linkedByIndex = {};
+		interClassLinks.forEach(function(d) {
+			linkedByIndex[d.source + "," + d.target] = true;
+		});
+
+		function isConnected(a, b) {
+			return linkedByIndex[a.index + "," + b.index] || linkedByIndex[b.index + "," + a.index] || a.index == b.index;
+		}
+
+		function hasConnections(a) {
+			for (var property in linkedByIndex) {
+				s = property.split(",");
+				if ((s[0] == a.index || s[1] == a.index) && linkedByIndex[property])
+					return true;
+			}
+			return false;
+		}
+
+
+
+
+		// There's one more property of the layout we need to define,
+		// its `linkDistance`. That's generally a configurable value and,
+		// for a first example, we'd normally leave it at its default.
+		// Unfortunately, the default value results in a visualization
+		// that's not especially clear. This parameter defines the
+		// distance (normally in pixels) that we'd like to have between
+		// nodes that are connected. (It is, thus, the length we'd
+		// like our links to have.)
+
+		
+
+		// Next we'll add the nodes and links to the visualization.
+		// Note that we're just sticking them into the SVG container
+		// at this point. We start with the links. The order here is
+		// important because we want the nodes to appear "on top of"
+		// the links. SVG doesn't really have a convenient equivalent
+		// to HTML's `z-index`; instead it relies on the order of the
+		// elements in the markup. By adding the nodes _after_ the
+		// links we ensure that nodes appear on top of links.
+
+		// Links are pretty simple. They're just SVG lines, and
+		// we're not even going to specify their coordinates. (We'll
+		// let the force layout take care of that.) Without any
+		// coordinates, the lines won't even be visible, but the
+		// markup will be sitting inside the SVG container ready
+		// and waiting for the force layout.
+
+
+		   console.log('test')
+
+
+
+
+		var link = svg.selectAll('.link')
+		    .data(interClassLinks)
+		    .enter().append('line')
+		    //.filter(function(d) { return d.value > 15})
+		    .attr('class', function(d) { return 'show link inter-class-link sp-' + d.sp_id })
+		    .style("stroke-width", function (d) { return d.strokeWidth })
+		    
+		    
+
+		/*var edgelabelCircle = svg.selectAll(".edgelabel-circle")
+			.data(links)
+			.enter()
+			.append('circle')
+			.attr('r', function(d) { return 4 + d.value.toString().length * 2 })
+			.attr("class", "edgelabel-hidden")	
+			.style("fill", "white");*/
+			
+
+
+			
+			//.style("fill", function(d) { return "rgba(50, 50, 50," + Math.max(0.7, d.strokeAlpha) + ")"});
+		
+
+
+		// Now it's the nodes turn. Each node is drawn as a circle.
+
+		var node = svg.selectAll('.node')
+		    .data(nodes)
+		    .enter().append('circle')
+		    .attr('class', function(d) { return "node sp-" + d.sp_id })
+		    .attr('r', function(d) { return d.size })
+			.attr('cx', function(d) { return d.x; })
+			.attr('cy', function(d) { return d.y; })
+			.on("dblclick", dblclick)			
+			.call(drag);
+
+
+		node.each(function(d) {
+			var i = d.sp_id;
+			if (!clusters[i] || (d.r > clusters[i].r)) {
+				clusters[i] = d;
+				/*console.log('d : ', d);
+				console.log('i : ', i);
+				console.log('clusters : ', clusters);*/
+			}
+		});
+
+
+
+		var focus_node = null, highlight_node = null;
+		// Highlight nodes when mouse over and mouse down
+		var firstClick = false;
+
+		node
+		.on("mousedown", function(d) {
+			d3.select(this)
+				.attr("class", function(d) { return "selected node sp-" + d.sp_id });
+			d3.event.stopPropagation();
+			focus_node = d;
+			set_focus(d)
+			firstClick = true;
+
+		})
+
+
+		svg.on("mouseup", function() {
+			console.log("mouse up")
+			if (focus_node!==null)
+			{
+				focus_node = null;
+			}		
+			node.style("opacity", 1);
+			node.attr("class", function(d) { return "node sp-" + d.sp_id });
+		  	link.attr("class", function(d) { return "inter-class-link link show sp-" + d.sp_id; });
+		  	label.style("opacity", 1);
+
+		});
+		
+
+
+		// Functions http://bl.ocks.org/eyaler/10586116
+
+
+		function set_focus(d)
+		{
+
+			
+			svg.style("cursor","pointer");
+			focus_node = d;
+
+			console.log(d);
+		
+			node.style("opacity", function(o) {
+				return isConnected(d, o) ? 1 : 0.1;
+			});
+			label.style("opacity", function(o) {
+				return isConnected(d, o) ? 1 : 0.1;
+			});
+			link.attr("class", function(o) {
+				return o.source.index == d.index || o.target.index == d.index ? "link show interclass-link sp-" + d.sp_id : "link hide";
+			});	
+			/*edgelabelCircle.attr("class", function(o) {
+				return o.source.index == d.index || o.target.index == d.index ? "edgelabel-visible" : "edgelabel-hidden";
+			});*/
+			/*edgelabel.attr("class", function(o) {
+				return ((o.source.index == d.index || o.target.index == d.index) && this.index != focus_node.index) ? "edgelabel-visible" : "edgelabel-hidden";
+			});*/
+		}
+
+
+
+
+		// Node and edge labels
+
+		var label = svg.selectAll(".mytext")
+			.data(nodes)
+			.enter()
+			.append("text")
+			.text(function (d) { return d.name; })
+
+
+		// We're about to tell the force layout to start its
+		// calculations. We do, however, want to know when those
+		// calculations are complete, so before we kick things off
+		// we'll define a function that we want the layout to call
+		// once the calculations are done.
+
+
+		// Okay, everything is set up now so it's time to turn
+		// things over to the force layout. Here we go.
+
+		force.start();
+
+		var tickCounter = 0;
+
+		function tick(e) {
+			tickCounter++;
+			
+
+			
+			d3.selectAll(".link.show")
+		  		.attr("x1", function(d) { return d.source.x; })
+		    	.attr("y1", function(d) { return d.source.y; })
+		    	.attr("x2", function(d) { return d.target.x; })
+		    	.attr("y2", function(d) { return d.target.y; });
+
+
+		    if(!firstClick) {
+			  	node
+			      	.each(cluster(10 * e.alpha * e.alpha))
+					.each(collide(.25))
+					.attr("cx", function(d) { return d.x; })
+			      	.attr("cy", function(d) { return d.y; })
+
+			  	label
+			  		.each(cluster(10 * e.alpha * e.alpha))
+					.each(collide(.25))
+			  		.attr("x", function(d) { return d.x; })
+			    	.attr("y", function(d) { return d.y + 2; })		    
+		    } else {
+			  	node
+					.attr("cx", function(d) { return d.x; })
+			      	.attr("cy", function(d) { return d.y; })
+			      	.each(collide(.25))
+
+			  	label
+			  		.attr("x", function(d) { return d.x; })
+			    	.attr("y", function(d) { return d.y + 2; })	
+			    	.each(collide(.25))
+		    }
+
+
+		}
+
+		function dblclick(d) {
+		  d3.select(this).classed("fixed", d.fixed = false);
+		}
+
+		function dragstart(d) {			
+		 	d3.select(this).classed("fixed", d.fixed = true);
+		}
+
+		function dragend(d) {
+			force.stop()
+		}
+
+		// By the time you've read this far in the code, the force
+		// layout has undoubtedly finished its work. Unless something
+		// went horribly wrong, you should see two light grey circles
+		// connected by a single dark grey line. If you have a screen
+		// ruler (such as [xScope](http://xscopeapp.com) handy, measure
+		// the distance between the centers of the two circles. It
+		// should be somewhere close to the `linkDistance` parameter we
+		// set way up in the beginning (480 pixels). That, in the most
+		// basic of all nutshells, is what a force layout does. We
+		// tell it how far apart we want connected nodes to be, and
+		// the layout keeps moving the nodes around until they get
+		// reasonably close to that value.
+
+		// Of course, there's quite a bit more than that going on
+		// under the hood. We'll take a closer look starting with
+		// the next example.
+
+		//https://bl.ocks.org/newsummit/880d663dba66affaf18226113d34073d
+		/* Cluster functions */
+
+		var padding = width/3, // separation between same-color nodes
+			clusterPadding = width, // separation between different-color nodes
+			maxRadius = width;
+
+
+		// Move d to be adjacent to the cluster node.
+		function cluster(alpha) {
+			return function(d) {
+				var cluster = clusters[d.sp_id];
+				if (cluster === d) return;
+				//console.log(d, cluster)
+
+				//console.log("---")
+				var x = d.x - cluster.x,
+				y = d.y - cluster.y,
+				l = Math.sqrt(x * x + y * y),
+				r = d.r + cluster.r;
+				if (l != r) {
+					l = (l - r) / l * alpha;
+					d.x -= x *= l;
+					d.y -= y *= l;
+					cluster.x += x;
+					cluster.y += y;
+				}
+			};
+		}
+
+		// Resolves collisions between d and all other circles.
+		function collide(alpha) {
+			var quadtree = d3.geom.quadtree(nodes);
+			return function(d) {
+				var r = d.r + maxRadius + Math.max(padding, clusterPadding),
+				nx1 = d.x - r,
+				nx2 = d.x + r,
+				ny1 = d.y - r,
+				ny2 = d.y + r;
+				quadtree.visit(function(quad, x1, y1, x2, y2) {
+				if (quad.point && (quad.point !== d)) {
+					var x = d.x - quad.point.x,
+		   			y = d.y - quad.point.y,
+		    		l = Math.sqrt(x * x + y * y),
+		   			r = d.r + quad.point.radius + (d.sp_id === quad.point.cluster ? padding : clusterPadding);
+					if (l < r) {
+						l = (l - r) / l * alpha;
+						d.x -= x *= l;
+						d.y -= y *= l;
+						quad.point.x += x;
+						quad.point.y += y;
+					}
+				}
+				return x1 > nx2 || x2 < nx1 || y1 > ny2 || y2 < ny1;
+			});
+		};
+		}
+
+
+
+
+
+

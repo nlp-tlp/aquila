@@ -1,0 +1,408 @@
+extends ../layouts/logged_in
+
+block content
+
+	div#decision-tree-breadcrumbs
+	div#decision-tree(style="width: 1360px")
+	
+
+
+block scripts	
+	script(type="text/javascript", src="https://code.jquery.com/jquery-2.2.3.min.js")
+	script(type="text/javascript" src="#{base_url}/javascripts/d3/d3.min.js")
+
+
+
+	script.
+
+		var margin = {top: 20, right: 120, bottom: 20, left: 120}
+		    //width = 960 - margin.right - margin.left,
+		    //height = 480 - margin.top - margin.bottom;
+
+		// https://bl.ocks.org/kerryrodden/7090426
+		// Breadcrumb dimensions: width, height, spacing, width of tip/tail.
+		var b = {
+		  w: 120, h: 30, s: 3, t: 10
+		};
+
+
+		var width = 60000 - margin.right - margin.left,
+		    height = 20000 - margin.top - margin.bottom;
+
+		var i = 0,
+		    duration = 750,
+		    root;
+
+		var nodeRadius = 15;
+
+		var tree = d3.layout.tree()
+		    .size([width, height]);
+
+		var diagonal = d3.svg.diagonal()
+		    .projection(function(d) { return [d.x, d.y]; });
+
+		var text;
+
+		var svg = d3.select("#decision-tree").append("svg")
+
+		    .attr("width", width + margin.right + margin.left)
+		    .attr("height", height + margin.top + margin.bottom)
+		  	
+		    	//.attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+		    	.call(d3.behavior.zoom().scaleExtent([0.05, 8]).on("zoom", zoom))
+		    .append("g")
+
+
+
+
+
+
+
+
+		d3.json('/javascripts/data_warehousing/decision_tree_data.json', function(error, flare) {
+		  if (error) throw error;
+
+		  root = flare;
+		  root.x0 = width - (width/5);
+		  root.y0 = 0;
+
+		  function collapse(d) {
+		    if (d.children) {
+		      d._children = d.children;
+		      d._children.forEach(collapse);
+		      d.children = null;
+		    }		    
+		  }
+
+		  //root.children.forEach(collapse);
+		  initializeBreadcrumbTrail();
+		  update(root);
+
+		});
+
+		function zoom() {
+			console.log("zooming")
+		  svg.attr("transform", "translate(" + d3.event.translate + ")scale(" + d3.event.scale + ")");
+		}	
+
+		d3.select(self.frameElement).style("height", "480px");
+
+		function update(source) {
+
+		  // Compute the new tree layout.
+		  var nodes = tree.nodes(root).reverse(),
+		      links = tree.links(nodes);
+
+		  // Normalize for fixed-depth.
+		  nodes.forEach(function(d) { d.y = d.depth * 180; });
+
+		  // Update the nodes…
+		  var node = svg.selectAll("g.node")		  	  
+		      .data(nodes, function(d) { return d.id || (d.id = ++i); })
+		      .attr('class', function(d) { return "node sp-" + d.sp_id });
+
+		  // Enter any new nodes at the parent's previous position.
+		  var nodeEnter = node.enter().append("g")
+		      .attr("class", "node")
+		      .attr('id', function(d) { return 'node-' + d.id })
+		      .attr("transform", function(d) { return "translate(" + source.x0 + "," + source.y0 + ")"; })
+		      .attr('class', function(d) { return "node sp-" + d.sp_id })
+		      .on("click", click);
+
+		/*  nodeEnter.append("circle")
+		      .attr("r", 1e-6)
+		      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });*/
+
+		  nodeEnter.filter(function(d) { return d.children }).append("rect")
+		      .attr("x", - 40)
+		      .attr("y", - 20)
+		      .attr("width", 1e-6)
+		      .attr("height", 1e-6)
+
+		  text = nodeEnter.append("text")
+		      //.attr("x", function(d) { return d.children || d._children ? -nodeRadius*1.2 : nodeRadius*1.2; })
+		      .attr("dy", ".35em")
+		      .attr("text-anchor", function(d) { return d.children || d._children ? "middle" : "middle"; })
+		      .text(function(d) { return d.name; })
+		      .style("fill-opacity", 1e-6);
+
+		  // Transition nodes to their new position.
+		  var nodeUpdate = node.transition()
+		      .duration(duration)
+		      .attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+		  /*nodeUpdate.select("circle")
+		      .attr("r", nodeRadius)
+		      .style("fill", function(d) { return d._children ? "lightsteelblue" : "#fff"; });*/
+
+		  nodeUpdate.select("rect")
+		      .attr("x", - 100)
+		      .attr("y", - 20)
+		      .attr("width", 200)
+		      .attr("height", 40)
+
+
+		  nodeUpdate.select("text")
+		      .style("fill-opacity", 1);
+
+		  // Transition exiting nodes to the parent's new position.
+		  var nodeExit = node.exit().transition()
+		      .duration(duration)
+		      .attr("transform", function(d) { return "translate(" + source.x + "," + source.y + ")"; })
+		      .remove();
+
+		  /*nodeExit.select("circle")
+		      .attr("r", 1e-6);*/
+
+		  nodeExit.select("rect")
+		      .attr("width", 1e-6)
+		      .attr("height", 1e-6);
+
+		  nodeExit.select("text")
+		      .style("fill-opacity", 1e-6);
+
+		  // Update the links…
+		  var link = svg.selectAll("path.link")
+		      .data(links, function(d) { return d.target.id; })
+
+
+
+		
+
+
+		  // Enter any new links at the parent's previous position.
+		  link.enter().insert("path", "g")
+		      .attr("class", "link")
+		      .style("stroke-dasharray", function(d) { return d.target.parent.children.indexOf(d.target) == 0 ? "5" : "0" })
+		      .attr("d", function(d) {
+		        var o = {x: source.x0, y: source.y0};
+		        return diagonal({source: o, target: o});
+		      })
+
+		 /* link.append("text")
+			.attr("x", 8)
+			.attr("dy", 28)
+			.append("textPath")
+			//.text(function(d) { return "dingdongli"; })
+			.attr("xlink:href", function (d,i) { return "#path_" + i; })
+			.text(function (d,i) { return "path_" + i; });*/
+
+
+
+
+		  // Transition links to their new position.
+		  link.transition()
+		      .duration(duration)
+		      .attr("d", diagonal)
+		      //.attr("marker-end", "url(#end)"); // add the arrow to the link end
+
+		  // Transition exiting nodes to the parent's new position.
+		  link.exit().transition()
+		      .duration(duration)
+		      .attr("d", function(d) {
+		        var o = {x: source.x, y: source.y};
+		        return diagonal({source: o, target: o});
+		      })
+		      .remove();
+
+		  // Stash the old positions for transition.
+		  nodes.forEach(function(d) {
+		    d.x0 = d.x;
+		    d.y0 = d.y;
+		  });
+
+
+		  nodesToHighlight = []
+		  linksToHighlight = []
+
+		  function highlightLinks(d) {
+
+		     /* if(link.attr("class") == "link-hover link") {
+		      	 console.log(link.attr("class"))
+		      	return -1;
+		      } else {
+		      
+		      }*/
+		      
+
+		      nodesToHighlight.push(d);
+
+			  link.each(function(l) {
+			    if (d === l.target) {
+			      //console.log(l);
+			      linksToHighlight.push($(this));			      
+			      highlightLinks(l.source);
+			    }
+			  });
+
+		  }
+
+
+			node.on('mouseover', function(d) {
+
+				var percentageString = "";
+				var sequenceArray = getAncestors(d);
+				updateBreadcrumbs(sequenceArray, percentageString);
+
+
+
+
+				highlightLinks(d);
+				//console.log(linksToHighlight)
+				//console.log(nodesToHighlight)
+				link.attr("class", "link link-fade");
+				node.attr("class", function(d) { return "node node-fade sp-" + d.sp_id });
+
+
+				for(var i = 0; i < linksToHighlight.length; i++) {
+					linksToHighlight[i].attr("class", "link-hover link");
+				}
+
+
+
+
+				for(var i = 0; i < nodesToHighlight.length; i++) {
+					//console.log("#node-" + nodesToHighlight[i].id);
+
+					//console.log(d3.select("#node-" + nodesToHighlight[i].id));
+
+					
+					d3.select("#node-" + nodesToHighlight[i].id).attr("class", function(d) { return "node node-hover sp-" + d.sp_id });
+					//console.log(nodesToHighlight[i].attr("class"));
+				}
+				linksToHighlight = []
+				nodesToHighlight = []
+
+
+
+			});
+
+			// Set the stroke width back to normal when mouse leaves the node.
+			node.on('mouseout', function() {
+			  // Hide the breadcrumb trail
+			  d3.select("#trail")
+			      .style("opacity", 0);
+
+
+
+			  link.attr('class', "link");
+			 node.attr("class", function(d) { return "node sp-" + d.sp_id });
+			});
+
+
+
+		}
+
+		// Toggle children on click.
+		function click(d) {
+		  if (d.children) {
+		    d._children = d.children;
+		    d.children = null;
+		  } else {
+		    d.children = d._children;
+		    d._children = null;
+		  }
+		  update(d);
+		}
+
+		// Given a node in a partition layout, return an array of all of its ancestor
+		// nodes, highest first, but excluding the root.
+		function getAncestors(node) {
+		  var path = [];
+		  var current = node;
+		  current.not_relevant = false;
+		  path.unshift(current);
+		  while (current.parent) {
+
+		  	// A parent is "not relevant" if its edge is on the left hand side. For example,
+		  	// light_vehicle -> [crush_injury, leg] means that the LHS (crush_injury) requires light_vehicle to be false.
+		  	var notRelevant = current.parent.children.indexOf(current) == 0;
+		  	//console.log(notRelevant);
+
+		  	current.parent.not_relevant = notRelevant;
+		  	//console.log(current.parent);
+		  	if(!notRelevant) {
+		   		path.unshift(current.parent);
+		    }
+		    //console.log(current, current.parent);
+		    current = current.parent;
+		  }
+		 // console.log(path)
+		  return path;
+		}
+
+		// Breadcrumb https://bl.ocks.org/kerryrodden/7090426
+		function initializeBreadcrumbTrail() {
+		  // Add the svg area.
+		  var trail = d3.select("#decision-tree-breadcrumbs").append("svg:svg")
+		      .attr("width", width)
+		      .attr("height", 50)
+		      .attr("id", "trail");
+		  // Add the label at the end, for the percentage.
+		  trail.append("svg:text")
+		    .attr("id", "endlabel")
+		    .style("fill", "#000");
+		}
+
+		// Generate a string that describes the points of a breadcrumb polygon.
+		function breadcrumbPoints(d, i) {
+		  var points = [];
+		  points.push("0,0");
+		  points.push(b.w + ",0");
+		  points.push(b.w + b.t + "," + (b.h / 2));
+		  points.push(b.w + "," + b.h);
+		  points.push("0," + b.h);
+		  if (i > 0) { // Leftmost breadcrumb; don't include 6th vertex.
+		    points.push(b.t + "," + (b.h / 2));
+		  }
+		  return points.join(" ");
+		}
+
+		// Update the breadcrumb trail to show the current sequence and percentage.
+		function updateBreadcrumbs(nodeArray, percentageString) {
+
+		  // Data join; key function combines name and depth (= position in sequence).
+		  var g = d3.select("#trail")
+		      .selectAll("g")
+		      .data(nodeArray, function(d) { return d.name + d.depth; });
+
+		  // Add breadcrumb and label for entering nodes.
+		  var entering = g.enter().append("svg:g")
+		  .attr("class", function(d) { return d.not_relevant ? "not-relevant" : ""});
+
+		  entering.append("svg:polygon")
+		      .attr("points", breadcrumbPoints)
+		      .attr("class", function(d) { return d.children ? "sp-" + d.sp_id : "leaf-node" });
+
+		  entering.append("svg:text")
+		      .attr("x", (b.w + b.t) / 2 )
+		      .attr("y", b.h / 2)
+		      .attr("dy", "0.35em")
+		      .attr("text-anchor", "middle")
+		      .text(function(d) { return d.name; });
+
+		  // Set position for entering and updating nodes.
+		  g.attr("transform", function(d, i) {
+		    return "translate(" + i * (b.w + b.s + 6) + ", 0)";
+		  }).attr("class", function(d) { return d.not_relevant ? "not-relevant" : ""});
+
+		  // Remove exiting nodes.
+		  g.exit().remove();
+
+		  // Now move and update the percentage at the end.
+		  d3.select("#trail").select("#endlabel")
+		      .attr("x", (nodeArray.length + 0.5) * (b.w + b.s))
+		      .attr("y", b.h / 2)
+		      .attr("dy", "0.35em")
+		      .attr("text-anchor", "middle")
+		      .text(percentageString);
+
+		  // Make the breadcrumb trail visible, if it's hidden.
+		  d3.select("#trail")
+		      .style("opacity", 1);
+
+		 //entering
+
+		}
+
+
