@@ -40,6 +40,8 @@ After both pipelines are complete, you can run the webserver via `npm`:
     $ cd ..
     $ npm start
 
+Once the web server is running, visit `localhost:3000` in your browser.
+
 ## File/folder Structure ##
 
 ```
