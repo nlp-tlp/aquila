@@ -79,7 +79,7 @@ The hardcoding takes place in `nlp/utils.py`, `data_warehousing/run_pipeline.py`
 
 The category hierarchy is stored in `data_warehousing/input/categories.yml`. This can be modified to suit your needs, though the structured fields mentioned in the list above will need to be present for the code to work correctly.
 
-You'll also need to modify `data_warehousing/data/categories.yml` to suit your dataset. For example, if your dataset has the categorical variable "Consequence_level" and there are four different consequence levels in that column, you'll need to add a node to the hierarchy:
+You'll also need to modify `data_warehousing/input/categories.yml` to suit your dataset. For example, if your dataset has the categorical variable "Consequence_level" and there are four different consequence levels in that column, you'll need to add a node to the hierarchy:
 
     Consequence_level:
       1:
