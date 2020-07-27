@@ -87,6 +87,10 @@ You'll also need to modify `data_warehousing/input/categories.yml` to suit your 
       3:
       4:
 
+### Adjusting the association rule mining parameters
+
+The ARM visualisation is built using two parameters: min support, and confidence threshold. These parameters can be adjusted in `data_warehousing/run_pipeline.py`, line 86. conf is the confidence threshold (i.e. only rules above the threshold will be generated) and support is the minimum support, i.e. the consequent must occur in the corresponding percentage of all records. The best value for min support will depend on your dataset.
+
 ### Note about the sample dataset
 
 The sample dataset (`nlp/data/sample_data.csv`) is taken from the US Accidents Injuries Dataset (https://catalog.data.gov/dataset/accident-injuries). The required columns (above) have been added, and the values in those columns are randomised. *The sample dataset is purely for demonstration purposes and will not yield useful information extraction results*.
