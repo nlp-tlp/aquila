@@ -24,7 +24,7 @@
     "mongodb": "^3.0.4",
     "mongoose": "^5.0.10",
     "morgan": "^1.9.1",
-    "node-sass": "^4.10.0",
+    "node-sass": "^4.13.1",
     "node-sass-middleware": "^0.11.0",
     "passport": "^0.4.0",
     "passport-local-mongoose": "^5.0.0",
