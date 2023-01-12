@@ -14,7 +14,7 @@
     "csurf": "^1.9.0",
     "csv-reader": "^1.0.3",
     "d3": "^5.7.0",
-    "debug": "~2.2.0",
+    "debug": "~2.6.9",
     "express": "^4.16.4",
     "file-type": "^9.0.0",
     "font-awesome": "^4.7.0",
