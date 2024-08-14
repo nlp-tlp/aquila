@@ -1,0 +1,12 @@
+version: "3.7"
+
+services:
+    # Aquila is an express app and thus the client and server are the same
+    aquila:
+        build:
+            context: .
+        ports:
+            - 3000:80
+        # environment:
+        #     - SERVER_HOST=http://localhost:3000
+        command: npm start

@@ -27,7 +27,7 @@ block content
 
 		div#erc-table-right
 			p#filter-info Showing all <b>#{data.length}</b> rules (s &gt; 0.003).
-			div.table-container.shadow#erc-table-container		
+			div.table-container.shadow#erc-table-container
 				table#entity-recognition-table.association-rule-mining-table
 					thead
 						tr
@@ -56,10 +56,10 @@ block content
 
 block scripts
 	script(type="text/javascript", src="https://code.jquery.com/jquery-2.2.3.min.js")
-	script(type="text/javascript" src="#{base_url}/javascripts/d3/d3.min.js")
-	script(type="text/javascript", src="#{base_url}/javascripts/data_warehousing/association_rule_mining_bar_chart_data.js")
-	script(type="text/javascript", src="#{base_url}/javascripts/data_warehousing/association_rule_mining_entity_appearances.js")
-	script(type="text/javascript", src="#{base_url}/javascripts/data_warehousing/entity_appearances_graph.js")
+	script(type="text/javascript" src="/javascripts/d3/d3.min.js")
+	script(type="text/javascript", src="/javascripts/data_warehousing/association_rule_mining_bar_chart_data.js")
+	script(type="text/javascript", src="/javascripts/data_warehousing/association_rule_mining_entity_appearances.js")
+	script(type="text/javascript", src="/javascripts/data_warehousing/entity_appearances_graph.js")
 
 	script.
 		makeHierarchicalBarChart("/javascripts/data_warehousing/association_rule_mining_bar_chart_data.json", "rules");

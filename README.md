@@ -1,13 +1,21 @@
-# README #
-  
-## Setting up ##
+# README
+
+## Running via Docker
+
+The preferred way to run the demo is via Docker. Simply run:
+
+    docker-compose up
+
+Then visit [http://localhost:3000](http://localhost:3000).
+
+## Running it without Docker - Setting up
 
 To run the web application, you must install NodeJS.
 
 All of the code under the /nlp folder requires Python 3+. In addition to Python 3, the NLP tasks require:
 
-* nltk
-* pyenchant
+-   nltk
+-   pyenchant
 
 MongoDB must also be installed and running to run the web server.
 
@@ -31,9 +39,9 @@ To run the NLP pipeline, navigate to the `nlp` folder and run `nlp.py`:
     $ python nlp.py
 
 Then, navigate to the `data_warehousing` folder and run the data warehousing pipeline:
-  
-  $ cd ../data_warehousing
-  $ python run_pipeline.py
+
+$ cd ../data_warehousing
+$ python run_pipeline.py
 
 After both pipelines are complete, you can run the webserver via `npm`:
 
@@ -42,14 +50,14 @@ After both pipelines are complete, you can run the webserver via `npm`:
 
 Once the web server is running, visit `localhost:3000` in your browser.
 
-## File/folder Structure ##
+## File/folder Structure
 
 ```
 aquila
 │   README.md       // This readme
 │   app.js          // Nodejs app file
 │   filesearch.rb       // A ruby script I made for easily searching files
-│   package.js        // Contains all the nodejs package information  
+│   package.js        // Contains all the nodejs package information
 │
 └───bin           // The nodejs server config
 └───data_warehousing    // All of the data warehousing code, including the preliminary tagging and association rule mining code
@@ -63,15 +71,15 @@ aquila
 
 ```
 
-## Running the code on a different dataset ##
+## Running the code on a different dataset
 
 The sample dataset is located at `nlp/data/sample_data.csv`. To run the pipelines on a new dataset, replace this file with your own and run the pipelines as shown above.
 
-### Notes ###
+### Notes
 
 When Aquila was originally built it was designed for a specific dataset. There are some components in the code that are unfortunately hardcoded, and your dataset must currently adhere to the hardcoded requirements:
 
-- The date column must be in the form dd/mm/yyyy.
+-   The date column must be in the form dd/mm/yyyy.
 
 The hardcoding takes place in `nlp/utils.py`, `data_warehousing/run_pipeline.py`, and `helpers/timeline_chart_helper.js`. You'll need to modify the capitalised variables at the top of each of these datasets to suit your dataset. Please see the comments in each file for more info.
 
@@ -93,7 +101,7 @@ The ARM visualisation is built using two parameters: min support, and confidence
 
 ### Note about the sample dataset
 
-The sample dataset (`nlp/data/sample_data.csv`) is taken from the US Accidents Injuries Dataset (https://catalog.data.gov/dataset/accident-injuries). The required columns (above) have been added, and the values in those columns are randomised. *The sample dataset is purely for demonstration purposes and will not yield useful information extraction results*.
+The sample dataset (`nlp/data/sample_data.csv`) is taken from the US Accidents Injuries Dataset (https://catalog.data.gov/dataset/accident-injuries). The required columns (above) have been added, and the values in those columns are randomised. _The sample dataset is purely for demonstration purposes and will not yield useful information extraction results_.
 
 ## Currently ongoing work
 
@@ -103,6 +111,6 @@ The NLP pipeline in this prototype is fairly simplistic, and was written early o
 
 The hardcoded requirements will be removed in future stable releases of Aquila - in particular, the user will be able to specify the structured fields they want to include in the data warehousing visualisations based on the columns present in their dataset.
 
-## Contact ##
+## Contact
 
 Email: michael.stewart@research.uwa.edu.au

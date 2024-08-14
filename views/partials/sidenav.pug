@@ -3,7 +3,7 @@ nav#sidenav
 	ul#sidenav-items
 
 		- var elements = []
-		- elements.push({title: 	"Dashboard",        		icon: "fa-home",	 	url: "/projects/dashboard"}) 
+		//- - elements.push({title: 	"Dashboard",        		icon: "fa-home",	 	url: "/projects/dashboard"})
 		//- elements.push({separator: "Project Management"})
 		//- elements.push({title: 	"Upload Data",  			icon: "fa-database", 	url: "/upload-data"})
 		//- elements.push({title: 	"Upload Training Data", 	icon: "fa-upload",   	url: "/generator/upload-training-data"})
@@ -17,10 +17,12 @@ nav#sidenav
 		- elements.push({title: 	"Decision Tree",			icon: "fa-sitemap",		url: "/decision-tree"})
 
 
-		if user
-			- each element in elements
-				if element.hasOwnProperty("separator")
-					li.separator: span #{element.separator}
-				else
-					li: a(href="#{base_url}#{element.url}" class=(path === element.url ? "current" : "")): <i class="fa #{element.icon}"></i> #{element.title}
-		
+
+		each element in elements
+			if element.hasOwnProperty("separator")
+				li.separator: span #{element.separator}
+			else
+				li
+					a(href=element.url class=(path === element.url ? "current" : ""))
+						<i class="fa #{element.icon}"></i> #{element.title}
+

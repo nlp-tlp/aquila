@@ -1,0 +1,29 @@
+extends ../layouts/logged_in
+
+block content
+	div(class="homepage-grid clearfix")
+		a(href="/timeline")
+
+			div(class="box")
+				div.inner(style="background-image: url('/images/timeline-screenshot.png')")
+					h2 Timeline
+		a(href="/entity-linking-graph")
+			div(class="box")
+				div.inner(style="background-image: url('/images/entity-linking-graph-screenshot.png')")
+					h2 Entity Linking Graph
+		a(href="/wordcloud")
+			div(class="box")
+				div.inner(style="background-image: url('/images/wordcloud-screenshot.png')")
+					h2 Wordcloud
+		a(href="/category-tree")
+			div(class="box")
+				div.inner(style="background-image: url('/images/tree-screenshot.png')")
+					h2 Category Tree
+		a(href="/entity-recognition-report")
+			div(class="box")
+				div.inner(style="background-image: url('/images/er-screenshot.png')")
+					h2 Entity Recognition Report
+		a(href="/association-rule-mining")
+			div(class="box")
+				div.inner(style="background-image: url('/images/arm-screenshot.png')")
+					h2 Association Rule Mining
