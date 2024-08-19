@@ -5,7 +5,7 @@ WORKDIR /app
 
 RUN rm -rf /app/node_nodules
 
-COPY package*.json .
+COPY package*.json ./
 
 RUN npm install
 
@@ -16,4 +16,4 @@ COPY nlp ./nlp/
 COPY public ./public/
 COPY routes ./routes/
 COPY views ./views/
-COPY app.js .
+COPY app.js ./
